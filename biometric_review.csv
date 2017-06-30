@@ -1,0 +1,14 @@
+Study,Study site,N,a,b,CI95a,CI95b,r2,Method,Formula,uL,uW,tL,Gender,Spear,minD,maxD,Years
+"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",472,-2.24,3.3,-0.17,3.24-3.36,0.95,log transformed and ordinary least squares,Y = a+bX,mm,g,total,Both,Yes,5,20,2011 - 2013
+"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",67,-5.93,3.47,-1.21,2.64-3.14,0.95,log transformed and ordinary least squares,Y = a+bX,mm,g,total,F,Yes,5,20,2011 - 2013
+"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",59,-5.38,3.23,-0.93,2.64-3.67,0.95,log transformed and ordinary least squares,Y = a+bX,mm,g,total,M,Yes,5,20,2011 - 2013
+"Sandel et al., 2015",Southern Caribbean Coast of Costa Rica,458,2.35E-02,2.81,NA,NA,NA,Non-linear least squares,W = aL^b,cm,g,total,Both,Yes*,NA,NA,2011
+Chin et al 2016,"Discovery Bay, Jamaica",419,-4.56,2.85,NA,NA,0.8715,NA,W = aL^b,mm,g,total,Both,Yes,18.3,18.3,2012 - 2014
+Brbour et al 2011,North Carolina,774,2.89E-05,2.89,NA,NA,NA,maximum likelihood of the normal distribution,W = aL^b,mm,g,total,Both,Yes*,27,45,2004 - 2009
+"de Leon et al., 2013",Bonaire,1450,0.00002285,2.89,NA,NA,0.96,NA,W = aL^b,mm,g,total,Both,NA,NA,NA,NA
+"Fogg et al., 2013",Northern Gulf of Mexico,582,-5.86E+00,3.4349,NA,NA,0.99,log transformed and ordinary least squares,Y = a+bX,mm,g,total,Both,Yes*,NA,NA,2012
+"Fogg et al., 2013",Northern Gulf of Mexico,119,-5.5693,3.31,NA,NA,0.97,log transformed and ordinary least squares,Y = a+bX,mm,g,y,M,Yes*,NA,NA,2012
+"Fogg et al., 2013",Northern Gulf of Mexico,115,-5.17E+00,3.1437,NA,NA,0.97,log transformed and ordinary least squares,Y = a+bX,mm,g,y,M,Yes*,NA,NA,2012
+"Edwards et al., 2014",Little Cayman,1887,0.000003,3.24,NA,NA,0.97,Non-linear least squares,W = aL^b,mm,g,total,Both,Yes*,15,30,2011
+"Sabido-Itzá et al., 2016","Parque Nacional Arrecifes de Xcalak, Mexico",2143,7.95E-03,3.1832,NA,NA,0.9907,NA,W = aL^b,mm,g,total,Both,Yes*,0.5,57,2009-2012
+Fishbase,NA,NA,1.15E-02,3.09,0.00441-0.02989,2.87-3.31,NA,based on LWR estimates for this (Sub)family-body shape,W = aL^b,cm,g,total,NA,NA,NA,NA,NA
