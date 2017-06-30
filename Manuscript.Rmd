@@ -1,0 +1,187 @@
+---
+title: "Manuscript"
+output:
+  html_notebook:
+    code_folding: hide
+bibliography: references.bib
+---
+
+# Title page
+
+**Title:** Biometry of the invasive lionfish (*Pterois volitans*) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range
+
+**Name of author:** Juan Carlos Villaseñor-Derbez
+
+**Affiliation:** Bren School of Environmental Sciences and Management
+
+**Full postal address:** University of California Santa Barbara, Santa Barbara,  CA 93106, USA
+
+**Running title:** Length - weigth parameters for *Pterois volitans*
+
+*Corresponding author information:*
+
+Juan Carlos Villaseñor-Derbez
+
+4312 Bren Hall
+
+Santa Barbara, CA
+
+93106
+
+jvillasenor@bren.ucsb.edu
+
++1 (207) 205 8435
+
+\clearpage
+
+**Title**
+
+**Abstract**
+
+300 words
+
+**Key words**
+
+lionfish, biometry, length-weight relationship, Mexico
+
+___________________
+
+**Resumen**
+
+**Palabras clave**
+
+pez león, biometría, relación lopngitud-peso, México
+
+\clearpage
+
+# Introduction
+
+# Materials and Methods
+
+```{r}
+
+suppressPackageStartupMessages({
+  library(RColorBrewer)
+  library(colorRamps)
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(tidyverse)
+  library(RefManageR)
+})
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+
+```
+
+```{r}
+fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>% 
+  group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
+  summarize(Length = 10*mean(TotalLength_cm),
+            Weight = mean(TotalWeigth_gr),
+            Stomach = mean(StomachLength_cm)) %>% 
+  ungroup()
+```
+
+## Area of study
+
+## Fish sampling
+
+## Data analysis
+
+# Results
+
+## Length-weight relationship
+
+```{r, results = "asis"}
+fish %>% 
+  select(Length, Weight, Stomach, Depth_m) %>% 
+  as.data.frame() %>% 
+  stargazer(header = F, type = "html", digits = 2)
+```
+
+```{r, fig.width = 5, fig.height = 7}
+length_hist <- ggplot(data = fish, mapping = aes(x = Length)) +
+  geom_density(fill = "gray", alpha = 0.5) +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total Length (mm)", y = "Density") +
+  geom_text(label = "a)", x = 310, y = 0.007) +
+  theme(text = element_text(family = "Times"))
+
+weight_hist <- ggplot(data = fish, mapping = aes(x = Weight)) +
+  geom_density(fill = "gray", alpha = 0.5) +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total weight (gr)", y = "Density") +
+  geom_text(label = "b)", x = 400, y = 0.017) +
+  theme(text = element_text(family = "Times"))
+
+gridExtra::grid.arrange(length_hist, weight_hist)
+```
+
+```{r}
+model <- lm(log(Weight) ~ log(Length), data = fish)
+```
+
+```{r, results = "asis"}
+TidyModel <- model%>%
+  lmtest::coeftest(vcov = sandwich::vcovHC(., type = "HC1")) %>%
+  broom::tidy()
+
+robust_se <- TidyModel$std.error %>%
+  set_names(TidyModel$term)
+
+wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
+f_string <- c(paste0("F Statistic (df = 1, ",dim(fish)[1]-2,")"), formatC(wald_results$F[2], digits = 2, format = "f"))
+
+stargazer(model,
+          header = F,
+          se = list(robust_se),
+          type = "html",
+          t.auto = T,
+          p.auto = T,
+          intercept.bottom = F,
+          single.row = T,
+          report = "vcs*",
+          omit.stat = "rsq",
+          add.lines = list(f_string))
+```
+
+
+```{r}
+
+a <- coefficients(model)[[1]]
+b <- coefficients(model)[[2]]
+
+predicted <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
+  mutate(Weight = exp((b*log(Length)) + a))
+
+ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
+  geom_line(data = predicted, mapping = aes(x = Length, y = Weight), size = 1) +
+  geom_point(size = 2, alpha = 0.25) +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total length (mm)", y = "Total Weight (g)") +
+  theme(text = element_text(family = "Times"))
+
+```
+
+## Comparison of allometric parameters
+
+```{r}
+review <- read_csv("biometric_review.csv", col_types = cols())
+
+knitr::kable(review, digits = 2, row.names = F, align = "l")
+```
+
+
+
+# Discussion and Conclusions
+
+# Aknowledgements
+
+# References
+
+# Raw data
