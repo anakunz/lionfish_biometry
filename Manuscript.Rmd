@@ -3,6 +3,7 @@ title: "Manuscript"
 output:
   html_notebook:
     code_folding: hide
+  word_document: default
 bibliography: references.bib
 ---
 
@@ -16,7 +17,7 @@ bibliography: references.bib
 
 **Full postal address:** University of California Santa Barbara, Santa Barbara,  CA 93106, USA
 
-**Running title:** Length - weigth parameters for *Pterois volitans*
+**Running title:** Length - weight parameters for *Pterois volitans*
 
 *Corresponding author information:*
 
@@ -56,6 +57,18 @@ pez león, biometría, relación lopngitud-peso, México
 
 # Introduction
 
+Lionfish
+
+Lionfish impacts
+
+Studies quantifying biomass from visual surveys
+
+Objectives
+
+  - Provide a new site-specific pair of growth parameters
+  - Highlight the relevance of using site-specific parameters
+  - Provide a review of existing growth parameters
+
 # Materials and Methods
 
 ```{r}
@@ -67,11 +80,18 @@ suppressPackageStartupMessages({
   library(sandwich)
   library(lmtest)
   library(broom)
-  library(tidyverse)
+  library(tmap)
+  library(tmaptools)
+  library(rgdal)
+  library(sp)
   library(RefManageR)
+  library(tidyverse)
 })
 
 windowsFonts(Times=windowsFont("TT Times New Roman"))
+
+# source('./update_ref.R')
+# update_ref()
 
 ```
 
@@ -86,9 +106,108 @@ fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>%
 
 ## Area of study
 
+The present study took place off the coasts of Playa del Carmen, in the coasts of the Mexican Caribbean. The region represents the northernmost section of the Mesoamerican reef, which extends from coast of Cancun south to Honduras (**reference**). Coral reefs and mangroves are important habitats distributed along the cost, and represent important sources of income in terms of extractive (*e.g.* recreational fishing) and non-extractive (*e.g.* SCUBA diving) activities related to tourism (**reference**), the main source of income to the local economy.
+
+Coral reefs in the region are characterized by X, Y, Z. Descripcion general de los arrecifes.
+
+```{r}
+# Load shapefiles
+proj <- CRS("+proj=longlat +datum=NAD27")
+
+stat <- readOGR(dsn = "./Spatial", layer = "states", verbose = F)
+
+qroo <- readOGR(dsn = "./Spatial", layer = "muni_2015gw", verbose = F)
+
+qroo <-qroo[qroo$NOM_ENT == "Quintana Roo",]
+
+#Small shapefile for region of interest
+xy1 <- data.frame(X = mean(-87.30662, -87.19194), Y = mean(20.39283, 20.51278))
+coordinates(xy1) <- c("X", "Y")
+proj4string(xy1) <- proj
+res1 <- spTransform(xy1, proj)
+
+#Create shapefile for sampling locations
+sample_points <- fish %>%
+  group_by(Location) %>%
+  summarize(latitude = mean(Latitude, na.rm = T),
+            longitude = mean(Longitude, na.rm = T)) %>%
+  ungroup()
+
+xy <- data.frame(X = -1*abs(sample_points$longitude), Y = sample_points$latitude)
+coordinates(xy) <- c("X", "Y")
+proj4string(xy) <- proj  ## for example
+res <- spTransform(xy, proj)
+b <- SpatialPointsDataFrame(coords = res, data = sample_points, proj4string = proj)
+
+# Create shapefile for relevant communities
+Communities <- data.frame(Longitude = c(-87.24),
+                           Latitude = c(20.5),
+                           Location = c("Pto. Aventuras"),
+                           stringsAsFactors = F)
+
+xy2 <- data.frame(X = -1*abs(Communities$Longitude), Y = Communities$Latitude)
+coordinates(xy2) <- c("X", "Y")
+proj4string(xy2) <- proj  ## for example
+res2 <- spTransform(xy2, proj)
+c <- SpatialPointsDataFrame(coords = res2, data = Communities, proj4string = proj)
+
+pen_map <- tm_shape(stat, bbox = bb(xlim = c(-89.29656, -86.71074), ylim = c(17.89399, 21.60525))) +
+  tm_polygons() +
+  tm_shape(res1) +
+  tm_symbols(shape = 5, size = 2, border.col = "black", col = "black", border.lwd = 2) +
+  tm_grid() +
+  tm_scale_bar()
+
+study_area <- tm_shape(qroo, bbox = bb(xlim = c(-87.30662, -87.19194), ylim = c(20.39283, 20.51278))) +
+  tm_polygons() +
+  tm_shape(b) +
+  tm_symbols(size = 0.125, border.col = "black", col = "black") +
+  tm_shape(c) +
+  tm_symbols(shape = 18, col = "black", border.col = "black", size = 0.5) +
+  tm_compass() +
+  tm_scale_bar()
+
+tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
+
+```
+
 ## Fish sampling
 
+The present study uses samples obtained by Villaseñor-Derbez & Herrera-Pérez [-@villaseorderbez_2014] for stomach content analysis between May and August of 2010. A total of 33 SCUBA immersions were performed in `r length(unique(fish$Location))` sampling sites along 14 Km of coast between Puerto Aventuras and Akumal (Fig. 1, Table 1). All observed organisms (n = `r dim(fish)[1]`) were collected using hand nets -to avoid weight loss due to bleeding- and numbered collection bottles. Information on Depth and other comments were recorded in an underwater slide. Depth was recorded by dive gauges held by divers as safety procedures during the collections. Samples were frozen within 30 mins of completing the dive and stored for posterior analysis in the lab. Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m. For every organism Total Length (TL; mm) and Total Weight (TW; gr) were recorded in the lab.
+
+```{r, results = "asis"}
+total <- data.frame(Location = "Total", Latitude = "", Longitude = "", N = 109, stringsAsFactors = F)
+
+fish %>% 
+  group_by(Location) %>% 
+  summarize(Latitude = formatC(mean(Latitude), digits = 3, format = "f"),
+            Longitude = formatC(mean(Longitude), digits = 3, format = "f"),
+            N = n()) %>% 
+  rbind(total) %>% 
+  stargazer(type = "html", header = F, summary = F, add.lines = list(c("Total", "", "", 109)), rownames = F)
+```
+
 ## Data analysis
+
+The weight at length relationship between the observed variables was calculated with the allometric growth function:
+
+$$TW = aTL^b$$
+
+Where $TW$ is the Total Weight (gr), $TL$ is the observed Total Length (mm), $a$ is the scaling parameter and $b$ is the exponent (**revisar**). The dependent and independent variables were transformed via base-10 logarithms so that the equation is then:
+
+$$log_{10}(TW) = blog_{10}TL + log{10}(a)$$
+
+To simplify this equation, we can re-write it as:
+
+$$Y = mX + c$$
+Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. This equation was used to estimate the coefficients ($a$ and $b$), which were estimated via an Ordinary Least Square Regression and heteroskedastic-robust; Standard Errors were calculated to account for **lo que sea que Olivier dijo que era importante**.
+
+  - Conversions to biomass
+
+  -Lit review
+
+When reviewing other length-weight relationships, it was noticed that some papers indistinctly use $a$ to report either the multiplying coefficient in **eq. 1** or the y-intercept ($c$) in **eq. 2**, which might sometimes be overlooked. Furthermore, some studies report their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicates that they were estimated as cm-to-gr conversions (Fig. A1). Here, both parameters ($a$ and $c$) are reported for the present findings and, when ever required, coefficients from other studies are converted. All coefficients are reported as mm to gr conversions.
+
 
 # Results
 
@@ -122,7 +241,7 @@ gridExtra::grid.arrange(length_hist, weight_hist)
 ```
 
 ```{r}
-model <- lm(log(Weight) ~ log(Length), data = fish)
+model <- lm(log10(Weight) ~ log10(Length), data = fish)
 ```
 
 ```{r, results = "asis"}
@@ -134,7 +253,7 @@ robust_se <- TidyModel$std.error %>%
   set_names(TidyModel$term)
 
 wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
-f_string <- c(paste0("F Statistic (df = 1, ",dim(fish)[1]-2,")"), formatC(wald_results$F[2], digits = 2, format = "f"))
+f_string <- c("F Statistic", paste0(formatC(wald_results$F[2], digits = 2, format = "f"), "*** (df = 1; ", dim(fish)[1]-2,")"))
 
 stargazer(model,
           header = F,
@@ -145,27 +264,9 @@ stargazer(model,
           intercept.bottom = F,
           single.row = T,
           report = "vcs*",
-          omit.stat = "rsq",
-          add.lines = list(f_string))
-```
-
-
-```{r}
-
-a <- coefficients(model)[[1]]
-b <- coefficients(model)[[2]]
-
-predicted <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
-  mutate(Weight = exp((b*log(Length)) + a))
-
-ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
-  geom_line(data = predicted, mapping = aes(x = Length, y = Weight), size = 1) +
-  geom_point(size = 2, alpha = 0.25) +
-  theme_bw() +
-  ggExtra::removeGrid() +
-  labs(x = "Total length (mm)", y = "Total Weight (g)") +
-  theme(text = element_text(family = "Times"))
-
+          omit.stat = c("rsq", "f"),
+          add.lines = list(f_string),
+          ci = T)
 ```
 
 ## Comparison of allometric parameters
@@ -177,8 +278,79 @@ knitr::kable(review, digits = 2, row.names = F, align = "l")
 ```
 
 
+```{r}
+
+a <- coefficients(model)[[1]]
+b <- coefficients(model)[[2]]
+
+predicted_this_study <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
+  mutate(Weight = 10^a*Length^b)
+
+plot_fit_this_study <-  ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
+  geom_line(data = predicted_this_study, mapping = aes(x = Length, y = Weight), size = 1) +
+  geom_point(size = 2, alpha = 0.25, color = "black") +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total length (mm)", y = "Total Weight (g)") +
+  theme(text = element_text(family = "Times")) +
+  scale_color_brewer(palette = "Set3") +
+  theme(text=element_text(family="Times"))
+
+plot_fit_this_study
+```
+
+```{r, fig.height = 9.5, fig.width = 6}
+predicted_all <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
+  mutate(This = 10^a*Length^b, 
+         APA = (10^review$a[1]) * ((Length/10)^review$b[1]),
+         APF = (10^review$a[2]) * (Length^review$b[2]),
+         APM = (10^review$a[3]) * (Length^review$b[3]),
+         Sandel = review$a[4] * ((Length/10)^review$b[4]),
+         Chin = (10^review$a[5]) * (Length^review$b[5]),
+         Barbour = review$a[6] * Length^review$b[6],
+         deLeon = review$a[7] * Length^review$b[7],
+         FoggA = (10^review$a[8]) * (Length^review$b[8]),
+         FoggM = (10^review$a[9]) * (Length^review$b[9]),
+         FoggF = (10^review$a[10]) * (Length^review$b[10]),
+         Edwards = review$a[11] * Length^review$b[11],
+         Sabido = review$a[12] * ((Length/10)^review$b[12]),
+         FishBase = review$a[13] * ((Length/10)^review$b[13])) %>%
+  gather(Study_id, Weight, -Length) %>% 
+  left_join(review, by ="Study_id") %>% 
+  mutate(ThisStudy = ifelse(Study_id == "This", "Actual", "Other"))
+
+plot_fit_all_studies <- ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
+  geom_line(data = predicted_all, mapping = aes(x = Length, y = Weight, linetype = Gender, color = Study), size = 1) +
+  geom_point(size = 2, alpha = 0.25, color = "black") +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total length (mm)", y = "Total Weight (g)") +
+  theme(text = element_text(family = "Times"),
+        legend.justification=c(0,1),
+        legend.position=c(0.01, 0.99)) +
+  guides(color = guide_legend(title=NULL)) +
+  scale_color_brewer(palette = "Paired")
+
+plot_fit_all_studies_log <- ggplot(data = fish, mapping = aes(x = Length, y = log10(Weight))) +
+  geom_line(data = predicted_all, mapping = aes(x = Length, y = log10(Weight), linetype = Gender, color = Study), size = 1) +
+  geom_point(size = 2, alpha = 0.25, color = "black") +
+  theme_bw() +
+  ggExtra::removeGrid() +
+  labs(x = "Total length (mm)", y = "log10(TW)") +
+  theme(text = element_text(family = "Times"),
+        legend.position = "None")+
+  scale_x_continuous(expand=c(0,0))+
+  scale_y_continuous(expand=c(0,0))
+
+gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
+
+```
+
+
 
 # Discussion and Conclusions
+
+Not using spear poles allows us to have a full sample of fish with a wider range of sizes and weights, ideal for visual census. Also, there is no loss in body mass due to bleeding.
 
 # Aknowledgements
 
