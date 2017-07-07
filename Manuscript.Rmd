@@ -1,57 +1,92 @@
 ---
-title: "Manuscript"
+title: "Biometry of the invasive lionfish (*Pterois volitans*) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range"
+header-includes:
+- \usepackage{setspace}
+- \doublespacing
+- \usepackage{lineno}
+- \linenumbers
 output:
-  html_notebook:
-    code_folding: hide
-  word_document: default
+  pdf_document:
+    fig_caption: yes
+fontsize: 12pt
 bibliography: references.bib
 ---
 
-# Title page
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
 
-**Title:** Biometry of the invasive lionfish (*Pterois volitans*) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range
+windowsFonts(Times=windowsFont("TT Times New Roman"))
 
-**Name of author:** Juan Carlos Villaseñor-Derbez
+# source('./update_ref.R')
+# update_ref()
+```
 
-**Affiliation:** Bren School of Environmental Sciences and Management
+```{r, load packages}
 
-**Full postal address:** University of California Santa Barbara, Santa Barbara,  CA 93106, USA
+suppressPackageStartupMessages({
+  library(RColorBrewer)
+  library(colorRamps)
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(tmap)
+  library(tmaptools)
+  library(rgdal)
+  library(sp)
+  library(RefManageR)
+  library(tidyverse)
+})
 
-**Running title:** Length - weight parameters for *Pterois volitans*
+```
+
+
+Juan Carlos Villaseñor-Derbez^1^\
+
+
+^1^ Bren School of Environmental Sciences and Management, University of California Santa Barbara\
+
+
+**Full postal address:**
+4312 Bren Hall, Santa Barbara, CA, 93106\
+
+
+**Running title:** Length - weight parameters for *Pterois volitans* \
+
 
 *Corresponding author information:*
 
-Juan Carlos Villaseñor-Derbez
-
-4312 Bren Hall
-
-Santa Barbara, CA
-
-93106
-
-jvillasenor@bren.ucsb.edu
-
+Juan Carlos Villaseñor-Derbez   
+4312 Bren Hall  
+Santa Barbara, CA   
+93106   
+jvillasenor@bren.ucsb.edu   
 +1 (207) 205 8435
 
 \clearpage
 
-**Title**
+**Title of the contribution:** Biometry of the invasive lionfish (*Pterois volitans*) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range\
+
 
 **Abstract**
 
-300 words
+300 words\
+
 
 **Key words**
 
-lionfish, biometry, length-weight relationship, Mexico
+lionfish, biometry, length-weight relationship, Mexico\
 
-___________________
 
 **Resumen**
 
+300 palabras\
+
+
 **Palabras clave**
 
-pez león, biometría, relación lopngitud-peso, México
+pez león, biometría, relación lopngitud-peso, México\
+
 
 \clearpage
 
@@ -71,31 +106,7 @@ Objectives
 
 # Materials and Methods
 
-```{r}
-
-suppressPackageStartupMessages({
-  library(RColorBrewer)
-  library(colorRamps)
-  library(stargazer)
-  library(sandwich)
-  library(lmtest)
-  library(broom)
-  library(tmap)
-  library(tmaptools)
-  library(rgdal)
-  library(sp)
-  library(RefManageR)
-  library(tidyverse)
-})
-
-windowsFonts(Times=windowsFont("TT Times New Roman"))
-
-# source('./update_ref.R')
-# update_ref()
-
-```
-
-```{r}
+```{r load fish data, include = F}
 fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>% 
   group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
   summarize(Length = 10*mean(TotalLength_cm),
@@ -110,7 +121,7 @@ The present study took place off the coasts of Playa del Carmen, in the coasts o
 
 Coral reefs in the region are characterized by X, Y, Z. Descripcion general de los arrecifes.
 
-```{r}
+```{r create map, include = F}
 # Load shapefiles
 proj <- CRS("+proj=longlat +datum=NAD27")
 
@@ -175,16 +186,21 @@ tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
 
 The present study uses samples obtained by Villaseñor-Derbez & Herrera-Pérez [-@villaseorderbez_2014] for stomach content analysis between May and August of 2010. A total of 33 SCUBA immersions were performed in `r length(unique(fish$Location))` sampling sites along 14 Km of coast between Puerto Aventuras and Akumal (Fig. 1, Table 1). All observed organisms (n = `r dim(fish)[1]`) were collected using hand nets -to avoid weight loss due to bleeding- and numbered collection bottles. Information on Depth and other comments were recorded in an underwater slide. Depth was recorded by dive gauges held by divers as safety procedures during the collections. Samples were frozen within 30 mins of completing the dive and stored for posterior analysis in the lab. Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m. For every organism Total Length (TL; mm) and Total Weight (TW; gr) were recorded in the lab.
 
-```{r, results = "asis"}
-total <- data.frame(Location = "Total", Latitude = "", Longitude = "", N = 109, stringsAsFactors = F)
+```{r table of locations, include = F}
+total <- data.frame(Location = "Total", Latitude = "", Longitude = "", minD = min(fish$Depth_m), maxD = max(fish$Depth_m), meanD = formatC(mean(fish$Depth_m), digits = 1, format = "f"), n = 109, stringsAsFactors = F)
 
-fish %>% 
+location_table <- fish %>% 
   group_by(Location) %>% 
   summarize(Latitude = formatC(mean(Latitude), digits = 3, format = "f"),
             Longitude = formatC(mean(Longitude), digits = 3, format = "f"),
-            N = n()) %>% 
+            minD = formatC(min(Depth_m), digits = 1, format = "f"),
+            maxD = formatC(max(Depth_m), digits = 1, format = "f"),
+            meanD = formatC(mean(Depth_m), digits = 1, format = "f"),
+            n = n()) %>% 
   rbind(total) %>% 
-  stargazer(type = "html", header = F, summary = F, add.lines = list(c("Total", "", "", 109)), rownames = F)
+  knitr::kable(row.names = F, caption = "Coordinates, minimum, maximum and mean depth (m), and number of samples for each location. n = sample size.", col.names = c("Location", "Latitude", "Longitude", "Minimum Depth (m)", "Maximum Depth (m)", "Mean Depth (m)", "n"))
+
+location_table
 ```
 
 ## Data analysis
@@ -213,14 +229,14 @@ When reviewing other length-weight relationships, it was noticed that some paper
 
 ## Length-weight relationship
 
-```{r, results = "asis"}
-fish %>% 
-  select(Length, Weight, Stomach, Depth_m) %>% 
+```{r summary table, include = F}
+summary_table <- fish %>% 
+  select(Length, Weight) %>% 
   as.data.frame() %>% 
-  stargazer(header = F, type = "html", digits = 2)
+  stargazer(header = F, type = "latex", digits = 2, title = "Summary statistics of Length and Weight of sampled organisms.")
 ```
 
-```{r, fig.width = 5, fig.height = 7}
+```{r histogram figures, include = F}
 length_hist <- ggplot(data = fish, mapping = aes(x = Length)) +
   geom_density(fill = "gray", alpha = 0.5) +
   theme_bw() +
@@ -240,11 +256,11 @@ weight_hist <- ggplot(data = fish, mapping = aes(x = Weight)) +
 gridExtra::grid.arrange(length_hist, weight_hist)
 ```
 
-```{r}
+```{r model fitting}
 model <- lm(log10(Weight) ~ log10(Length), data = fish)
 ```
 
-```{r, results = "asis"}
+```{r regression table, include = F}
 TidyModel <- model%>%
   lmtest::coeftest(vcov = sandwich::vcovHC(., type = "HC1")) %>%
   broom::tidy()
@@ -255,10 +271,10 @@ robust_se <- TidyModel$std.error %>%
 wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
 f_string <- c("F Statistic", paste0(formatC(wald_results$F[2], digits = 2, format = "f"), "*** (df = 1; ", dim(fish)[1]-2,")"))
 
-stargazer(model,
+regression_table <- stargazer(model,
           header = F,
           se = list(robust_se),
-          type = "html",
+          type = "latex",
           t.auto = T,
           p.auto = T,
           intercept.bottom = F,
@@ -268,17 +284,22 @@ stargazer(model,
           add.lines = list(f_string),
           ci = T)
 ```
+\clearpage
 
 ## Comparison of allometric parameters
 
-```{r}
+```{r, include = F}
 review <- read_csv("biometric_review.csv", col_types = cols())
 
-knitr::kable(review, digits = 2, row.names = F, align = "l")
+review_table <- review %>% 
+  select(Reference, n = N, a, c, b, r2, Gender, minD, maxD, Spear) %>% 
+  knitr::kable(digits = 4, row.names = F, caption = "Allometric growth parameters for eight published papers, Fishbase (Froese and Pauly 2016), and this study. All parameters have been adjusted to convert from millimiters to grams. n = Sample size, a = scaling parameter for eq. 1, c = y-intercept for eq. 3, b = exponent or slope for eq. 1 or eq. 2, respectively.")
+
+review_table
 ```
 
 
-```{r}
+```{r scatter plot, include = F}
 
 a <- coefficients(model)[[1]]
 b <- coefficients(model)[[2]]
@@ -290,7 +311,6 @@ plot_fit_this_study <-  ggplot(data = fish, mapping = aes(x = Length, y = Weight
   geom_line(data = predicted_this_study, mapping = aes(x = Length, y = Weight), size = 1) +
   geom_point(size = 2, alpha = 0.25, color = "black") +
   theme_bw() +
-  ggExtra::removeGrid() +
   labs(x = "Total length (mm)", y = "Total Weight (g)") +
   theme(text = element_text(family = "Times")) +
   scale_color_brewer(palette = "Set3") +
@@ -299,43 +319,40 @@ plot_fit_this_study <-  ggplot(data = fish, mapping = aes(x = Length, y = Weight
 plot_fit_this_study
 ```
 
-```{r, fig.height = 9.5, fig.width = 6}
+```{r review plots, include = F}
 predicted_all <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
-  mutate(This = 10^a*Length^b, 
-         APA = (10^review$a[1]) * ((Length/10)^review$b[1]),
-         APF = (10^review$a[2]) * (Length^review$b[2]),
-         APM = (10^review$a[3]) * (Length^review$b[3]),
-         Sandel = review$a[4] * ((Length/10)^review$b[4]),
-         Chin = (10^review$a[5]) * (Length^review$b[5]),
-         Barbour = review$a[6] * Length^review$b[6],
-         deLeon = review$a[7] * Length^review$b[7],
-         FoggA = (10^review$a[8]) * (Length^review$b[8]),
-         FoggM = (10^review$a[9]) * (Length^review$b[9]),
-         FoggF = (10^review$a[10]) * (Length^review$b[10]),
-         Edwards = review$a[11] * Length^review$b[11],
-         Sabido = review$a[12] * ((Length/10)^review$b[12]),
-         FishBase = review$a[13] * ((Length/10)^review$b[13])) %>%
+  mutate(This = review$a[14] * (Length^review$b[14]), 
+         APA = review$a[1] * (Length^review$b[1]),
+         APF = review$a[2] * (Length^review$b[2]),
+         APM = review$a[3] * (Length^review$b[3]),
+         Sandel = review$a[4] * (Length^review$b[4]),
+         Chin = review$a[5] * (Length^review$b[4]),
+         Barbour = review$a[6] * (Length^review$b[6]),
+         deLeon = review$a[7] * (Length^review$b[7]),
+         FoggA = review$a[8] * (Length^review$b[8]),
+         FoggM = review$a[9] * (Length^review$b[9]),
+         FoggF = review$a[10] * (Length^review$b[10]),
+         Edwards = review$a[11] * (Length^review$b[11]),
+         Sabido = review$a[12] * (Length^review$b[12]),
+         FishBase = review$a[13] * (Length^review$b[13])) %>%
   gather(Study_id, Weight, -Length) %>% 
   left_join(review, by ="Study_id") %>% 
   mutate(ThisStudy = ifelse(Study_id == "This", "Actual", "Other"))
 
 plot_fit_all_studies <- ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
   geom_line(data = predicted_all, mapping = aes(x = Length, y = Weight, linetype = Gender, color = Study), size = 1) +
-  geom_point(size = 2, alpha = 0.25, color = "black") +
   theme_bw() +
-  ggExtra::removeGrid() +
   labs(x = "Total length (mm)", y = "Total Weight (g)") +
   theme(text = element_text(family = "Times"),
         legend.justification=c(0,1),
-        legend.position=c(0.01, 0.99)) +
+        legend.position=c(0.01, 0.99),
+        legend.background = element_rect(fill = "transparent", size=.5, linetype="dotted")) +
   guides(color = guide_legend(title=NULL)) +
   scale_color_brewer(palette = "Paired")
 
 plot_fit_all_studies_log <- ggplot(data = fish, mapping = aes(x = Length, y = log10(Weight))) +
   geom_line(data = predicted_all, mapping = aes(x = Length, y = log10(Weight), linetype = Gender, color = Study), size = 1) +
-  geom_point(size = 2, alpha = 0.25, color = "black") +
   theme_bw() +
-  ggExtra::removeGrid() +
   labs(x = "Total length (mm)", y = "log10(TW)") +
   theme(text = element_text(family = "Times"),
         legend.position = "None")+
@@ -354,6 +371,70 @@ Not using spear poles allows us to have a full sample of fish with a wider range
 
 # Aknowledgements
 
-# References
+\clearpage
 
-# Raw data
+# Tables
+
+## Location table
+
+```{r}
+location_table
+```
+
+\clearpage
+
+## Summary table
+
+```{r, results = "asis"}
+cat(summary_table)
+```
+
+\clearpage
+
+## Regression table
+
+```{r, results = "asis"}
+cat(regression_table)
+```
+
+\clearpage
+
+## Review table
+
+```{r}
+review_table
+```
+
+
+\clearpage
+
+# Figures
+
+## Map
+
+```{r}
+tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
+```
+
+\clearpage
+
+## Histograms
+
+```{r, fig.width = 5, fig.height = 7}
+gridExtra::grid.arrange(length_hist, weight_hist)
+```
+
+## Scatter plot
+
+```{r}
+plot_fit_this_study
+```
+
+## Review plots
+
+```{r, fig.height = 9.5, fig.width = 6}
+gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
+```
+
+
+# References
