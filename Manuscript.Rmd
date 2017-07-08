@@ -1,5 +1,5 @@
 ---
-title: "Biometry of the invasive lionfish (*Pterois volitans*) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range"
+title: \normalsize{Biometry of the invasive lionfish (\textit{Pterois volitans}) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range}
 header-includes:
 - \usepackage{setspace}
 - \doublespacing
