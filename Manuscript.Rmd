@@ -12,17 +12,24 @@ fontsize: 12pt
 bibliography: references.bib
 ---
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { 
+      equationNumbers: { 
+            autoNumber: "all",
+            formatNumber: function (n) {return '9.'+n}
+      } 
+  }
+});
+</script>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F)
 
 windowsFonts(Times=windowsFont("TT Times New Roman"))
-
-# source('./update_ref.R')
-# update_ref()
 ```
 
-```{r, load packages}
-
+```{r load packages}
 suppressPackageStartupMessages({
   library(RColorBrewer)
   library(colorRamps)
@@ -207,15 +214,16 @@ location_table
 
 The weight at length relationship between the observed variables was calculated with the allometric growth function:
 
-$$TW = aTL^b$$
+\begin{equation}TW = aTL^b\end{equation}
 
 Where $TW$ is the Total Weight (gr), $TL$ is the observed Total Length (mm), $a$ is the scaling parameter and $b$ is the exponent (**revisar**). The dependent and independent variables were transformed via base-10 logarithms so that the equation is then:
 
-$$log_{10}(TW) = blog_{10}TL + log{10}(a)$$
+\begin{equation}log_{10}(TW) = blog_{10}TL + log{10}(a)\end{equation}
 
 To simplify this equation, we can re-write it as:
 
-$$Y = mX + c$$
+\begin{equation}Y = mX + c\end{equation}
+
 Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. This equation was used to estimate the coefficients ($a$ and $b$), which were estimated via an Ordinary Least Square Regression and heteroskedastic-robust; Standard Errors were calculated to account for **lo que sea que Olivier dijo que era importante**.
 
   - Conversions to biomass
