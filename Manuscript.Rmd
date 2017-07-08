@@ -502,5 +502,12 @@ plot_fit_this_study
 gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
 ```
 
+## Predictions plot
+
+```{r}
+Predicted_biomass_plot
+```
+
+\clearpage
 
 # References
