@@ -378,6 +378,57 @@ gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
 
 ```
 
+```{r Predicted biomass for each site}
+Predicted_biomass <- fish %>% 
+  mutate(This = review$a[14] * (Length^review$b[14]), 
+         APA = review$a[1] * (Length^review$b[1]),
+         APF = review$a[2] * (Length^review$b[2]),
+         APM = review$a[3] * (Length^review$b[3]),
+         Sandel = review$a[4] * (Length^review$b[4]),
+         Chin = review$a[5] * (Length^review$b[4]),
+         Barbour = review$a[6] * (Length^review$b[6]),
+         deLeon = review$a[7] * (Length^review$b[7]),
+         FoggA = review$a[8] * (Length^review$b[8]),
+         FoggM = review$a[9] * (Length^review$b[9]),
+         FoggF = review$a[10] * (Length^review$b[10]),
+         Edwards = review$a[11] * (Length^review$b[11]),
+         Sabido = review$a[12] * (Length^review$b[12]),
+         FishBase = review$a[13] * (Length^review$b[13])) %>% 
+  group_by(Location) %>% 
+  summarize(Observed = sum(Weight),
+            This = sum(This)/Observed,
+            APA = sum(APA)/Observed,
+            APF = sum(APF)/Observed,
+            APM = sum(APM)/Observed, 
+            Sandel = sum(Sandel)/Observed,
+            Chin = sum(Chin)/Observed,
+            Barbour = sum(Barbour)/Observed,
+            deLeon = sum(deLeon)/Observed,
+            FoggA = sum(FoggA)/Observed,
+            FoggM = sum(FoggM)/Observed,
+            FoggF = sum(FoggF)/Observed,
+            Edwards = sum(Edwards)/Observed,
+            Sabido = sum(Sabido)/Observed,
+            FishBase = sum(FishBase)/Observed) %>% 
+  ungroup() %>% 
+  gather(Study, Biomass, -Location)
+```
+
+
+```{r plot comparing predictions, include = F}
+Predicted_biomass_plot <-   Predicted_biomass %>% 
+  filter(!Study == "Observed") %>% 
+  ggplot(aes(x = Study, y = Biomass)) +
+  stat_summary(geom = "errorbar", fun.data = "mean_se", width = 0, size = 1) +
+  stat_summary(geom = "point", fun.y = "mean", fill = "blue", size = 3, shape = 21) +
+  geom_hline(yintercept = 1, linetype = "dashed") +
+  labs(y = "Biomass (Predicted / Observed)") +
+  coord_flip() +
+  theme_bw() +
+  theme(text = element_text(family = "Times"))
+
+Predicted_biomass_plot
+```
 
 
 # Discussion and Conclusions
