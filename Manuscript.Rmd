@@ -45,6 +45,8 @@ suppressPackageStartupMessages({
   library(tidyverse)
 })
 
+# source('./update_ref.R')
+# update_ref()
 ```
 
 
@@ -101,15 +103,20 @@ pez león, biometría, relación lopngitud-peso, México\
 
 Lionfish
 
-Lionfish impacts
+Lionfish (*Pterois volitans - miles* complex) are an invasive species in the North-Western Atlantic and the Caribbean. They are the first marine vertebrates to establish in North Atlantic [@schofield_2009: @schofield_2010] and Caribbean coasts. Their presence in these waters has been labeled as a major marine invasion due to its threat to local biodiversity, the veolocity of its invasion, and the difficulty of management [@hixon_2016].
 
-Studies quantifying biomass from visual surveys
+Liofnish have been prooven to reduce recruitment of local reef fish species [@albins_2008]. Their diet focuses on small demersal reef-associated fish and crustaceans [@morris_2009; @villaseorderbez_2014].
+
+Lionfish were first recorded in Mexican waters in 2010 [@aguilarperera_2010].
+
+
+Studies quantifying biomass from visual surveys / Ecosim simulations / stock assessments
+
+Significant efforts have been made to understand the possible impacts of the invasion by X (cita de X), y (cita de Y) y z (cita de Z). An important pair of parameters often used in these studies are those which allow researchers to convert observed lengths into weights (*i.e.* weight-at-length parameters) to estimate biomass. Having presission of these parameters is important, because small changes in any of them can result in important over- or unnderestimation of biomass levels. This becomes particularly important when research involves, for example, identifying the total biomass available for harvest by fishers (as invasion management programs).
 
 Objectives
 
-  - Provide a new site-specific pair of growth parameters
-  - Highlight the relevance of using site-specific parameters
-  - Provide a review of existing growth parameters
+The objectives of this study include providing site-specific weight-at-length parameters for the invasive lionfish in the Mexican Caribbean region. At the same time, we highlight the importance of using site-specific parameters by using those from other studies and comparing predicted weights to those found in this study. Finaly, we provide a review of and summarize other weight-at-length studies presented, making them readily accessible for future research.
 
 # Materials and Methods
 
