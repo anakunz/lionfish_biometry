@@ -9,7 +9,7 @@ output:
   pdf_document:
     fig_caption: yes
 fontsize: 12pt
-bibliography: references.bib
+bibliography: [references.bib, packages.bib]
 ---
 
 <script type="text/x-mathjax-config">
@@ -31,8 +31,9 @@ windowsFonts(Times=windowsFont("TT Times New Roman"))
 
 ```{r load packages}
 suppressPackageStartupMessages({
-  library(RColorBrewer)
-  library(colorRamps)
+  # library(RColorBrewer)
+  # library(colorRamps)
+  library(e1071)
   library(stargazer)
   library(sandwich)
   library(lmtest)
@@ -101,22 +102,17 @@ pez león, biometría, relación lopngitud-peso, México\
 
 # Introduction
 
-Lionfish
+At least 84% of the marine eco-regions have reported the presence of an invasive species [@molnar_2008]. The presence of invasive alien species represents a major threat to local biodiversity and the economic activities that depend on it, like tourism or fisheries [@bax_2003]. By 2005, the economic cost of invasive species to the United States was  estimated at \$120 billion per year and nearly 42% of species that have been included in the Endangered or Threatened species list have been labeled as such due to presence of invasive species [@pimentel_2005]. Invasive species may threaten native species through competition [@davis_2003] or predation. This highlightes the importance of understanding, managing, and preventing ecological invasions.
 
-Lionfish (*Pterois volitans - miles* complex) are an invasive species in the North-Western Atlantic and the Caribbean. They are the first marine vertebrates to establish in North Atlantic [@schofield_2009: @schofield_2010] and Caribbean coasts. Their presence in these waters has been labeled as a major marine invasion due to its threat to local biodiversity, the veolocity of its invasion, and the difficulty of management [@hixon_2016].
+Lionfish (*Pterois volitans - miles* complex) are an invasive species in the North-Western Atlantic and the Caribbean likely introduced through libreation of aquarium-kept organisms [@betancurr_2011]. They are the first marine vertebrates to establish in North Atlantic [@schofield_2009: @schofield_2010] and Caribbean coasts. Lionfish have been recorded in coral reefs [@aguilarperera_2010], but also in other habitats like estuaries [@jud_2011], mangroves [@barbour_2010] and hard-bottom reefs [@muoz_2011]. Their presence in these waters has been labeled as a major marine invasion due to its threat to local biodiversity, the veolocity of its invasion, and its difficulty of management [@hixon_2016].
 
-Liofnish have been prooven to reduce recruitment of local reef fish species [@albins_2008]. Their diet focuses on small demersal reef-associated fish and crustaceans [@morris_2009; @villaseorderbez_2014].
+As ways to reduce the abundance of this invasive species local authorities have promoted removal programs incentivized consumption of this invasive species [@chin_2016]. Lionfish removals have shown to significantly reduce -but not quite eliminate- lionfish abundances at local scales [@sandel_2015, @chin_2016, @deleon_2013]. While complete erradication through fishing effort is unlikely to be a solution due to the rapid recovery rates exhibited by the species [@barbour_2011], further incentivizing its consumption might create a market demand big enough to promote a fishery [@chin_2016].
 
-Lionfish were first recorded in Mexican waters in 2010 [@aguilarperera_2010].
+A significant amount of research has been done on lionfish feeding ecology in North Carolina [@muoz_2011], the Bahamas [@morris_2009; @cote_2013], Northern Gulf of Mexico [@dahl_2014], Mexican Caribbean [@valdezmoreno_2012; @villaseorderbez_2014], and Costa Rica [@sandel_2015]. It has been identified that lionfish can reduce recruitment [@albins_2008] and population sizes [@green_2012] of native reef-fish species, and further the endangerement of critically endangered reef fish [@rocha_2015]. This information has been useful in predicting the trophic impacts of lionfish [@ariasgonzalez_2011]. Significant efforts have also been made to understand the possible impacts of the invasion by keeping track of the invasion range through time [@schofield_2009; @schofield_2010] and predicting invasion ranges under climate change scenarios (@grieve_2016).
 
+Biomass is a standard indicator used to measure the state or size of a population. Biomass has been used in lionfish research to convert individual fish length observations into fish weight. In order to do this, researchers must find growth parameters thad describe the growth of their species for a particular region or location. Having precision of these parameters is important, because small changes in any of them can result in important over- or underestimation of biomass levels. This becomes particularly important when research involves, for example, identifying the total biomass available for harvest by fishers -as invasion management programs- or the efficacy of lionfish removals.
 
-Studies quantifying biomass from visual surveys / Ecosim simulations / stock assessments
-
-Significant efforts have been made to understand the possible impacts of the invasion by X (cita de X), y (cita de Y) y z (cita de Z). An important pair of parameters often used in these studies are those which allow researchers to convert observed lengths into weights (*i.e.* weight-at-length parameters) to estimate biomass. Having presission of these parameters is important, because small changes in any of them can result in important over- or unnderestimation of biomass levels. This becomes particularly important when research involves, for example, identifying the total biomass available for harvest by fishers (as invasion management programs).
-
-Objectives
-
-The objectives of this study include providing site-specific weight-at-length parameters for the invasive lionfish in the Mexican Caribbean region. At the same time, we highlight the importance of using site-specific parameters by using those from other studies and comparing predicted weights to those found in this study. Finaly, we provide a review of and summarize other weight-at-length studies presented, making them readily accessible for future research.
+The objectives of this study include providing site-specific weight-at-length parameters for the invasive lionfish in the Mexican Caribbean region. At the same time, we highlight the importance of using site-specific parameters by estimating biomass with parameters from other regions across the invasion range and comparing them to observed biomasses. Finally, we summarize other weight-at-length studies presented, making them readily accessible for future research.
 
 # Materials and Methods
 
@@ -198,7 +194,7 @@ tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
 
 ## Fish sampling
 
-The present study uses samples obtained by Villaseñor-Derbez & Herrera-Pérez [-@villaseorderbez_2014] for stomach content analysis between May and August of 2010. A total of 33 SCUBA immersions were performed in `r length(unique(fish$Location))` sampling sites along 14 Km of coast between Puerto Aventuras and Akumal (Fig. 1, Table 1). All observed organisms (n = `r dim(fish)[1]`) were collected using hand nets -to avoid weight loss due to bleeding- and numbered collection bottles. Information on Depth and other comments were recorded in an underwater slide. Depth was recorded by dive gauges held by divers as safety procedures during the collections. Samples were frozen within 30 mins of completing the dive and stored for posterior analysis in the lab. Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m. For every organism Total Length (TL; mm) and Total Weight (TW; gr) were recorded in the lab.
+The present study used samples obtained by @villaseorderbez_2014 for stomach content analysis between May and August of 2010. A total of 33 SCUBA immersions were performed in `r length(unique(fish$Location))` sampling sites along 14 Km of coast between Puerto Aventuras and Akumal (Fig. 1, Table 1). Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m.  All observed organisms (n = `r dim(fish)[1]`) were collected using hand nets -to avoid weight loss due to bleeding- and numbered collection bottles. Information on depth and other comments were recorded in an underwater slide. Depth was recorded by dive gauges held by divers as safety procedures during the collections. Samples were frozen within 30 minutes of completing the dive and stored for posterior analysis in the lab. For every organism, Total Length (TL; mm) and Total Weight (TW; gr) were recorded in the lab.
 
 ```{r table of locations, include = F}
 total <- data.frame(Location = "Total", Latitude = "", Longitude = "", minD = min(fish$Depth_m), maxD = max(fish$Depth_m), meanD = formatC(mean(fish$Depth_m), digits = 1, format = "f"), n = 109, stringsAsFactors = F)
@@ -212,7 +208,7 @@ location_table <- fish %>%
             meanD = formatC(mean(Depth_m), digits = 1, format = "f"),
             n = n()) %>% 
   rbind(total) %>% 
-  knitr::kable(row.names = F, caption = "Coordinates, minimum, maximum and mean depth (m), and number of samples for each location. n = sample size.", col.names = c("Location", "Latitude", "Longitude", "Minimum Depth (m)", "Maximum Depth (m)", "Mean Depth (m)", "n"))
+  knitr::kable(row.names = F, caption = "Coordinates, minimum, maximum and mean depth (m), and number of samples for each location. n = sample size.", col.names = c("Location", "Lat.", "Long.", "Min. Depth", "Max. Depth", "Mean Depth", "n"))
 
 location_table
 ```
@@ -223,7 +219,7 @@ The weight at length relationship between the observed variables was calculated 
 
 \begin{equation}TW = aTL^b\end{equation}
 
-Where $TW$ is the Total Weight (gr), $TL$ is the observed Total Length (mm), $a$ is the scaling parameter and $b$ is the exponent (**revisar**). The dependent and independent variables were transformed via base-10 logarithms so that the equation is then:
+Where $TW$ is the Total Weight (gr), $TL$ is the observed Total Length (mm), $a$ is the ponderal index and $b$ is the scaling exponent or allometric parameter. When $b = 3$, it is said that the organism exhibits a perfect isometric growth. The dependent and independent variables were transformed via base-10 logarithms so that the equation is then:
 
 \begin{equation}log_{10}(TW) = blog_{10}TL + log{10}(a)\end{equation}
 
@@ -231,18 +227,21 @@ To simplify this equation, we can re-write it as:
 
 \begin{equation}Y = mX + c\end{equation}
 
-Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. This equation was used to estimate the coefficients ($a$ and $b$), which were estimated via an Ordinary Least Square Regression and heteroskedastic-robust; Standard Errors were calculated to account for **lo que sea que Olivier dijo que era importante**.
+Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. The coefficients ($c$ and $b$) were estimated with  an Ordinary Least Square Regression and heteroskedastic-robust standard errors. Both coefficients were tested agains the null hypothesis of no change (*i.e.* $h_0: c = 0$ and $h_0: b = 0$). Additionally, the allometric parameter was tested against the null hypothesis of isometric growth ($H_0: b = 3$). Coefficient testing was made with a two-tailed Student's t-test. The significance of the regression was corroborated with an F-test.
 
-  - Conversions to biomass
+Other growth parameters were extracted from published research from North Carolina [@barbour_2011], Northern [@fogg_2013] and Southern [@aguilarperera_2016] Gulf of Mexico, the Southern Mexican Caribbean [@sabidoitza_2016], Little Cayman [@edwards_2014], Jamaica [@chin_2016], Bonaire [@deleon_2013] and Costa Rica [@sandel_2015]. Additionally, parameters from Fishbase [@froese_website_2016] were also included in this study. When available, information on sampling methods, location, and depth ranges of each study was retreived. During this review process, it was noticed that some papers indistinctly use $a$ to report either the ponderal index in **eq. 1** or the y-intercept ($c$) in **eq. 2**, which might sometimes be overlooked. Furthermore, some studies report their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicates that they were estimated as cm-to-gr conversions. Here, both parameters ($a$ and $c$) are reported for the present findings and, when ever required, values from other studies are converted for consistency. All coefficients are reported as mm to gr conversions.
 
-  -Lit review
+Observed biomass was calculated as the sum of all observed organisms for each location. Expected biomass for each organism was calculated with the growth parameteres estimated in this study, as well as those retreived from additional literature. Then, total expected biomass was calculated for each surveyed site as the sum of expected biomasses previously calculated. For each study and site, biomass was divided by the corresponding observed biomass to obtain a ratio that allowed rapid identification of over- or underestimation. Therefore, values lower than 1 indicate that the parameters used underestimate the biomass. On the other side, values larger than 1 indicate that the parameteres used overestimate biomass. Mean expected-to-observed biomass ratios were calculated by averaging across all sites for each study.
 
-When reviewing other length-weight relationships, it was noticed that some papers indistinctly use $a$ to report either the multiplying coefficient in **eq. 1** or the y-intercept ($c$) in **eq. 2**, which might sometimes be overlooked. Furthermore, some studies report their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicates that they were estimated as cm-to-gr conversions (Fig. A1). Here, both parameters ($a$ and $c$) are reported for the present findings and, when ever required, coefficients from other studies are converted. All coefficients are reported as mm to gr conversions.
-
+All hypothesis testing was performed with a confidence level of $\alpha = 0.01$ and performed in R version 3.4.0 [@rcore_2017]. Data wrangling was performed with the tidyverse package [@tidyverse_2017]. Maps were created with a mix of functions from the sp [@sp_2017], rgdal [@rgdal_2017], tmap [@tmap_2017], and tmaptools [@tmaptools_2017] packages. Correction for heteroskedastic-robust standard errors was done with the sandwich [@sandwich_2014] and lmtest [@lmtest_2002] packages. Models were manipulated with with the broom package [@broom_2017]. Stargazer [@stargazer_2015] was used to produce the tables, and refmanager [@RefManager_2014] was used to keep track of citations. The manuscript was written in rmarkdown [@rmarkdown_2017] and processed with the knitr package [@knitr_2017].
 
 # Results
 
+A summary of Total Lengths and Total Weights of the the `r dim(fish)[1]` sampled organisms is presented in Table 1. The smallest organism (TL = `r formatC(min(fish$Length), digits = 2, format = "f")`) was also the lightest organism (TW = `r formatC(min(fish$Weight), digits = 2, format = "f")`). However, the largest organism (TL = `r formatC(max(fish$Length), digits = 2, format = "f")`) was not the heaviest (TW = `r formatC(fish$Weight[fish$Length == max(fish$Length)], digits = 2, format = "f")`), and the heaviest organism (TW = `r formatC(max(fish$Weight), digits = 2, format = "f")`) was `r formatC(fish$Length[fish$Weight == max(fish$Weight)], digits = 2, format = "f")` mm in total length. Kernell density plots (Fig. 2) show the distribution for TL and TW. Both measures were positively skewed, with skewness of `r formatC(skewness(fish$Length), digits = 2, format = "f")` for TL and `r formatC(skewness(fish$Weight), digits = 2, format = "f")` for TW.
+
 ## Length-weight relationship
+
+
 
 ```{r summary table, include = F}
 summary_table <- fish %>% 
@@ -299,7 +298,18 @@ regression_table <- stargazer(model,
           add.lines = list(f_string),
           ci = T)
 ```
-\clearpage
+
+```{r}
+test_intercept <- 2*pt(abs(coef(model)[[1]]/robust_se[[1]]), df = 107, lower.tail = F)
+
+test_slope <- 2*pt(abs(coef(model)[[2]]/robust_se[[2]]), df = 107, lower.tail = F)
+
+test_slope_3 <- 2*pt(abs((coef(model)[[2]]-3)/robust_se[[2]]), df = 107, lower.tail = F)
+
+```
+
+The model adjusted to eq. 3 estimated the coefficient values at $m = `r coef(model)[[2]]`$ and $c = `r coef(model)[[1]]`$. The intercept and slope were significantly different from zero ($t(107) = `r formatC(coef(model)[[1]]/robust_se[[1]], digits = 2, format = "f")`; p<0.01$ and $t(107) = `r formatC(coef(model)[[2]]/robust_se[[2]], digits = 2, format = "f")`; p<0.01$, respectively), rejecting the null hypothesis of no change. Additionally, the allometric factor was significantly different from zero ($t(107) = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.01$). More information on model fit and confidence intervals of estimated coefficients is presented in Table 3.
+
 
 ## Comparison of allometric parameters
 
@@ -351,8 +361,7 @@ predicted_all <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by 
          Sabido = review$a[12] * (Length^review$b[12]),
          FishBase = review$a[13] * (Length^review$b[13])) %>%
   gather(Study_id, Weight, -Length) %>% 
-  left_join(review, by ="Study_id") %>% 
-  mutate(ThisStudy = ifelse(Study_id == "This", "Actual", "Other"))
+  left_join(review, by ="Study_id")
 
 plot_fit_all_studies <- ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
   geom_line(data = predicted_all, mapping = aes(x = Length, y = Weight, linetype = Gender, color = Study), size = 1) +
@@ -411,18 +420,20 @@ Predicted_biomass <- fish %>%
             Sabido = sum(Sabido)/Observed,
             FishBase = sum(FishBase)/Observed) %>% 
   ungroup() %>% 
-  gather(Study, Biomass, -Location)
+  gather(Study_id, Biomass, -Location) %>% 
+  left_join(review, by ="Study_id")
 ```
 
 
 ```{r plot comparing predictions, include = F}
 Predicted_biomass_plot <-   Predicted_biomass %>% 
   filter(!Study == "Observed") %>% 
-  ggplot(aes(x = Study, y = Biomass)) +
+  transform(Study_id = reorder(Study_id, -Biomass)) %>% 
+  ggplot(aes(x = Study_id, y = Biomass)) +
   stat_summary(geom = "errorbar", fun.data = "mean_se", width = 0, size = 1) +
   stat_summary(geom = "point", fun.y = "mean", fill = "blue", size = 3, shape = 21) +
   geom_hline(yintercept = 1, linetype = "dashed") +
-  labs(y = "Biomass (Predicted / Observed)") +
+  labs(y = "Biomass (Predicted / Observed)", x = "Study") +
   coord_flip() +
   theme_bw() +
   theme(text = element_text(family = "Times"))
@@ -478,7 +489,7 @@ review_table
 
 ## Map
 
-```{r}
+```{r, fig.cap = "Map of the study area. The black inset on the left indicates the location where study sites are distributed. On the right, circular markers indicate sampling sites and the black romboid indicates location of Puerto Aventuras."}
 tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
 ```
 
@@ -486,25 +497,31 @@ tmap_arrange(pen_map, study_area, outer.margins = 0.005, ncol = 2)
 
 ## Histograms
 
-```{r, fig.width = 5, fig.height = 7}
+```{r, fig.width = 5, fig.height = 6, fig.cap = "Kernell density plots for a) Total length (mm) and b) Total weight (gr) for 109 lionfish sampled off the coast of Puerto Aventuras, Mexico."}
 gridExtra::grid.arrange(length_hist, weight_hist)
 ```
 
+\clearpage
+
 ## Scatter plot
 
-```{r}
+```{r, fig.cap = "Weight-at-length relationship for 109 lionfish sampled off the coast of Puerto Aventuras, Mexico."}
 plot_fit_this_study
 ```
 
+\clearpage
+
 ## Review plots
 
-```{r, fig.height = 9.5, fig.width = 6}
-gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
+```{r, fig.height = 4.5, fig.width = 6, fig.cap = "Weight-at-length relationships (n = 14) for eight studies, this study, and FishBase parameters. Colors indicate studies from which the parameters were extracted. Solid lines indicate that the fit was performed for males and females pooled together. Dotted lines indicate that the regression was performed on females, and dashed lines indicate it was performed for males."}
+plot_fit_all_studies
 ```
+
+\clearpage
 
 ## Predictions plot
 
-```{r}
+```{r, fig.cap = "Mean predicted to observed biomass ratios for eight studies, this study, and FishBase parameters. Error bars indicate +/- 1 Standard Error."}
 Predicted_biomass_plot
 ```
 
