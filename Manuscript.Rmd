@@ -1,15 +1,20 @@
 ---
-title: \normalsize{Biometry of the invasive lionfish (\textit{Pterois volitans}) in Playa del Carmen, Mexico and a review of length - weight parameters across the invasion range}
+title: \normalsize{Biometry of the invasive lionfish (\textit{Pterois volitans}) in
+  Playa del Carmen, Mexico and a review of length - weight parameters across the invasion
+  range}
+csl: apa.csl
+fontsize: 12pt
+output:
+  pdf_document:
+    fig_caption: yes
 header-includes:
 - \usepackage{setspace}
 - \doublespacing
 - \usepackage{lineno}
 - \linenumbers
-output:
-  pdf_document:
-    fig_caption: yes
-fontsize: 12pt
-bibliography: [references.bib, packages.bib]
+bibliography:
+- references.bib
+- packages.bib
 ---
 
 <script type="text/x-mathjax-config">
@@ -229,19 +234,15 @@ To simplify this equation, we can re-write it as:
 
 Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. The coefficients ($c$ and $b$) were estimated with  an Ordinary Least Square Regression and heteroskedastic-robust standard errors. Both coefficients were tested agains the null hypothesis of no change (*i.e.* $h_0: c = 0$ and $h_0: b = 0$). Additionally, the allometric parameter was tested against the null hypothesis of isometric growth ($H_0: b = 3$). Coefficient testing was made with a two-tailed Student's t-test. The significance of the regression was corroborated with an F-test.
 
-Other growth parameters were extracted from published research from North Carolina [@barbour_2011], Northern [@fogg_2013] and Southern [@aguilarperera_2016] Gulf of Mexico, the Southern Mexican Caribbean [@sabidoitza_2016], Little Cayman [@edwards_2014], Jamaica [@chin_2016], Bonaire [@deleon_2013] and Costa Rica [@sandel_2015]. Additionally, parameters from Fishbase [@froese_website_2016] were also included in this study. When available, information on sampling methods, location, and depth ranges of each study was retreived. During this review process, it was noticed that some papers indistinctly use $a$ to report either the ponderal index in **eq. 1** or the y-intercept ($c$) in **eq. 2**, which might sometimes be overlooked. Furthermore, some studies report their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicates that they were estimated as cm-to-gr conversions. Here, both parameters ($a$ and $c$) are reported for the present findings and, when ever required, values from other studies are converted for consistency. All coefficients are reported as mm to gr conversions.
+Other growth parameters were extracted from published research from North Carolina [@barbour_2011], Northern [@fogg_2013] and Southern [@aguilarperera_2016] Gulf of Mexico, the Southern Mexican Caribbean [@sabidoitza_2016], Little Cayman [@edwards_2014], Jamaica [@chin_2016], Bonaire [@deleon_2013] and Costa Rica [@sandel_2015]. Additionally, parameters from Fishbase [@froese_website_2016] were also included in this study. When available, information on sampling methods, gender differentiation, location, and depth ranges of each study was retreived. Whenever gender was not specified, it was assumed that the results were presented for both genders pooled together. During this review process, it was noticed that some papers indistinctly use $a$ to report either the ponderal index in **eq. 1** or the y-intercept ($c$) in **eq. 2**, which might sometimes be overlooked. Furthermore, some studies report their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicates that they were estimated as cm-to-gr conversions. Here, both parameters ($a$ and $c$) are reported for the present findings and, when ever required, values from other studies are converted for consistency. All coefficients are reported as mm to gr conversions.
 
-Observed biomass was calculated as the sum of all observed organisms for each location. Expected biomass for each organism was calculated with the growth parameteres estimated in this study, as well as those retreived from additional literature. Then, total expected biomass was calculated for each surveyed site as the sum of expected biomasses previously calculated. For each study and site, biomass was divided by the corresponding observed biomass to obtain a ratio that allowed rapid identification of over- or underestimation. Therefore, values lower than 1 indicate that the parameters used underestimate the biomass. On the other side, values larger than 1 indicate that the parameteres used overestimate biomass. Mean expected-to-observed biomass ratios were calculated by averaging across all sites for each study.
+Mean observed biomass was calculated as the average Total Weight of all observed organisms. Expected biomass for each organism was calculated with the growth parameteres estimated in this study, as well as those retreived from additional literature. Then, mean expected biomass was calculated for each study. All expected biomass values were divided by the observed biomass to obtain a ratio that allowed rapid identification of over- or underestimation with respect to the observed biomass in this study. Therefore, values lower than 1 indicate that the parameters used underestimate the biomass. On the other side, values larger than 1 indicate that the parameteres used overestimate biomass. Median and mean expected to observed biomass ratios were calculated across all sites for each study.
 
 All hypothesis testing was performed with a confidence level of $\alpha = 0.01$ and performed in R version 3.4.0 [@rcore_2017]. Data wrangling was performed with the tidyverse package [@tidyverse_2017]. Maps were created with a mix of functions from the sp [@sp_2017], rgdal [@rgdal_2017], tmap [@tmap_2017], and tmaptools [@tmaptools_2017] packages. Correction for heteroskedastic-robust standard errors was done with the sandwich [@sandwich_2014] and lmtest [@lmtest_2002] packages. Models were manipulated with with the broom package [@broom_2017]. Stargazer [@stargazer_2015] was used to produce the tables, and refmanager [@RefManager_2014] was used to keep track of citations. The manuscript was written in rmarkdown [@rmarkdown_2017] and processed with the knitr package [@knitr_2017].
 
 # Results
 
-A summary of Total Lengths and Total Weights of the the `r dim(fish)[1]` sampled organisms is presented in Table 1. The smallest organism (TL = `r formatC(min(fish$Length), digits = 2, format = "f")`) was also the lightest organism (TW = `r formatC(min(fish$Weight), digits = 2, format = "f")`). However, the largest organism (TL = `r formatC(max(fish$Length), digits = 2, format = "f")`) was not the heaviest (TW = `r formatC(fish$Weight[fish$Length == max(fish$Length)], digits = 2, format = "f")`), and the heaviest organism (TW = `r formatC(max(fish$Weight), digits = 2, format = "f")`) was `r formatC(fish$Length[fish$Weight == max(fish$Weight)], digits = 2, format = "f")` mm in total length. Kernell density plots (Fig. 2) show the distribution for TL and TW. Both measures were positively skewed, with skewness of `r formatC(skewness(fish$Length), digits = 2, format = "f")` for TL and `r formatC(skewness(fish$Weight), digits = 2, format = "f")` for TW.
-
-## Length-weight relationship
-
-
+A summary of Total Lengths and Total Weights of the the sampled organisms (n = `r dim(fish)[1]`) is presented in Table 2. The smallest organism (TL = `r formatC(min(fish$Length), digits = 2, format = "f")` mm) was also the lightest organism (TW = `r formatC(min(fish$Weight), digits = 2, format = "f")` gr). However, the largest organism (TL = `r formatC(max(fish$Length), digits = 2, format = "f")` mm) was not the heaviest (TW = `r formatC(fish$Weight[fish$Length == max(fish$Length)], digits = 2, format = "f")` gr), and the heaviest organism (TW = `r formatC(max(fish$Weight), digits = 2, format = "f")` gr) was `r formatC(fish$Length[fish$Weight == max(fish$Weight)], digits = 2, format = "f")` mm in total length. Kernell density plots (Fig. 2) show the distribution for TL and TW. Both measures were positively skewed, with skewness of `r formatC(skewness(fish$Length), digits = 2, format = "f")` for TL and `r formatC(skewness(fish$Weight), digits = 2, format = "f")` for TW.
 
 ```{r summary table, include = F}
 summary_table <- fish %>% 
@@ -270,11 +271,11 @@ weight_hist <- ggplot(data = fish, mapping = aes(x = Weight)) +
 gridExtra::grid.arrange(length_hist, weight_hist)
 ```
 
+## Length-weight relationship
+
 ```{r model fitting}
 model <- lm(log10(Weight) ~ log10(Length), data = fish)
-```
 
-```{r regression table, include = F}
 TidyModel <- model%>%
   lmtest::coeftest(vcov = sandwich::vcovHC(., type = "HC1")) %>%
   broom::tidy()
@@ -285,6 +286,19 @@ robust_se <- TidyModel$std.error %>%
 wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
 f_string <- c("F Statistic", paste0(formatC(wald_results$F[2], digits = 2, format = "f"), "*** (df = 1; ", dim(fish)[1]-2,")"))
 
+```
+
+```{r testing coefficients}
+test_intercept <- 2*pt(abs(coef(model)[[1]]/robust_se[[1]]), df = 107, lower.tail = F)
+
+test_slope <- 2*pt(abs(coef(model)[[2]]/robust_se[[2]]), df = 107, lower.tail = F)
+
+test_slope_3 <- 2*pt(abs((coef(model)[[2]]-3)/robust_se[[2]]), df = 107, lower.tail = F)
+```
+
+The model adjusted to eq. 3 estimated the coefficient values at $m = `r coef(model)[[2]]`$ and $c = `r coef(model)[[1]]`$. The intercept and slope were significantly different from zero ($t(107) = `r formatC(coef(model)[[1]]/robust_se[[1]], digits = 2, format = "f")`; p<0.01$ and $t(107) = `r formatC(coef(model)[[2]]/robust_se[[2]], digits = 2, format = "f")`; p<0.01$, respectively), rejecting the null hypothesis of no change. Additionally, the allometric factor was significantly different from zero ($t(107) = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.01$). More information on model fit and confidence intervals for the estimated coefficients are presented in Table 3. The relationship between Total Length and Total Weight is presented in Figure 3.
+
+```{r regression table, include = F}
 regression_table <- stargazer(model,
           header = F,
           se = list(robust_se),
@@ -298,31 +312,6 @@ regression_table <- stargazer(model,
           add.lines = list(f_string),
           ci = T)
 ```
-
-```{r}
-test_intercept <- 2*pt(abs(coef(model)[[1]]/robust_se[[1]]), df = 107, lower.tail = F)
-
-test_slope <- 2*pt(abs(coef(model)[[2]]/robust_se[[2]]), df = 107, lower.tail = F)
-
-test_slope_3 <- 2*pt(abs((coef(model)[[2]]-3)/robust_se[[2]]), df = 107, lower.tail = F)
-
-```
-
-The model adjusted to eq. 3 estimated the coefficient values at $m = `r coef(model)[[2]]`$ and $c = `r coef(model)[[1]]`$. The intercept and slope were significantly different from zero ($t(107) = `r formatC(coef(model)[[1]]/robust_se[[1]], digits = 2, format = "f")`; p<0.01$ and $t(107) = `r formatC(coef(model)[[2]]/robust_se[[2]], digits = 2, format = "f")`; p<0.01$, respectively), rejecting the null hypothesis of no change. Additionally, the allometric factor was significantly different from zero ($t(107) = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.01$). More information on model fit and confidence intervals of estimated coefficients is presented in Table 3.
-
-
-## Comparison of allometric parameters
-
-```{r, include = F}
-review <- read_csv("biometric_review.csv", col_types = cols())
-
-review_table <- review %>% 
-  select(Reference, n = N, a, c, b, r2, Gender, minD, maxD, Spear) %>% 
-  knitr::kable(digits = 4, row.names = F, caption = "Allometric growth parameters for eight published papers, Fishbase (Froese and Pauly 2016), and this study. All parameters have been adjusted to convert from millimiters to grams. n = Sample size, a = scaling parameter for eq. 1, c = y-intercept for eq. 3, b = exponent or slope for eq. 1 or eq. 2, respectively.")
-
-review_table
-```
-
 
 ```{r scatter plot, include = F}
 
@@ -343,6 +332,22 @@ plot_fit_this_study <-  ggplot(data = fish, mapping = aes(x = Length, y = Weight
 
 plot_fit_this_study
 ```
+
+## Comparison of allometric parameters
+
+```{r, include = F}
+review <- read_csv("biometric_review.csv", col_types = cols())
+
+review_table <- review %>% 
+  select(Reference, n = N, a, c, b, r2, Gender, minD, maxD, Spear) %>% 
+  knitr::kable(row.names = F, caption = "Allometric growth parameters for eight published papers, Fishbase (Froese and Pauly 2016), and this study. All parameters have been adjusted to convert from millimiters to grams. n = Sample size, a = scaling parameter for eq. 1, c = y-intercept for eq. 3, b = exponent or slope for eq. 1 or eq. 2, respectively.", digits =  c(1, 0, 6, 4, 4, 4, 0, 1, 1))
+
+review_table
+```
+
+From the eight peer-reviewd studies including information on growth parameters for *P. volitans* and FishBase [@froese_website_2016], `r dim(review)[1]-1` parameters were identified. Two studies [@aguilarperera_2016; @fogg_2013] reported gender-level and pooled parameters, while the rest of the studies always presented pooled results. The smallest coefficient of determination was presented by @chin_2016 with $R^2 = `r min(review[,12], na.rm = T)`$, while @sabidoitza_2016 reported the highest value at $R^2 = `r min(review[,12], na.rm = T)`$. These studies presented information for organisms obtained at depths between `r min(review$minD, na.rm = T)` and `r max(review$maxD, na.rm = T)` meters. Two studies [@aguilarperera_2016; @chin_2016] explicitly stated that their organisms were sampled with pole spears. Five studies [@sandel_2015; @barbour_2011; @fogg_2013; @edwards_2014; @sabidoitza_2016] mentioned that some of their organisms were obtained with pole spears (or other type of harpoon). A single study [@deleon_2013] did not specify how samples were obtained.
+
+Parameters from models fit to males or females exclusively tend to have a higher steapness (*i.e.* higher allometric parameter), with mean $\pm$ standard deviation values of $b = `r formatC(mean(review$b[review$Gender == "M"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "M"]), digits = 2, format = "f")`$ and $b = `r formatC(mean(review$b[review$Gender == "F"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "F"]), digits = 2, format = "f")`$, compared to parameters from models for pooled genders with a mean $\pm$ standard deviation value of $b = `r formatC(mean(review$b[review$Gender == "Both"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "Both"]), digits = 2, format = "f")`$. In the case of the ponderal index ($a$) and its $log_{10}$ transformed parameter ($c$), values were higher for parameters for pooled genders. The trends in $a$, $c$, and $b$ indicate that some models will tend to estimate Total Weights differently. Figure 4 shows the predicted weights for organisms within the size range of these study using the 14 parameters previously described.
 
 ```{r review plots, include = F}
 predicted_all <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
@@ -374,69 +379,49 @@ plot_fit_all_studies <- ggplot(data = fish, mapping = aes(x = Length, y = Weight
   guides(color = guide_legend(title=NULL)) +
   scale_color_brewer(palette = "Paired")
 
-plot_fit_all_studies_log <- ggplot(data = fish, mapping = aes(x = Length, y = log10(Weight))) +
-  geom_line(data = predicted_all, mapping = aes(x = Length, y = log10(Weight), linetype = Gender, color = Study), size = 1) +
-  theme_bw() +
-  labs(x = "Total length (mm)", y = "log10(TW)") +
-  theme(text = element_text(family = "Times"),
-        legend.position = "None")+
-  scale_x_continuous(expand=c(0,0))+
-  scale_y_continuous(expand=c(0,0))
 
-gridExtra::grid.arrange(plot_fit_all_studies, plot_fit_all_studies_log)
-
+plot_fit_all_studies
 ```
 
-```{r Predicted biomass for each site}
+```{r}
 Predicted_biomass <- fish %>% 
-  mutate(This = review$a[14] * (Length^review$b[14]), 
-         APA = review$a[1] * (Length^review$b[1]),
-         APF = review$a[2] * (Length^review$b[2]),
-         APM = review$a[3] * (Length^review$b[3]),
-         Sandel = review$a[4] * (Length^review$b[4]),
-         Chin = review$a[5] * (Length^review$b[4]),
-         Barbour = review$a[6] * (Length^review$b[6]),
-         deLeon = review$a[7] * (Length^review$b[7]),
-         FoggA = review$a[8] * (Length^review$b[8]),
-         FoggM = review$a[9] * (Length^review$b[9]),
-         FoggF = review$a[10] * (Length^review$b[10]),
-         Edwards = review$a[11] * (Length^review$b[11]),
-         Sabido = review$a[12] * (Length^review$b[12]),
-         FishBase = review$a[13] * (Length^review$b[13])) %>% 
-  group_by(Location) %>% 
-  summarize(Observed = sum(Weight),
-            This = sum(This)/Observed,
-            APA = sum(APA)/Observed,
-            APF = sum(APF)/Observed,
-            APM = sum(APM)/Observed, 
-            Sandel = sum(Sandel)/Observed,
-            Chin = sum(Chin)/Observed,
-            Barbour = sum(Barbour)/Observed,
-            deLeon = sum(deLeon)/Observed,
-            FoggA = sum(FoggA)/Observed,
-            FoggM = sum(FoggM)/Observed,
-            FoggF = sum(FoggF)/Observed,
-            Edwards = sum(Edwards)/Observed,
-            Sabido = sum(Sabido)/Observed,
-            FishBase = sum(FishBase)/Observed) %>% 
-  ungroup() %>% 
-  gather(Study_id, Biomass, -Location) %>% 
+  select(Length, Weight) %>% 
+  mutate(This = review$a[14] * (Length^review$b[14])/Weight, 
+         APA = review$a[1] * (Length^review$b[1])/Weight,
+         APF = review$a[2] * (Length^review$b[2])/Weight,
+         APM = review$a[3] * (Length^review$b[3])/Weight,
+         Sandel = review$a[4] * (Length^review$b[4])/Weight,
+         Chin = review$a[5] * (Length^review$b[4])/Weight,
+         Barbour = review$a[6] * (Length^review$b[6])/Weight,
+         deLeon = review$a[7] * (Length^review$b[7])/Weight,
+         FoggA = review$a[8] * (Length^review$b[8])/Weight,
+         FoggM = review$a[9] * (Length^review$b[9])/Weight,
+         FoggF = review$a[10] * (Length^review$b[10])/Weight,
+         Edwards = review$a[11] * (Length^review$b[11])/Weight,
+         Sabido = review$a[12] * (Length^review$b[12])/Weight,
+         FishBase = review$a[13] * (Length^review$b[13])/Weight) %>% 
+  gather(Study_id, Biomass_ratio, -c(Length, Weight)) %>% 
   left_join(review, by ="Study_id")
 ```
 
+From all allometric parameters reviewed, those of @edwards_2014 slightly underestimated the observed biomass, with median (`r filter(Predicted_biomass, Study_id == "Edwards") %$% median(Biomass_ratio) %>% formatC(digits = 2, format = "f")`) and mean (`r filter(Predicted_biomass, Study_id == "Edwards") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")`) bellow one. There is no significance in comparing the parameters estimated in this study since, by definition, they are the pair of parameters for which residual sum of squares was minimized with values of median =`r filter(Predicted_biomass, Study_id == "This") %$% median(Biomass_ratio) %>% formatC(digits = 2, format = "f")` and mean (`r filter(Predicted_biomass, Study_id == "This") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")`). For all the other studies, the 95% confidence interval fell further away from a value of 1, indicating overestimation. Predicted to observed biomass ratios are presented in Figure 5.
 
 ```{r plot comparing predictions, include = F}
 Predicted_biomass_plot <-   Predicted_biomass %>% 
-  filter(!Study == "Observed") %>% 
-  transform(Study_id = reorder(Study_id, -Biomass)) %>% 
-  ggplot(aes(x = Study_id, y = Biomass)) +
-  stat_summary(geom = "errorbar", fun.data = "mean_se", width = 0, size = 1) +
-  stat_summary(geom = "point", fun.y = "mean", fill = "blue", size = 3, shape = 21) +
+  transform(Study_id = reorder(Study_id, -Biomass_ratio)) %>%
+  ggplot(aes(x = Study_id, y = Biomass_ratio)) +
+  geom_boxplot(aes(fill = Gender), outlier.size = 1, notch = T) +
+  stat_summary(geom = "point", fun.y = "mean", size = 3) +
   geom_hline(yintercept = 1, linetype = "dashed") +
   labs(y = "Biomass (Predicted / Observed)", x = "Study") +
   coord_flip() +
   theme_bw() +
-  theme(text = element_text(family = "Times"))
+  theme(text = element_text(family = "Times")) +
+  scale_fill_brewer(palette = "Greys") +
+  theme(text = element_text(family = "Times"),
+        legend.justification=c(1,1),
+        legend.position=c(0.99, 0.99),
+        legend.background = element_rect(fill = "transparent", size=.5, linetype="dotted"))
 
 Predicted_biomass_plot
 ```
@@ -444,7 +429,13 @@ Predicted_biomass_plot
 
 # Discussion and Conclusions
 
-Not using spear poles allows us to have a full sample of fish with a wider range of sizes and weights, ideal for visual census. Also, there is no loss in body mass due to bleeding.
+Wider range sizes
+
+Model fit and this model
+
+No spear doesnt seem to be a determinant factor in weight, but spear doesnt allow catching small organisms. Not using spear poles allows us to have a full sample of fish with a wider range of sizes and weights, ideal for visual census. Also, there is no loss in body mass due to bleeding.
+
+Gender-level overestimates and is steaper because it lacks small organisms to pull the curve
 
 # Aknowledgements
 
@@ -505,7 +496,7 @@ gridExtra::grid.arrange(length_hist, weight_hist)
 
 ## Scatter plot
 
-```{r, fig.cap = "Weight-at-length relationship for 109 lionfish sampled off the coast of Puerto Aventuras, Mexico."}
+```{r, fig.cap = "Weight-at-length relationship for 109 lionfish sampled off the coast of Puerto Aventuras, Mexico. Points indicate samples, solid line indicates curve of best fit."}
 plot_fit_this_study
 ```
 
@@ -521,7 +512,7 @@ plot_fit_all_studies
 
 ## Predictions plot
 
-```{r, fig.cap = "Mean predicted to observed biomass ratios for eight studies, this study, and FishBase parameters. Error bars indicate +/- 1 Standard Error."}
+```{r, fig.cap = ". Box and whiskers plot showing the distribution of predicted to observed Total Weight ratios for 14 pairs of allometric parameters. Lines indicate median values, circles indicate mean values, notches represent 95% confidence intervals arround the median, lower and upper hinges correspond to the first and third quartiles, whiskers extend to the largest and lowes values within 1.5 inter-quartile range of the hinge, small points represent outliers further away than the whiskers."}
 Predicted_biomass_plot
 ```
 
