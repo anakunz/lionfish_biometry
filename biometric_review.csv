@@ -1,15 +1,15 @@
 Study_id,Reference,Study,Study_site,N,a_c,a,c,b,CI95a,CI95b,r2,uL,uW,tL,Gender,Spear,minD,maxD,Years,lineal,potencial
 APA,@aguilarperera_2016,"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",472,-2.24,2.88E-06,-5.54,3.3,-0.17,3.24-3.36,0.95,cm,g,total,Both,Yes,5,20,2011 - 2013,716.8438214,716.8438214
-APF,@aguilarperera_2016,"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",67,-5.93,1.17E-06,-5.93,3.47,-1.22,2.64-3.14,0.95,mm,g,total,F,Yes,5,20,2011 - 2013,790.5259193,790.5259193
-APM,@aguilarperera_2016,"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",59,-5.38,4.17E-06,-5.38,3.23,-0.93,2.64-3.67,0.95,mm,g,total,M,Yes,5,20,2011 - 2013,687.6061989,687.6061989
-Sandel,@sandel_2015,"Sandel et al., 2015",Southern Caribbean Coast of Costa Rica,458,2.35E-02,3.64E-05,-4.44E+00,2.81,NA,NA,NA,cm,g,total,Both,Yes*,NA,NA,2011,512.7422052,512.7422052
+APF,@aguilarperera_2016,"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",67,-5.93,1.17E-06,-5.93,3.47,-1.22,2.64-3.14,0.95,mm,g,total,Female,Yes,5,20,2011 - 2013,790.5259193,790.5259193
+APM,@aguilarperera_2016,"Aguilar-Perera & Quijano-Puerto, 2016","Arrecife Alacranes, Mexico",59,-5.38,4.17E-06,-5.38,3.23,-0.93,2.64-3.67,0.95,mm,g,total,Male,Yes,5,20,2011 - 2013,687.6061989,687.6061989
+Sandel,@sandel_2015,"Sandel et al., 2015",Southern Caribbean Coast of Costa Rica,458,2.35E-02,3.64E-05,-4.44E+00,2.81,NA,NA,-,cm,g,total,Both,Yes*,-,-,2011,512.7422052,512.7422052
 Chin,@chin_2016,Chin et al 2016,"Discovery Bay, Jamaica",419,-4.56,2.75E-05,-4.56,2.85,NA,NA,0.8715,mm,g,total,Both,Yes,18.3,18.3,2012 - 2014,490.4490825,490.4490825
-Barbour,@barbour_2011,Brbour et al 2011,North Carolina,774,2.89E-05,2.89E-05,-4.539102157,2.89,NA,NA,NA,mm,g,total,Both,Yes*,27,45,2004 - 2009,650.5107695,650.5107695
-deLeon,@deleon_2013,"de Leon et al., 2013",Bonaire,1450,0.00002285,0.00002285,-4.641113796,2.89,NA,NA,0.96,mm,g,total,Both,NA,NA,NA,NA,514.3311794,514.3311794
-FoggA,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,582,-5.86E+00,1.38E-06,-5.86E+00,3.4349,NA,NA,0.99,mm,g,total,Both,Yes*,NA,NA,2012,756.1697949,756.1697949
-FoggM,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,119,-5.5693,2.70E-06,-5.57E+00,3.31,NA,NA,0.97,mm,g,total,M,Yes*,NA,NA,2012,710.5018724,710.5018724
-FoggF,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,115,-5.17E+00,6.76E-06,-5.17E+00,3.1437,NA,NA,0.94,mm,g,total,F,Yes*,NA,NA,2012,672.6462278,672.6462278
+Barbour,@barbour_2011,Brbour et al 2011,North Carolina,774,2.89E-05,2.89E-05,-4.539102157,2.89,NA,NA,-,mm,g,total,Both,Yes*,27,45,2004 - 2009,650.5107695,650.5107695
+deLeon,@deleon_2013,"de Leon et al., 2013",Bonaire,1450,0.00002285,0.00002285,-4.641113796,2.89,NA,NA,0.96,mm,g,total,Both,NA,-,-,NA,514.3311794,514.3311794
+FoggA,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,582,-5.86E+00,1.38E-06,-5.86E+00,3.4349,NA,NA,0.99,mm,g,total,Both,Yes*,-,-,2012,756.1697949,756.1697949
+FoggM,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,119,-5.5693,2.70E-06,-5.57E+00,3.31,NA,NA,0.97,mm,g,total,Male,Yes*,-,-,2012,710.5018724,710.5018724
+FoggF,@fogg_2013,"Fogg et al., 2013",Northern Gulf of Mexico,115,-5.17E+00,6.76E-06,-5.17E+00,3.1437,NA,NA,0.94,mm,g,total,Female,Yes*,-,-,2012,672.6462278,672.6462278
 Edwards,@edwards_2014,"Edwards et al., 2014",Little Cayman,1887,0.000003,0.000003,-5.522878745,3.24,NA,NA,0.97,mm,g,total,Both,Yes*,15,30,2011,524.6887089,524.6887089
 Sabido,@sabidoitza_2016,"Sabido-Itza et al., 2016","Parque Nacional Arrecifes de Xcalak, Mexico",2143,7.95E-03,5.21E-06,-5.282832871,3.1832,NA,NA,0.9907,cm,g,total,Both,Yes*,0.5,57,2009-2012,653.7994147,653.7994147
-FishBase,@froese_website_2016,Fishbase,NA,NA,1.15E-02,9.35E-06,-5.02930216,3.09,0.00441-0.02989,2.87-3.31,NA,cm,g,total,Both,NA,NA,NA,NA,678.9973783,678.9973783
+FishBase,@froese_website_2016,Fishbase,NA,NA,1.15E-02,9.35E-06,-5.02930216,3.09,0.00441-0.02989,2.87-3.31,-,cm,g,total,Both,NA,-,-,NA,678.9973783,678.9973783
 This,This study,This study,"Puerto Aventuras, Mexico",109,-5.494087,3.21E-06,-5.494087,3.234739,,,0.9766,mm,g,total,Both,No,5.7,38.1,2010,543.6371433,543.6371433
