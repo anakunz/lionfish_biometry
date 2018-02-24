@@ -1,0 +1,36 @@
+---
+title: "Weight-at-length of the invasive lionfish *Pterois volitans* (Actinopterygii, Scorpaenidae) in the Central Mexican Caribbean, and a review of allometric growth parameters across the invasion range"
+author: "Juan Carlos Villaseñor-Derbez"
+institution: "Bren School of Environmental Sciences and Management, University of California Santa Barbara, Santa Barbara, California, U.S."
+abstract: "Lionfish (*Pterois volitans/miles*) are an invasive species in the North-Western Atlantic and the Caribbean. In order to better manage the invasion, inform lionfish removal programs, and estimate biomass available for harvest, we must be able to accurately estimate their total biomass, frequently from length observations. This work compares length-weight relationships of the invasive lionfish through the invasion range and reports the length--weight relationship for lionfish in the Central Mexican Caribbean. A review of 13 length--weight relationships reported in eight peer-reviewed studies and FishBase is provided. These parameters were used to identify spatial variation in weight-at-length. For a given length, parameters from the Caribbean yielded lower weights than those from the Gulf of Mexico and Atlantic, indicating that weight-at-length is spatially variable. This highlights the importance of using site-specific parameters to estimate biomass from length observations. This study also reports a new pair of length-weight parameters ($a = 3.2056\times 10^{-6}; b = 3.235$) for organisms sampled in the Central Mexican Caribbean. Findings from this work can aid managers and decision makers to better select length-weight parameters when these are not available for their region of interest."
+output:
+  bookdown::pdf_document2:
+    keep_tex: yes
+    template: peerj_template.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+```
+
+## R Markdown
+
+\citep{pimentel_2005}
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE, fig.cap = "My Caption"}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+\bibliography{references}
