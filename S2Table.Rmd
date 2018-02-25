@@ -1,0 +1,76 @@
+---
+title: "Supplementary Table S2"
+author: "Juan Carlos Villaseñor-Derbez"
+output: pdf_document
+---
+
+Regression table for the linear model fit between log10-transformed Total Weight (dependent variable) and Total Length (independent variable). Numbers in parentheses next to coefficient estimates indicate heteroskedastic-robust standard errors.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+
+options(knitr.table.format = "latex")
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+```
+
+
+```{r load packages}
+suppressPackageStartupMessages({
+  # library(RColorBrewer)
+  # library(colorRamps)
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(tidyverse)
+})
+```
+
+```{r}
+fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>% 
+  group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
+  summarize(Length = 10*mean(TotalLength_cm),
+            Weight = mean(TotalWeigth_gr),
+            Stomach = mean(StomachLength_cm)) %>% 
+  ungroup()
+```
+
+```{r}
+model <- lm(log10(Weight) ~ log10(Length), data = fish)
+
+TidyModel <- model%>%
+  lmtest::coeftest(vcov = sandwich::vcovHC(., type = "HC1")) %>%
+  broom::tidy()
+
+robust_se <- TidyModel$std.error %>%
+  set_names(TidyModel$term)
+
+wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
+
+f_string <- c("F Statistic", paste0(formatC(wald_results$F[2], digits = 2, format = "f"), "*** (df = 1; ", dim(fish)[1]-2,")"))
+
+a <- coefficients(model)[[1]]
+b <- coefficients(model)[[2]]
+```
+
+```{r, results = "asis"}
+ci_c <- c("95\\% CI for c", paste0("(", formatC(a-(1.96*robust_se[[1]]), digits = 3, format = "f"),"-", formatC(a+(1.96*robust_se[[1]]), digits = 3, format = "f"),")"))
+
+ci_b <- c("95\\% CI for b", paste0("(", formatC(b-(1.96*robust_se[[2]]), digits = 3, format = "f"),"-", formatC(b+(1.96*robust_se[[2]]), digits = 3, format = "f"),")"))
+
+stargazer(model,
+          header = F,
+          se = list(robust_se),
+          type = "latex",
+          t.auto = T,
+          p.auto = T,
+          intercept.bottom = F,
+          single.row = T,
+          report = "vcs*",
+          omit.stat = c("f"),
+          add.lines = list(ci_c, ci_b, f_string),
+          covariate.labels = c("c", "b"),
+          dep.var.labels = "log10(TW)")
+```
+

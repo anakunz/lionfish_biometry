@@ -1,0 +1,53 @@
+---
+title: "Supplementary Table S1"
+author: "Juan Carlos Villaseñor-Derbez"
+output: pdf_document
+---
+
+Coordinates, minimum, maximum and mean depth (m), and number of samples for each location.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+
+options(knitr.table.format = "latex")
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+```
+
+
+```{r load packages}
+suppressPackageStartupMessages({
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(knitr)
+  library(tidyverse)
+})
+```
+
+```{r}
+fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>% 
+  group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
+  summarize(Length = 10*mean(TotalLength_cm),
+            Weight = mean(TotalWeigth_gr),
+            Stomach = mean(StomachLength_cm)) %>% 
+  ungroup()
+```
+
+```{r table of locations, results = "asis"}
+total <- data.frame(Location = "Total", Latitude = "", Longitude = "", minD = min(fish$Depth_m), maxD = max(fish$Depth_m), meanD = formatC(mean(fish$Depth_m), digits = 1, format = "f"), n = 109, stringsAsFactors = F)
+
+fish %>% 
+  group_by(Location) %>% 
+  summarize(Latitude = formatC(mean(Latitude), digits = 3, format = "f"),
+            Longitude = formatC(mean(Longitude), digits = 3, format = "f"),
+            minD = formatC(min(Depth_m), digits = 1, format = "f"),
+            maxD = formatC(max(Depth_m), digits = 1, format = "f"),
+            meanD = formatC(mean(Depth_m), digits = 1, format = "f"),
+            n = n()) %>% 
+  rbind(total) %>% 
+  knitr::kable(row.names = F,
+               col.names = c("Location", "Lat.", "Long.", "Min. Depth", "Max. Depth", "Mean Depth", "n"))
+```
+

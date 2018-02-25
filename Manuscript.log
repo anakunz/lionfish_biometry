@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  23 FEB 2018 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  25 FEB 2018 14:10
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -654,56 +654,37 @@ LaTeX Info: Redefining \lslig on input line 916.
 Package microtype Info: Loading configuration file microtype.cfg.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
 File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
-Package: amsthm 2015/03/04 v2.20.2
-\thm@style=\toks27
-\thm@bodyfont=\toks28
-\thm@headfont=\toks29
-\thm@notefont=\toks30
-\thm@headpunct=\toks31
-\thm@preskip=\skip67
-\thm@postskip=\skip68
-\thm@headsep=\skip69
-\dth@everypar=\toks32
-)
-\c@theorem=\count127
-\c@lemma=\count128
-\c@definition=\count129
-\c@corollary=\count130
-\c@proposition=\count131
-\c@example=\count132
-\c@exercise=\count133
-(Manuscript.aux)
+)) (Manuscript.aux)
 \openout1 = `Manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 45.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count134
+\scratchcounter=\count127
 \scratchdimen=\dimen159
 \scratchbox=\box31
-\nofMPsegments=\count135
-\nofMParguments=\count136
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count137
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen160
-\MPnumerator=\count138
-\makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks28
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -777,8 +758,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 60.
-LaTeX Info: Redefining \microtypecontext on input line 60.
+(lastpage)             ! on input line 45.
+LaTeX Info: Redefining \microtypecontext on input line 45.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -791,7 +772,7 @@ Package microtype Info: No adjustment of character kerning.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-ptm.cfg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 63.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
@@ -800,14 +781,10 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <20> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 63.
-LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <20> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 63.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 63
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 48
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -816,180 +793,131 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 63
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 48
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 63
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 48
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 63
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 48
 .
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 63.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 164.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 174.
 [2]
-<Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf, id=17, 469.755pt x 325.21
+<Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf, id=16, 397.485pt x 325.21
 5pt>
 File: Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pd
 f)
 <use Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf us
-ed on input line 192.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-
-Overfull \hbox (54.62814pt too wide) in paragraph at lines 192--197
- [][] 
- []
-
+ed on input line 178.
+(pdftex.def)             Requested size: 397.48402pt x 325.2142pt.
 [3
 
- <./Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf>] [4]
-
-LaTeX Warning: File `Manuscript_files/figure-latex/histogram figures-1.pdf' not
- found on input line 331.
-
-
-<Manuscript_files/figure-latex/histogram figures-1.pdf, id=29, 361.35pt x 433.6
-2pt>
-File: Manuscript_files/figure-latex/histogram figures-1.pdf Graphic file (type 
-pdf)
-<use Manuscript_files/figure-latex/histogram figures-1.pdf>
-Package pdftex.def Info: Manuscript_files/figure-latex/histogram figures-1.pdf 
-used on input line 331.
-(pdftex.def)             Requested size: 361.34912pt x 433.61894pt.
-
-LaTeX Warning: File `Manuscript_files/figure-latex/scatter plot-1.pdf' not foun
-d on input line 356.
-
-
-<Manuscript_files/figure-latex/scatter plot-1.pdf, id=30, 433.62pt x 325.215pt>
-File: Manuscript_files/figure-latex/scatter plot-1.pdf Graphic file (type pdf)
-<use Manuscript_files/figure-latex/scatter plot-1.pdf>
-Package pdftex.def Info: Manuscript_files/figure-latex/scatter plot-1.pdf used 
-on input line 356.
-(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
-
-Overfull \hbox (18.49323pt too wide) in paragraph at lines 356--359
- [] 
- []
-
-[5] [6 <./Manuscript_files/figure-latex/histogram figures-1.pdf>] [7 <./Manuscr
-ipt_files/figure-latex/scatter plot-1.pdf>]
-
-LaTeX Warning: File `Manuscript_files/figure-latex/review plots-1.pdf' not foun
-d on input line 418.
-
-
-<Manuscript_files/figure-latex/review plots-1.pdf, id=60, 433.62pt x 325.215pt>
-File: Manuscript_files/figure-latex/review plots-1.pdf Graphic file (type pdf)
-<use Manuscript_files/figure-latex/review plots-1.pdf>
-Package pdftex.def Info: Manuscript_files/figure-latex/review plots-1.pdf used 
-on input line 418.
-(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
-
-Overfull \hbox (18.49323pt too wide) in paragraph at lines 418--424
- [] 
- []
-
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 429.
+ <./Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf>]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 293.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 429.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 293.
+[4]
+<Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf, id=31, 397.485pt x 252.94
+5pt>
+File: Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pd
+f)
+<use Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf us
+ed on input line 306.
+(pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
 
-LaTeX Warning: File `Manuscript_files/figure-latex/plot comparing predictions-1
-.pdf' not found on input line 439.
-
-
-<Manuscript_files/figure-latex/plot comparing predictions-1.pdf, id=61, 433.62p
-t x 325.215pt>
-File: Manuscript_files/figure-latex/plot comparing predictions-1.pdf Graphic fi
-le (type pdf)
-<use Manuscript_files/figure-latex/plot comparing predictions-1.pdf>
-Package pdftex.def Info: Manuscript_files/figure-latex/plot comparing predictio
-ns-1.pdf used on input line 439.
-(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
-
-Overfull \hbox (18.49323pt too wide) in paragraph at lines 439--448
- [] 
+Overfull \hbox (46.87204pt too wide) in paragraph at lines 317--341
+ [][] 
  []
 
-[8 <./Manuscript_files/figure-latex/review plots-1.pdf>] [9 <./Manuscript_files
-/figure-latex/plot comparing predictions-1.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 530.
+[5 <./Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf>]
+<Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf, id=44, 397.485pt x 274.02
+374pt>
+File: Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pd
+f)
+<use Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf>
+Package pdftex.def Info: Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf us
+ed on input line 347.
+(pdftex.def)             Requested size: 397.48402pt x 274.02307pt.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `pcr' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-[10] (Manuscript.bbl [11]
+<Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf, id=45, 397.485pt x 252.94
+5pt>
+File: Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pd
+f)
+<use Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf us
+ed on input line 358.
+(pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
+[6 <./Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf> <./Manuscript_files/
+figure-latex/unnamed-chunk-7-1.pdf>] (Manuscript.bbl [7
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[12]) 
+[8]) 
 AED: lastpage setting LastPage
-[13] (Manuscript.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[9] (Manuscript.aux) ) 
 Here is how much of TeX's memory you used:
- 9297 strings out of 493329
- 134677 string characters out of 3139072
- 353967 words of memory out of 3000000
- 12393 multiletter control sequences out of 15000+200000
- 67591 words of font info for 254 fonts, out of 3000000 for 9000
+ 9111 strings out of 493329
+ 132106 string characters out of 3139072
+ 351917 words of memory out of 3000000
+ 12221 multiletter control sequences out of 15000+200000
+ 65538 words of font info for 250 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,11n,45p,733b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
-courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
-mr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Manuscript.pdf (13 pages, 339119 bytes).
+ 43i,11n,45p,507b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic
+/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Manuscript.pdf (9 pages, 328611 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 102 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 47642 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 46613 words of extra memory for PDF output out of 51595 (max. 10000000)
 
