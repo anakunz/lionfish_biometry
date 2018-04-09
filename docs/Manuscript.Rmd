@@ -76,14 +76,11 @@ review <- read.csv(here::here("data", "biometric_review.csv"), stringsAsFactors 
 
 The main objective of this work was to compare allometric growth of lionfish throughout the invasion range. Allometric parameters were retreived from scientific literature, and an additional pair of parameters was calculated from filed observations in the central Mexican Caribbean.
 
-Length-weight relationships (n = 15) identified in literature were obtained for North Carolina (n = 1, \citet{barbour_2011}), Northern (n = 3, \citet{fogg_2013}) and Southern Gulf of Mexico (n = 3, \citet{aguilarperera_2016}), the Southern Mexican Caribbean (n = 1, \citet{sabidoitza_2016}), Little Cayman (n = 1,\citet{edwards_2014}), Jamaica (n = 1, \citet{chin_2016}), Bonaire (n = 1, \citet{deleon_2013}) and Costa Rica (n = 1, \citet{sandel_2015}). Locations with allometric parameters are shown in Figure \ref{fig:map}. When available, information on sampling methods, gender differentiation, location, and depth ranges of each study was retrieved. Whenever gender was not specified, it was assumed that the results were presented for pooled genders.
-
-Parameters from the central Mexican Caribbean were obtaines from data collected in `r length(unique(fish$Location))` sampling sites along the Mexican Caribbean coast in 2010 (Table S1). Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m.  All observed lionfish (n = `r dim(fish)[1]`) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed a better representation of small sizes by eliminating gear selectivity. Organisms were euthanized (via pithing) and Total Length (TL; mm) and Total Weight (TW; gr) were recorded before freezing organisms.
+Length-weight relationships (n = `r dim(review)[1]-1`) identified in literature were obtained for the North Atlantic (n = 1, \citet{barbour_2011}), Gulf of Mexico (n = 7, \citet{aguilarperera_2016,fogg_2013,dahl_2014}), and Caribbean (n = 8, \citet{chin_2016,toledohernndez_2014,deleon_2013,edwards_2014,sabidoitza_2016,sandel_2015,darling_2011}). When available, information on sampling methods, sex differentiation, location, and depth ranges of each study was retrieved. Whenever gender was not specified, it was assumed that the results were presented for pooled genders. Locations with allometric parameters are shown in Figure \ref{fig:map} and \ref{tab:all_params}.
 
 \clearpage
 
-
-```{r, fig.cap = "\\label{fig:map}Locations where allometric growth of lionfish (*Pterois spp*) have been reported. Sizes indicate sample size of each study, colors indicate the b coefficient in Eq \\ref{eq:allometric}"}
+```{r, fig.cap = "\\label{fig:map}Locations where allometric growth of lionfish (*Pterois spp*) have been reported. Sizes indicate sample size of each study, colors indicate the b coefficient in Eq. \\ref{eq:allometric}."}
 
 proj <- CRS("+proj=longlat +datum=NAD27")
 
