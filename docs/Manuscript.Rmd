@@ -141,6 +141,7 @@ ggplot() +
   lims(x = c(-106, -60), y = c(9, 36))
 ```
 
+Parameters from the central Mexican Caribbean were obtained from data collected in `r length(unique(fish$Location))` sampling sites along the Central Mexican Caribbean coast in 2010 (Table S1). Sampling locations included wall and carpet reefs at depths between `r min(fish$Depth_m)` m and `r max(fish$Depth_m)` m.  All observed lionfish (n = `r dim(fish)[1]`) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed a better representation of small sizes by eliminating gear selectivity. Organisms were euthanized (via pithing) and Total Length (TL; mm) and Total Weight (TW; gr) were recorded before freezing organisms.
 
 The weight at length relationship for lionfish in the central Mexican Caribbean was calculated with the allometric growth function:
 
@@ -163,13 +164,11 @@ This can be simplified and re-written as:
 Y = mX + c
 \end{equation}
 
-Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. Since $b = m$, we will only use $b$ throughout the paper for simplicity. The coefficients ($c$ and $b$) were estimated with  an Ordinary Least Square Regression and heteroskedastic-robust standard error correction \citep{zeileis_2004}. Both coefficients were tested against the null hypothesis of no change (*i.e.* $H_0: c = 0$ and $H_0: b = 0$). Additionally, the allometric parameter was tested against the null hypothesis of isometric growth ($H_0: b = 3$). Coefficients were tested with a two-tailed Student's t-test. The significance of the regression was corroborated with an F-test.
+Where $Y = log_{10}(TW)$, $X = log_{10}(TL)$, $m = b$, and $c = log_{10}(a)$. Since $b = m$, we will only use $b$ throughout the paper for simplicity. The coefficients ($c$ and $b$) were estimated with  an Ordinary Least Square Regression and heteroskedastic-robust standard error correction \citep{zeileis_2004}. Both coefficients were tested against the null hypothesis of no change (*i.e.* $H_0: c = 0$ and $H_0: b = 0$) and the null hypothesis of isometric growth ($H_0: b = 3$). Coefficients were tested with a two-tailed Student's t-test. The significance of the regression was corroborated with an F-test.
 
 During the review process, some studies indistinctly used $a$ to report either the ponderal index in \ref{eq:allometric} or the y-intercept ($c$) in \ref{eq:log-alo-trans}. Others reported their parameters as mm-to-gr conversions, but a rapid evaluation of such parameters indicated that they were estimated as cm-to-gr conversions. Here, all parameters are reported as TL(mm) to TW(gr) conversions. When required, values from other studies were transformed for consistency.
 
-Since uncertainty around estimated relationships was not reported in some of the reviewed studies, it was not possible to test for statistical differences between relationships. Instead, the 16 length-weight relationships were used to calculate expected weight length observations of the organisms sampled from the Central Mexican Caribbean (n = 109). Expected weights were divided by the observed weights to obtain a ratio. Difference in mean weight ratios across studies were tested with a one-way Analysis of Variance (ANOVA).
-
-All hypothesis testing was performed with an *a priori* confidence level of $\alpha = 0.01$ in R version 3.4.0 \citep{rcore_2017}. Raw data and code used in this work is available at dryad.org.
+Since uncertainty around estimated relationships was not reported in some of the reviewed studies, it was not possible to test for statistical differences between relationships. Instead, the 16 length-weight relationships were used to calculate predicted weight from length observations of the organisms sampled from the Central Mexican Caribbean. Predicted weights were divided by the observed weights to obtain a ratio. Difference in mean weight ratios across studies were tested with a one-way Analysis of Variance (ANOVA). All analyses were performed in R version 3.4.4 \citep{rcore_2018}. Raw data and code used in this work is available at dryad.org.
 
 ```{r model fitting}
 model <- lm(log10(Weight) ~ log10(Length), data = fish)
@@ -180,11 +179,6 @@ TidyModel <- model%>%
 
 robust_se <- TidyModel$std.error %>%
   set_names(TidyModel$term)
-
-wald_results <- waldtest(model, vcov = vcovHC(model, type = "HC1"))
-
-f_string <- c("F Statistic", paste0(formatC(wald_results$F[2], digits = 2, format = "f"), "*** (df = 1; ", dim(fish)[1]-2,")"))
-
 ```
 
 ```{r testing coefficients}
@@ -196,9 +190,6 @@ test_slope_3 <- 2*pt(abs((coef(model)[[2]]-3)/robust_se[[2]]), df = 107, lower.t
 
 a <- coefficients(model)[[1]]
 b <- coefficients(model)[[2]]
-
-predicted_this_study <- data.frame(Length = seq(min(fish$Length), max(fish$Length), by = 1)) %>% 
-  mutate(Weight = 10^a*Length^b)
 ```
 
 ```{r}
