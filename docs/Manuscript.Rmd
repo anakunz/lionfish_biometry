@@ -126,7 +126,9 @@ c <- SpatialPointsDataFrame(coords = res2, data = Communities, proj4string = pro
 
 ggplot() +
   geom_sf(data = W) +
-  geom_point(data = review[review$Gender == "Both", ], aes(x = lon, y = lat, fill = b, size = N), shape = 21) +
+  geom_point(data = review %>%
+      mutate(N = ifelse(is.na(N), 1, N)),
+    aes(x = lon, y = lat, fill = b, size = N), shape = 21) +
   theme_classic() +
   scale_fill_gradientn(colors = colorRamps::matlab.like(20)) +
   theme(legend.justification = c(0, 1),
