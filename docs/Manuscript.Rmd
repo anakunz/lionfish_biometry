@@ -1,6 +1,6 @@
 ---
 title: "Invasive lionfish present region-wide variation of allometric growth in the Western Atlantic"
-author: "Juan Carlos Villaseñor-Derbez"
+author: "Juan Carlos Villaseñor-Derbez, Sean Fitzgerald"
 institution: "Bren School of Environmental Sciences and Management, University of California Santa Barbara, Santa Barbara, California, U.S."
 abstract: "Lionfish (*Pterois volitans/miles*) are an invasive species in the Western Atlantic and the Caribbean. In order to better manage the invasion, we must be able to accurately estimate their total biomass. This work compares length-weight relationships of the invasive lionfish through the invasion range. A review of 15 length-weight relationships reported in 11 peer-reviewed studies shows that lionfish exhibit spatial variation in weight-at-length. The reviewed parameters indicate that, for the same length, lionfish in the Caribbean have lower body mass than in the Atlantic or Gulf of Mexico. This highlights the importance of using site-specific parameters to estimate biomass from length observations. This study also reports a new pair of length-weight parameters ($a = 3.2056\\times 10^{-6}; b = 3.235$) for organisms sampled in the central Mexican Caribbean region. These findings can have major implications in management, especially when estimating biomass available for harvest, predicting effects on local ecosystems, or evaluating the effectiveness of removal programs."
 header-includes: #allows you to add in your own Latex packages
