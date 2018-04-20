@@ -230,8 +230,8 @@ There were significant differences in predicted-to-observed weight ratios estima
 
 ```{r}
 get_eqn <- function(model){
-  substitute(italic(TW) == a %*% italic(TL)^b,
-             list(a = format(10^coef(model)[1], digits = 3),
+  substitute(italic(TW) == a %*% "10"^"-6" ~ italic(TL)^b,
+             list(a = "3.2",
                   b = format(coef(model)[2], digits = 3))) %>% 
     as.expression() %>% 
     as.character()
@@ -256,8 +256,20 @@ fit <- ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
   scale_color_brewer(palette = "Set3") +
   theme(text=element_text(family = "Times")) +
   geom_smooth(method = "lm", formula = y ~ I(a*x^b), color = "black", se = F) +
-  geom_text(aes(x = 120, y = 390), label = get_eqn(model), parse = T, size = 4, family="Times", face="italic") +
-  geom_text(aes(x = 120, y = 350), label = get_rsq(model), parse = T, size = 4, family="Times", face="italic")
+  annotate(geom = "text",
+            x = 120, y = 390,
+            label = get_eqn(model),
+            parse = T,
+            size = 4,
+            family="Times",
+            face="italic") +
+  annotate(geom = "text",
+            x = 120, y = 350, 
+            label = get_rsq(model),
+            parse = T,
+            size = 4,
+            family="Times",
+            face="italic")
             
 
 ggExtra::ggMarginal(p = fit,
