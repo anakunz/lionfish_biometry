@@ -28,7 +28,7 @@ windowsFonts(Times=windowsFont("TT Times New Roman"))
 suppressPackageStartupMessages({
   # library(RColorBrewer)
   # library(colorRamps)
-  library(e1071)
+  # library(e1071)
   library(stringr)
   library(agricolae)
   library(magrittr)
