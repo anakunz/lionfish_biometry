@@ -138,10 +138,6 @@ ggplot() +
   scale_fill_gradientn(colors = colorRamps::matlab.like(20)) +
   theme(legend.background = element_blank(),
         panel.grid.major = element_line(colour = "transparent")) +
-  # guides(colorbar = guide_legend(order = 0),
-  #        size = guide_legend(order = 1,
-  #                            direction = "horizontal",
-  #                            title.position = "top")) +
   lims(x = c(-100, -60), y = c(9, 36)) +
   labs(x = "longitude", y = "latitude") +
   geom_text(aes(x = -70, y = 30), label = "North Atlantic\nOcean") +
