@@ -81,9 +81,9 @@ review <- read.csv(here::here("data", "biometric_review.csv"), stringsAsFactors 
 
 The main objective of this work was to compare allometric growth of lionfish throughout their invasion range. Allometric parameters were retreived from scientific literature, and an additional pair of parameters was calculated from filed observations in the central Mexican Caribbean.
 
-Length-weight relationships (n = `r dim(review)[1]-1`) identified in literature were obtained for the North Atlantic (n = 1), Gulf of Mexico (n = 7,), and Caribbean (n = 8). Information on sampling methods, sex differentiation, location, and depth ranges of each study was retrieved when available. Studies were assumed to include both genders if gender was unspecified. Locations where allometric studies were performed are shown in Figure \ref{fig:map} and \ref{tab:all_params}.
+Length-weight relationships (n = `r dim(review)[1]-1`) identified in literature were obtained for the North Atlantic (n = 1), Gulf of Mexico (n = 7,), and Caribbean (n = 8). Information on sampling methods, sex differentiation, location, and depth ranges of each study was retrieved when available. Studies were assumed to include both genders if gender was unspecified. Locations where allometric studies were performed are shown in Figure \ref{fig:map} and Table \ref{tab:all_params}.
 
-\clearpage
+<!-- \clearpage -->
 
 ```{r, fig.cap = "\\label{fig:map}Locations where allometric growth parameters of lionfish (*Pterois spp*) have been reported. Circle sizes indicate sample size from each study, colors indicate the $b$ coefficient from Eq. \\ref{eq:allometric}."}
 
