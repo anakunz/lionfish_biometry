@@ -103,8 +103,9 @@ unlikely because of their rapid recovery rates and ongoing recruitment
 to shallow-water areas from their persistent populations in mesophotic
 coral ecosystems \citep{barbour_2011,andradibrown_2017}. However,
 promoting its consumption might create a level of demand capable of
-sustaining a stable fishery, which can help control invasive populations
-while providing alternative livelihoods \citep{chin_2016}.
+sustaining a stable fishery, which can help control shallow-water
+populations while providing alternative livelihoods and avoiding further
+impacts to local reef biota \citep{chin_2016}.
 
 The feasibility of establishing fisheries through lionfish removal
 programs has been extensively evaluated through field observations and
@@ -130,15 +131,16 @@ to changes in mortality (\emph{i.e.} culling). A common way to model
 this is via age- or length-structured population models
 \citep{cote_2014,barbour_2011,andradibrown_2017}, which convert fish
 length or age to weight to then calculate total biomass. Therefore,
-length-weight relationships are an essential component of biomass-based
-modeling. However, this relationship can vary across regions as a
+length-weight relationships are an essential component of these models.
+However, the length-weight relationship can vary across regions as a
 response to biotic (\emph{e.g.} local food availability) and abiotic
 (\emph{e.g.} water temperature) conditions \citep{johnson_2016}.
-Literature suggests that when length-weight relationships are spatially
-variable, Site-specific parameters are necessary to obtain accurate
-biomass estimates. This becomes ingreasingly important when estimating
-the potential effectiveness (and resources neded) of lionfish culling
-programs or identifying total biomass available for harvest by fishers
+Literature suggests that site-specific parameters are necessary to
+obtain accurate biomass estimates when length-weight relationships
+present spatial variation. This becomes ingreasingly important when
+estimating the potential effectiveness (and resources neded) of lionfish
+culling programs or identifying total biomass available for harvest by
+fishers
 \citep{barbour_2011,morris_2011,johnston_2015,chin_2016,cote_2014}.
 Genetic analysis of invasive lionfish suggest that two distinct
 population groups exist \citep{betancurr_2011}, and as such we would
@@ -172,8 +174,15 @@ obtained for the North Atlantic (n = 1), Gulf of Mexico (n = 7,), and
 Caribbean (n = 10). Information on sampling methods, sex
 differentiation, location, and depth ranges of each study was retrieved
 when available. Studies were assumed to include both genders if gender
-was unspecified. Locations where allometric studies were performed are
-shown in Figure \ref{fig:map} and Table \ref{tab:all_params}.
+was unspecified. Locations where allometric studies have been performed
+are shown in Figure \ref{fig:map} and Table \ref{tab:all_params}.
+
+Studies inconsistently defined \(a\) as either the ponderal index from
+Eq. \ref{eq:allometric} or the y-intercept (\(c\)) from Eq.
+\ref{eq:log-alo-trans}. Other studies incorrectly reported parameters as
+mm-to-g conversions when they were in fact cm-to-g conversions. Here,
+all parameters are reported as TL(mm) to TW(gr) conversions. When
+required, values from other studies were transformed for consistency.
 
 \begin{figure}
 \centering
@@ -229,20 +238,17 @@ isometric growth (\emph{i.e.} \(H_0: b = 3\)). Coefficients were tested
 with a two-tailed Student's t, and the significance of the regression
 was corroborated with an F-test.
 
-Studies inconsistently defined \(a\) as either the ponderal index from
-Eq. \ref{eq:allometric} or the y-intercept (\(c\)) from Eq.
-\ref{eq:log-alo-trans}. Other studies incorrectly reported parameters as
-mm-to-g conversions when they were in fact cm-to-g conversions. Here,
-all parameters are reported as TL(mm) to TW(gr) conversions. When
-required, values from other studies were transformed for consistency.
-
-We compare observed TW to TW estimated with the 18 length-weight
-relationsips to quantify the extent to which using \emph{ex situ} this
-leads to over- or underestimation. Predicted weights were divided by the
-observed weights to obtain a ratio. Difference in mean weight ratios
-across studies were tested with a one-way Analysis of Variance (ANOVA).
-All analyses were performed in R version 3.5.0 \citep{rcore_2018}. Raw
-data and code used in this work are available at dryad.org.
+Combining the length-weight parameters extracted from the literature and
+the additional pair calculated here, we obtain a total of 18 pairs. We
+test wether using \emph{ex situ} parameters produces differences in
+weight estimates by estimating TW from the 109 length observations of
+lionfish from the central Mexican Caribbean with each ot the 18
+relationships. Predicted weights were divided by know observed weights
+to obtain a simple measurement of over- or underestimation. Difference
+in mean weight ratios across studies were tested with a one-way analysis
+of variance (ANOVA). All analyses were performed in R version 3.5.0
+\citep{rcore_2018}. Raw data and code used in this work are available at
+dryad.org.
 
 \section*{Results}
 
