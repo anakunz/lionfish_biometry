@@ -1,7 +1,7 @@
 ---
 title: Invasive lionfish present region-wide variation of allometric growth in the
   Western Atlantic
-author: "Juan Carlos Villaseñor-Derbez$^1$, Sean Fitzgerald"
+author: "Juan Carlos VillaseÃ±or-Derbez$^1$, Sean Fitzgerald"
 header-includes:
 - \usepackage{float}
 - \floatplacement{figure}{H}
@@ -10,9 +10,23 @@ output:
     keep_tex: yes
     number_sections: no
     template: peerj_template.tex
-institution: "Bren School of Environmental Sciences and Management, University of California Santa Barbara, Santa Barbara, California, U.S."
-abstract: "Lionfish (*Pterois volitans/miles*) are an invasive species in the Western Atlantic and the Caribbean. In order to better manage the invasion, we must be able to accurately estimate their total biomass. This work compares length-weight relationships of the invasive lionfish through the invasion range. A review of 17 length-weight relationships reported in 12 peer-reviewed studies shows that lionfish exhibit spatial variation in weight-at-length. The reviewed parameters indicate that, for the same length, lionfish in the Caribbean have lower body mass than in the Atlantic or Gulf of Mexico. This highlights the importance of using site-specific parameters to estimate biomass from length observations. This study also reports a new pair of length-weight parameters ($a = 3.2056\times 10^{-6}; b = 3.235$) for organisms sampled in the central Mexican Caribbean region. These findings can have major implications in management, especially when estimating biomass available for harvest, predicting effects on local ecosystems, or evaluating the effectiveness of removal programs."
-keywords: "A, B, C"
+  word_document: default
+keywords: A, B, C
+institution: Bren School of Environmental Sciences and Management, University of California
+  Santa Barbara, Santa Barbara, California, U.S.
+abstract: "Lionfish (*Pterois volitans/miles*) are an invasive species in the Western
+  Atlantic and the Caribbean. In order to better manage the invasion, we must be able
+  to accurately estimate their total biomass. This work compares length-weight relationships
+  of the invasive lionfish through the invasion range. A review of 17 length-weight
+  relationships reported in 12 peer-reviewed studies shows that lionfish exhibit spatial
+  variation in weight-at-length. The reviewed parameters indicate that, for the same
+  length, lionfish in the Caribbean have lower body mass than in the Atlantic or Gulf
+  of Mexico. This highlights the importance of using site-specific parameters to estimate
+  biomass from length observations. This study also reports a new pair of length-weight
+  parameters ($a = 3.2056\times 10^{-6}; b = 3.235$) <!--fix formatting --> for organisms
+  sampled in the central Mexican Caribbean region. These findings can have major implications
+  in management, especially when estimating biomass available for harvest, predicting
+  effects on local ecosystems, or evaluating the effectiveness of removal programs."
 ---
 
 ```{r setup, include = FALSE}
@@ -220,7 +234,7 @@ Fstring <- paste0("F(df = 1; ",nobs(model)-2, ") = ", formatC(Fstring$statistic[
 
 The model adjusted to Eq. \ref{eq:log-alo-trans} estimated the coefficient values at $b = `r coef(model)[[2]]`$ and $c = `r coef(model)[[1]]`$ ($R^2 = `r Rsq`$, `r Fstring`, $p < 0.001$). The allometric factor ($b$) was significantly different from the value of isometric growth of $b = 3$ ($t(107) = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.001$), indicating that lionfish present allometric growth. More information on model fit is presented in TableS2. The relationship between TL and TW is presented in Figure \ref{fig:l-w-carib}.
 
-From this study in the central Mexican Caribbean and the `r length(unique(review$Study))-1` peer-reviewed studies that reported length-weight parameters for *P. volitans* `r dim(review)[1]-1` parameters were identified (Table \ref{tab:all_params}, Fig \ref{fig:all_allo}). Two studies \citep{aguilarperera_2016,fogg_2013} reported gender-level and pooled parameters, while the rest presented pooled results. Reviewed studies presented information for organisms obtained at depths between `r min(review$minD, na.rm = T)` and `r max(review$maxD, na.rm = T)` m. Three studies explicitly stated that their organisms were sampled with pole spears \citep{aguilarperera_2016,chin_2016,dahl_2014,sabidoitz_2016}, and five studies mentioned that some of their organisms were obtained with pole spears (or other type of harpoon) but also hand-held nets or fish traps \citep{sandel_2015,barbour_2011,fogg_2013,edwards_2014,sabidoitza_2016,sabidoitz_2016,toledohernndez_2014}, and two studies did not specify how organisms were sampled \citep{deleon_2013,darling_2011}. \citet{fogg_2013} use spine-less weight in the length-weight relationship estimation.
+From this study in the central Mexican Caribbean and the `r length(unique(review$Study))-1` peer-reviewed studies that reported length-weight parameters for *P. volitans* `r dim(review)[1]-1` parameters were identified (Table \ref{tab:all_params}, Fig \ref{fig:all_allo}). Two studies reported gender-level and pooled parameters \citep{aguilarperera_2016,fogg_2013}, while the rest presented pooled results. Reviewed studies presented information for organisms obtained at depths between `r min(review$minD, na.rm = T)` and `r max(review$maxD, na.rm = T)` m. Three studies explicitly stated that their organisms were sampled with pole spears \citep{aguilarperera_2016,chin_2016,dahl_2014,sabidoitz_2016}, and five studies mentioned that some of their organisms were obtained with pole spears (or other type of harpoon) but also hand-held nets or fish traps \citep{sandel_2015,barbour_2011,fogg_2013,edwards_2014,sabidoitza_2016,sabidoitz_2016,toledohernndez_2014}, and two studies did not specify how organisms were sampled \citep{deleon_2013,darling_2011}. \citet{fogg_2013} use spine-less weight in the length-weight relationship estimation.
 
 Parameters from models fit to males or females exclusively tend to have a higher steepness (*i.e.* higher allometric parameter), with mean $\pm$ standard deviation values of $b = `r formatC(mean(review$b[review$Gender == "Male"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "Male"]), digits = 2, format = "f")`$ and $b = `r formatC(mean(review$b[review$Gender == "Female"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "Female"]), digits = 2, format = "f")`$ for males and females respectively, compared to parameters from models for pooled genders with a mean $\pm$ standard deviation value of $b = `r formatC(mean(review$b[review$Gender == "Both"]), digits = 2, format = "f")` \pm `r formatC(sd(review$b[review$Gender == "Both"]), digits = 2, format = "f")`$. In the case of the ponderal index ($a$) and its $log_{10}$ transformation ($c$), values were higher for parameters for pooled genders. Figure \ref{fig:all_allo} shows the length-weight relationships with parameters from all studies.
 
@@ -381,6 +395,8 @@ Predicted_biomass %>%
 \section*{Discussion}
 
 <!-- A new pair of allometric growth parameters for lionfish in the central Mexican Caribbean are provided, complimenting existing literature for other sites in the Mexican Caribbean \citep{sabidoitza_2016,sabidoitz_2016}. Additionally, the study identifies regional differences in length-weight relationships. -->
+
+<!-- I thought you said the new pair of parameters was LESS interesting to you than the regional differences in length-weight, right?  So I think the "additional" part would be this study, not the regional differences? -->
 
 The length-weight coefficients estimated in this study were within the range identified by studies in other regions (Table \ref{tab:all_params}). However, the ones presented here provide lower weight estimates for similar lenmgths. Until about TL = 200 mm, there are no appreciable differences between the parameters for organisms from the Mexican Caribbean and those for little Cayman \citep{edwards_2014} and Jamaica \citep{chin_2016}. Yet, for larger organisms (TL > 270 mm) parameters from Costa Rica \citep{sandel_2015} and Bonaire \citep{deleon_2013} provide similar estimates to those from this study. Conversely, these same studies tend to estimate higher weights --as compared to the ones reported here-- for smaller organisms, likely due to the lack of small organisms in the samples used to estimate their parameters.
 
