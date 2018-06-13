@@ -1,54 +1,128 @@
-%% Submissions for peer-review must enable line-numbering 
-%% using the lineno option in the \documentclass command.
-%%
-%% Preprints and camera-ready submissions do not need 
-%% line numbers, and should have this option removed.
-%%
-%% Please note that the line numbering option requires
-%% version 1.1 or newer of the wlpeerj.cls file, and
-%% the corresponding author info requires v1.2
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
 
-\documentclass[fleqn,10pt,lineno]{wlpeerj} % for journal submissions
-% \documentclass[fleqn,10pt]{wlpeerj} % for preprint submissions
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
 
-\title{Invasive lionfish present region-wide variation of allometric growth in
-the Western Atlantic}
+%%% Change title format to be more compact
+\usepackage{titling}
 
-\author[1]{Juan Carlos Villaseñor-Derbez}
-\author[1]{Sean Fitzgerald}
-\affil[1]{Bren School of Environmental Sciences and Management, University of California
-  Santa Barbara, Santa Barbara, California, USA}
-\corrauthor[1]{Juan Carlos Villaseñor-Derbez}{jvillasenor@ucsb.edu}
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
 
-% \keywords{Keyword1, Keyword2, Keyword3}
+\setlength{\droptitle}{-2em}
+  \title{\LARGE{Allometric growth of invasive lionfish (\textit{Pterois spp}) varies by region in the Western Atlantic}}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\doublespacing
+\usepackage{lineno}
+\linenumbers
+\usepackage{float}
+\floatplacement{figure}{H}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+Juan Carlos Villaseñor-Derbez\textsuperscript{1}*, Sean
+Fitzgerald\textsuperscript{1}
+
+\textsuperscript{1} Bren School of Environmental Science and Management,
+University of California Santa Barbara, Santa Barbara, California,
+United States
+
+*jvillasenor@bren.ucsb.edu
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{abstract}
-Lionfish (\emph{Pterois volitans / miles}) are an invasive species in
-the Western Atlantic and the Caribbean. Improving management of invasive
-lionfish populations requires accurate estimates of total biomass, which
-depend on accurate estimates of the length-weight relationship. Lionfish
-exhibit a sedentary behavior that is likely to result in high levels of
-spatial variation in some life history characterstics, such as the
-length-weight relationship. We review 12 published length-weight
-relationships of lionfish taken throughout their invasive range and
-describe the spatial variation and implications of these differences.
-The spatial pattern observed here is consistent with those reported in
-genetic studies or age-at-length studies. We show that the use of
-\emph{ex situ} parameters can result in up to a three-fold
-overestimation of Total Weight, but that using parameters obtained
-nearby reduces this error. These findings can have major implications
-for management in terms of predicting effects on local ecosystems,
-evaluating the effectiveness of removal programs, or estimating biomass
-available for harvest.
+Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics, so we review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
 \end{abstract}
 
-\begin{document}
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\flushbottom
-\maketitle
-\thispagestyle{empty}
-
-\section*{Introduction}
+\section{Introduction}\label{introduction}
 
 Lionfish (\emph{Pterois volitans/miles} complex) are an invasive species
 in the western Atlantic and Caribbean Sea, likely introduced through
@@ -60,126 +134,106 @@ has been labeled as a major marine invasion because they threaten local
 biodiversity, spread rapidly, and are difficult to manage
 \citep{hixon_2016}.
 
-Invasive lionfish are primarily studied in coral reef ecosystems, where
-their impacts are far-reaching. For example, field experiments by
-\citet{albins_2008} showed that lionfish establishment led to reduced
-recruitment of native fishes by nearly 80\% over a five week period in
-Florida. \citet{green_2012} report that prey fish biomass declined 65\%
-over two years as lionfish biomass increased along Bahamian coral reefs.
-Lionfish have also established invasive populations in other habitats
-such as estuaries, mangroves, hard-bottomed areas, and mesophotic reefs
-\citep{jud_2011,barbour_2010,muoz_2011,andradibrown_2017,claydon_2012}.
-
-A substantial amount of research describes lionfish feeding ecology
-throughout the invaded range
-\citep{muoz_2011,morris_2009,cote_2013,dahl_2014,valdezmoreno_2012,villaseorderbez_2014,hackerott_2017,sandel_2015}.
-A meta-analysis by \citet{peake_2018} showed that invasive lionfish prey
+A substantial amount of research describes lionfish impacts throughout
+its invaded range.For example, field experiments by \citet{albins_2008}
+showed that lionfish establishment led to reduced recruitment of native
+fishes by nearly 80\% over a five week period in Florida.
+\citet{green_2012} reported that prey fish biomass declined by 65\% over
+two years as lionfish biomass increased along Bahamian coral reefs. A
+meta-analysis by \citet{peake_2018} showed that invasive lionfish prey
 on at least 167 different species across the tropical and temperate
-North Atlantic. Their feeding behavior and high consumption rates can
-reduce recruitment and population sizes of native reef-fish species, and
-can further endanger reef fish
-\citep{albins_2008, green_2012,rocha_2015}. (However, see
-\citet{hackerott_2017} for a case where there was no evidence that
-lionfish affected the density, richness, or community composition of
-prey fishes). Major efforts have been made to understand the possible
-impacts of the invasion by tracking the spread of established lionfish
-populations through time \citep{schofield_2009,schofield_2010} and by
-predicting invasion ranges under future climates \citep{grieve_2016}.
-It\{s been proposed that trophic impacts of lionfish can be minimized if
-local lionfish biomass is controled by culling
-\citep{ariasgonzalez_2011}.
+North Atlantic. Lionfish have also established invasive populations in
+other habitats such as estuaries, mangroves, hard-bottomed areas, and
+mesophotic reefs
+\citep{barbour_2010,jud_2011,muoz_2011,claydon_2012,andradibrown_2017}.
+Their feeding behavior and high consumption rates can reduce recruitment
+and population sizes of native reef-fish species, and can further
+endanger reef fish (\citet{green_2012,rocha_2015}; but see
+\citet{hackerott_2017}). These trophic impacts can be minimized if local
+lionfish biomass is controlled by culling \citep{ariasgonzalez_2011}.
 
 Governments and non-profit organizations have sought to reduce lionfish
 densities through removal programs and incentivizing its consumption
 \citep{chin_2016}. In some cases, these have shown to significantly
 reduce --but not quite eliminate-- lionfish abundances at local scales
-\citep{sandel_2015,chin_2016,deleon_2013}. In addition, culling programs
-can help stabilize or grow native prey fish populations
-\citep{cote_2014}. Complete eradication of lionfish through fishing is
-unlikely because of their rapid recovery rates and ongoing recruitment
-to shallow-water areas from their persistent populations in mesophotic
-coral ecosystems \citep{barbour_2011,andradibrown_2017}. However,
-promoting lionfish consumption might create a level of demand capable of
-sustaining a stable fishery, which can help control shallow-water
-populations while providing alternative livelihoods and avoiding further
-impacts to local reef biota \citep{chin_2016}.
+\citep{deleon_2013,sandel_2015}. Complete eradication of lionfish
+through fishing is unlikely because of their rapid recovery rates and
+ongoing recruitment to shallow-water areas from persistent populations
+in mesophotic ecosystems \citep{barbour_2011,andradibrown_2017}.
+However, promoting lionfish consumption might create a level of demand
+capable of incentivizing a stable fishery while controlling
+shallow-water populations, thus creating alternative livelihoods and
+avoiding further impacts to local biota.
 
 The feasibility of establishing fisheries through lionfish removal
 programs has been extensively evaluated through field observations and
 empirical modeling
-\citep{barbour_2011,morris_2011,deleon_2013,johnston_2015,sandel_2015,chin_2016,usseglio_2017}.
-One contributing factor to the success of many removal programs is the
-sedentary nature of adult lionfish \citep{jud_2012}. Culling programs
-are effective in reducing local adult populations largely because
-lionfish exhibit high levels of site fidelity and rarely leave their
-home range \citep{Fishelson_1997,cote_2014,kochzius_2005}. Fish with
-this sedentary behavior are likely to exhibit high levels of spatial
-variation in important life history characterstics such as growth or
-natural mortality rates \citep{hutchinson_2008,wilson_2012}. The
-importance of considering spatial heterogeneity is well-documented in
-terms of assessing and managing sedentary species
-\citep{gunderson_2008,guan_2013}, and such variation should be accounted
-for when evaluating the feasibility of establishing lionfish fisheries
-as well.
+\citep{barbour_2011,morris_2011,deleon_2013,johnston_2015,sandel_2015,usseglio_2017}.
+Determining the feasibility of such initiatives requires modeling the
+change in biomass in response to changes in mortality (\emph{i.e.}
+culling). A common way to model this is via length-structured population
+models, where fish lengths are converted to weight to calculate total
+biomass \citep{barbour_2011,cote_2014,andradibrown_2017}. The allometric
+length-weight relationship is thus an essential component of these
+models, but this relationship can vary across regions as a response to
+biotic and abiotic conditions \citep{johnson_2016}.
 
-Determining the feasibility of such initiatives require modeling changes
-in biomass in response to changes in mortality (\emph{i.e.} culling). A
-common way to model this is via length-structured population models,
-where fish lengths are converted to weight to calculate total biomass
-\citep{cote_2014,barbour_2011,andradibrown_2017}. The length-weight
-relationship is therefore an essential component of these models, but
-this relationship can vary across regions as a response to biotic
-(\emph{e.g.} local food availability) and abiotic (\emph{e.g.} water
-temperature) conditions \citep{johnson_2016}. Literature suggests that
-site-specific parameters are necessary in order to accurately estimate
-biomass when length-weight relationships are spatially variable, and
-this variability becomes increasingly important when estimating the
-potential effectiveness and feasability of lionfish culling programs or
-when identifying total biomass available for harvest by fishers
-\citep{barbour_2011,morris_2011,johnston_2015,chin_2016,cote_2014}. In
-addition to environmentally-driven spatial variation, genetic analysis
-of invasive lionfish suggest biological differences due to the existence
-of two genetically distinct subpopulations between the northwest
-Atlantic and the Caribbean \citep{betancurr_2011}. To date, no studies
-have examined region-wide differences in length-weight parameters
-despite the large number of studies reporting this relationship for
-lionfish.
+Outcomes of previous studies suggest lionfish are likely to exhibit
+spatial heterogeneity in the length-weight relationship, which we
+summarize in two main causes. First, culling programs are effective in
+reducing local adult populations largely because lionfish exhibit high
+levels of site fidelity and small home ranges
+\citep{Fishelson_1997,kochzius_2005,jud_2012,cote_2014}. It is know that
+fish with sedentary behavior are likely to exhibit high levels of
+spatial variation in important life history characterstics such as
+growth or natural mortality rates
+\citep{gunderson_2008,hutchinson_2008,wilson_2012,guan_2013}. Second,
+genetic analysis of lionfish suggests biological differences due to the
+existence of two genetically distinct invasive subpopulations between
+the northwest Atlantic and the Caribbean \citep{betancurr_2011}.
+Site-specific parameters are necessary to accurately estimate biomass
+when allometric relationships are spatially variable, and this
+variability is increasingly important when estimating the potential
+effectiveness of lionfish culling programs
+\citep{barbour_2011,morris_2011,cote_2014,johnston_2015}. However, the
+region-wide differences in allometric growth parameters has remained
+unexplored for lionfish, despite the large number of site-specific
+studies reporting the length-weight relationship.
 
-The objective of this paper is to describe the spatial pattern of
-length-weight relationships of lionfish in the Caribbean and Western
-Atlantic and evaluate the implications of these spatial differences.
-Length-weight relationships for lionfish exist for North Carolina,
-Northern and Southern Gulf of Mexico, the Southern Mexican Caribbean,
-Bahamas, Little Cayman, Jamaica, Bonaire, Puerto Rico, and Costa Rica
-\citep{barbour_2011,fogg_2013,dahl_2014,aguilarperera_2016,sabidoitza_2016,sabidoitz_2016,darling_2011,edwards_2014,chin_2016,deleon_2013,toledohernndez_2014,sandel_2015}.
-This study also provides the first length-weight relationship for the
-central Mexican Caribbean.
+Here, we compare previously published length-weight relationships for
+lionfish populations in North Carolina, Northern and Southern Gulf of
+Mexico, the Southern Mexican Caribbean, Bahamas, Little Cayman, Jamaica,
+Bonaire, Puerto Rico, and Costa Rica
+\citep{barbour_2011,darling_2011,deleon_2013,fogg_2013,dahl_2014,edwards_2014,toledohernndez_2014,sandel_2015,aguilarperera_2016,sabidoitza_2016,sabidoitz_2016,chin_2016}.
+We also collected lionfish length and weight data in the central Mexican
+Caribbean and report the first allometric growth equation for this
+region. The objective of this paper is to describe the spatial pattern
+of length-weight relationships of lionfish across the Caribbean and
+Western Atlantic and to discuss implications of these spatial
+differences.
 
-\clearpage
-
-\section*{Materials and Methods}
+\section{Materials and Methods}\label{materials-and-methods}
 
 We reviewed 12 published studies and obtained 17 length-weight
 relationships for the North Atlantic (n = 1), Gulf of Mexico (n = 7),
-and Caribbean (n = 10, Table \ref{tab:all_params}, Fig
+and Caribbean (n = 9, Table \ref{tab:all_params}, Fig
 \ref{fig:all_allo}). We collected information on sampling methods, sex
 differentiation, location, and depth ranges from each study when
-available, and assumed both genders were included in a study if gender
-was unspecified. Only two studies reported parameters for each gender
-\citep{aguilarperera_2016,fogg_2013}. Reviewed studies presented
-information for organisms obtained at depths between 0.5 m and 57 m.
-Three studies explicitly stated that their organisms were sampled with
-pole spears
-\citep{aguilarperera_2016,chin_2016,dahl_2014,sabidoitz_2016}, and five
+available. Only two studies reported parameters for each gender
+\citep{aguilarperera_2016,fogg_2013}, so we assumed both genders were
+included in a study if gender was unspecified. Reviewed studies
+presented information for organisms obtained at depths between 0.5 m and
+57 m. Three studies explicitly stated that their organisms were sampled
+with pole spears
+\citep{dahl_2014,aguilarperera_2016,chin_2016,sabidoitz_2016}, and five
 studies mentioned that some of their organisms were obtained with pole
 spears (or other type of harpoon) but also hand-held nets or fish traps
-\citep{sandel_2015,barbour_2011,fogg_2013,edwards_2014,sabidoitza_2016,sabidoitz_2016,toledohernndez_2014},
+\citep{barbour_2011,fogg_2013,edwards_2014,toledohernndez_2014,sandel_2015,sabidoitza_2016,sabidoitz_2016},
 and two studies did not specify how organisms were sampled
-\citep{deleon_2013,darling_2011}. \citet{fogg_2013} use spine-less
-weight in the length-weight relationship estimation, and thus their
-parameters likely underestimate total wieght. Since no spine-less to
-total weight conversions were available, these parameters were taken as
-reported.
+\citep{darling_2011,deleon_2013}. \citet{fogg_2013} use spineless weight
+in their calculations, so their parameters likely underestimated total
+wieght. Since no spineless to total weight conversions were available,
+these parameters were taken as reported.
 
 We also collected data from 10 sampling sites along the central Mexican
 Caribbean coast in 2010 (Table S1). Sampling locations included wall and
@@ -190,15 +244,6 @@ and allowed better representation of small sizes by eliminating gear
 selectivity. Organisms were euthanized via pithing and Total Length (TL;
 mm) and Total Weight (TW; g) were recorded.
 
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-1-1.pdf}
-\caption{\label{fig:map}Locations where allometric growth parameters of
-lionfish (\emph{Pterois spp}) have been reported. Circle sizes indicate
-sample size from each study, colors indicate the \(b\) coefficient from
-Eq. \ref{eq:allometric}.}
-\end{figure}
-
 The weight at length relationship for lionfish in the central Mexican
 Caribbean was calculated with the allometric growth function:
 
@@ -208,9 +253,7 @@ TW = aTL^b
 \end{equation}
 
 Where \(a\) is the ponderal index and \(b\) is the scaling exponent or
-allometric parameter. When \(b = 3\), it is said that the organism
-exhibits a perfect isometric growth. Transforming this equation via
-base-10 logarithms:
+allometric parameter. Transforming this equation via base-10 logarithms:
 
 \begin{equation}
 \label{eq:log-alo}
@@ -227,10 +270,12 @@ Y = bX + c
 Where \(Y = log_{10}(TW)\), \(X = log_{10}(TL)\), and
 \(c = log_{10}(a)\). The coefficients (\(c\) and \(b\)) were estimated
 with an Ordinary Least Squares Regression and heteroskedastic-robust
-standard error correction \citep{zeileis_2004}. The \(b\) coefficient
-was tested against the null hypothesis of isometric growth (\emph{i.e.}
-\(H_0: b = 3\)). Coefficients were tested with a two-tailed Student's t,
-and the significance of the regression was corroborated with an F-test.
+standard error correction \citep{zeileis_2004}. When the \(b = 3\), it
+is said that the organism exhibits a perfect isometric growth, so the
+\(b\) coefficient was tested against the null hypothesis of isometric
+growth (\emph{i.e.} \(H_0: b = 3\)). Coefficients were tested with a
+two-tailed Student's t, and the significance of the regression was
+corroborated with an F-test.
 
 Some of the reviewed studies inconsistently defined \(a\) as either the
 ponderal index from Eq. \ref{eq:allometric} or the y-intercept (\(c\))
@@ -241,21 +286,21 @@ report all parameters as TL(mm) to TW (gr) conversions. Locations where
 allometric studies have been performed are shown in Figure \ref{fig:map}
 and Table \ref{tab:all_params}.
 
-Combining the length-weight parameters extracted from the literature and
-the additional pair calculated here, we obtain a total of 18 pairs. We
-use the central Mexican Caribbean as a case study of how the use of
-\emph{ex situ} parameters influences the accuracy of weight estimates
-for lionfish. We estimated TW from the TL observations we collected in
-the central Mexican Caribbean (n = 109) using each of the 18 parameter
-pairs and divided predicted weights by known observed weights to obtain
-a simple measure of over- or underestimation. Difference in mean weight
-ratios across the different parameter pairs were tested with a one-way
-analysis of variance (ANOVA) and Tuskey's test was used for post-hoc
-tests. All analyses were performed in R version 3.5.0
-\citep{rcore_2018}. Raw data and code used in this work are available at
-dryad.org.
+We obtained a total of 18 parameter pairs by combining length-weight
+parameters extracted from the literature and the additional pair
+calculated here. We used the central Mexican Caribbean as a case study
+of how the use of \emph{ex situ} parameters influences the accuracy of
+weight estimates for lionfish. We estimated TW from the TL observations
+we collected in the central Mexican Caribbean (n = 109) using each of
+the 18 parameter pairs and divided predicted weights by known observed
+weights to obtain a simple measure of over- or underestimation.
+Difference in mean weight ratios across the different parameter pairs
+were tested with a one-way analysis of variance (ANOVA) and Tukey's test
+was used for post-hoc tests. All analyses were performed in R version
+3.5.0 \citep{rcore_2018}. Raw data and code used in this work are
+available at dryad.org.
 
-\section*{Results}
+\section{Results}\label{results}
 
 The length-weight relationship for organisms from the central Mexican
 Caribbean resulted in the coefficient values
@@ -266,52 +311,138 @@ different from \(b = 3\) (\(t(107) = 6.04; p<0.001\)) indicating that
 lionfish present allometric growth. The length-weight coefficients
 estimated in this study were within the range identified by studies in
 other regions (Table \ref{tab:all_params}). Figure \ref{fig:l-w-carib}
-shows the relationship between TL and TW for this region, and more
-information on model fit is presented in Table S2.
-
-Figure \ref{fig:all_allo} shows the length-weight relationships with
-parameters from all studies. Parameters from models fit to males or
-females exclusively tend to have a higher steepness (\emph{i.e.} higher
-allometric parameter), with mean \(\pm\) standard deviation values of
-\(b = 3.27 \pm 0.06\) and \(b = 3.31 \pm 0.23\) for males and females
-respectively, compared to parameters from models for combined genders
-with a mean \(\pm\) standard deviation value of \(b = 3.14 \pm 0.20\).
-In the case of the ponderal index (\(a\)) and its \(log_{10}\)
-transformation (\(c\)), values were higher for parameters for combined
-genders.
+shows the relationship between TL and TW for this region, and model fit
+statistics is presented in Table \ref{tab:reg_table}.
 
 There were significant differences in our predicted weights for the
 central Mexican Caribbean when using the different pairs of parameters
-(\(F(df = 15; 1728) = 38.26; p < 0.001\)). Weight estimates using
+(\(F(df = 17; 1944) = 61.55; p < 0.001\)). The lowest weight estimates
+resulted from using the allometric parameters from Banco Chinchorro in
+the Caribbean, with mean \(\pm\) SD of 40.37 \(\pm\) 58.74 gr
+\citep{sabidoitz_2016}, and the highest weight estimates came from the
+Northern Atlantic 73.76 \(\pm\) 96.11 gr \citep{barbour_2011}. To put
+this in context, true observed weights were 52.56 \(\pm\) 76.58 gr.
+These correspond to predicted-to-observed weights ratios of 0.80 \(\pm\)
+0.19 and 1.76 \(\pm\) 0.50 (mean \(\pm\) SD), respectively.
+
+The calculated ratio of predicted-to-observed weight ranged from 0.36 to
+3.51, indicating that \emph{ex situ} parameters can result in major
+under- and overestimations. Tukey's post-hoc test suggests that weight
+ratios for the central Mexican Caribbean were not different from those
+obtained with parameters from Little Cayman, the Bahamas, and some sites
+in the Gulf of Mexico (Tukeys HSD \(p > 0.05\)). Weight estimates using
 parameters from the Gulf of Mexico and North-Western Atlantic were
-higher on average than those from the Caribbean. The average (\(\pm\)
-SD) predicted-to-observed weight ratios from these three regions were
-1.24 \(\pm\) 0.309, 1.76 \(\pm\) 0.496, and 1.17 \(\pm\) 0.398,
-respectively. The lowest weight estimates resulted from using the
-allometric parameters from Banco Chinchorro in the Caribbean
-\citet{sabidoitz_2016}, and the highest weight estimates came from the
-Northern Atlantic \citep{barbour_2011}. The calculated ratio of
-predicted-to-observed weight ranged from 0.80 \(\pm\) 0.19 to 1.76
-\(\pm\) 0.50 (mean \(\pm\) SD). Tukey's post-hoc test suggests that
-weight ratios for the central Mexican Caribbean were not differnt from
-those obntained with parameters from Little Cayman, the Bahamas, and
-some sites in the Gulf of Mexico (Tukeys HSD \(p > 0.05\)).
+higher on average than those from the Caribbean (Fig
+\ref{fig:all_allo}). The average (\(\pm\) SD) predicted-to-observed
+weight ratios from these three regions were 1.24 \(\pm\) 0.309, 1.76
+\(\pm\) 0.496, and 1.17 \(\pm\) 0.398, respectively.
 Predicted-to-observed weight ratios are presented in Figure
-\ref{fig:bio_ratio}. Spine-less weight parameters from \citet{fogg_2013}
+\ref{fig:bio_ratio}. Spineless weight parameters from \citet{fogg_2013}
 still produced predicted-to-observed weight ratios \textgreater{} 1.
+
+\section{Discussion}\label{discussion}
+
+We detected substantial differences in weight-at-length between
+organisms from the Caribbean, Gulf of Mexico, and North-Western
+Atlantic. Groupings of predicted-to-observed weight ratios aligned with
+the spatial distribution of the examined studies, suggesting that these
+differences are mediated by space. These regional allometric differences
+mirror similar patterns in age-at-length of lionfish across both their
+invaded and native regions \citep{pusack_2016}. Variation may be driven
+by genetics or by organisms' exposure to distinct environmental
+conditions. For example, \citet{betancurr_2011} used mitochondrial DNA
+to demonstrate the existence of two distinct population groups,
+identified as the ``Caribbean group'' and ``Northern Group'', and
+\citet{fogg_2015} alternatively suggested that age-at-length differences
+may be climate-driven. Differences in weight-at-length could also
+reflect differential energy input or usage, or a combination of both.
+Future research is needed to determine which processes are at work here.
+
+Differences in length-weight relationships have traditionally been
+highlighted as potential pitfalls to fishery management. For example,
+\citet{wilson_2012} show that small-scale variations in length-at-age
+and fishing mortality in other Scorpaeniformes translate to differential
+landings, effort, and catch per unit effort in the live fish fishery of
+California, and that these differences must be taken into account in
+management plans. The lionfish case poses the opposite scenario, where
+the manager desires to eradicate species. To accurately gauge both the
+effectiveness of lionfish removal efforts and the resources needed to
+successfully manage an invasion, we must acknowledge and understand
+regional biological differences in important variables such as
+allometric growth parameters.
+
+The results presented here have major implications for management. For
+example, \citet{edwards_2014} simulated a lionfish culling program under
+two scenarios, one using length-at-age and length-to-weight parameters
+from North Carolina and one using parameters from Little Cayman. Their
+results show that using different parameters caused up to a four-year
+difference in the time required for the simulated lionfish population to
+recover to 90\% of its initial biomass after removals ceased. Here, we
+show that using one set of length-weight parameters versus another for a
+given length can result in up to a threefold overestimation of TW. These
+spatially-driven differences become especially important when allocating
+resources for lionfish removal programs, incentivizing lionfish
+fisheries as a source of alternative livelihoods, or estimating
+ecosystem impacts. Research efforts focused on invasive lionfish
+populations need to use parameters calculated for their region to the
+extent possible, or at least use reasonable sets of different parameters
+that provide upper and lower bounds in their results.
+
+\section{Acknowledgements}\label{acknowledgements}
+
+The authors would like to thank thank Nils Van Der Haar and Michael
+Doodey from Dive Aventuras as well as Guillermo Lotz-Cador who provided
+help to collect samples.
+
+\bibliography{references}
+
+\clearpage
+
+\section{Figures and Tables}\label{figures-and-tables}
 
 \begin{figure}
 \centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-4-1.pdf}
-\caption{\label{fig:l-w-carib}Length-weight relationship for 109
-lionfish sampled in the central Mexican Caribbean. Points indicate
-samples, dashed black line indicates curve of best fit, marginal plots
-represent the density distribution of each variable.}
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-8-1.pdf}
+\caption{\label{fig:unnamed-chunk-8}\label{fig:map}Locations where
+allometric growth parameters of lionfish (\emph{Pterois spp}) have been
+reported. Circle sizes indicate sample size from each study, colors
+indicate the \(b\) coefficient from Eq. \ref{eq:allometric}.}
+\end{figure}
+
+\begin{table}[!htbp] \centering 
+  \caption{\label{tab:reg_table}Coefficients of the linear model fit to Eq \ref{eq:log-alo-trans}. Numbers in parenthesees represent heteroskedastic-robust standard errors.} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{$log_{10}(TW)$} \\ 
+\cline{2-2} 
+\hline \\[-1.8ex] 
+ c & $-$5.494 (0.083)$^{***}$ \\ 
+  b & 3.235 (0.039)$^{***}$ \\ 
+ \hline \\[-1.8ex] 
+F Statistic & 6928.67*** (df = 1; 107) \\ 
+Observations & 109 \\ 
+Adjusted R$^{2}$ & 0.976 \\ 
+Residual Std. Error & 0.096 (df = 107) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-10-1.pdf}
+\caption{\label{fig:unnamed-chunk-10}\label{fig:l-w-carib}Length-weight
+relationship for 109 lionfish sampled in the central Mexican Caribbean.
+Points indicate samples, dashed black line indicates curve of best fit,
+marginal plots represent the density distribution of each variable.}
 \end{figure}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-5}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The $R^2$ column indicates reported model fit.}
+\caption{\label{tab:unnamed-chunk-11}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The $R^2$ column indicates reported model fit.}
 \centering
 \begin{tabular}[t]{llllrrll}
 \toprule
@@ -337,88 +468,31 @@ GoM & B & 582 & 0.14 & 3.43 & -5.86 & 0.99 & Fogg et al., 2013\\
 \addlinespace
 GoM & M & 119 & 0.27 & 3.31 & -5.57 & 0.97 & Fogg et al., 2013\\
 GoM & F & 115 & 0.68 & 3.14 & -5.17 & 0.94 & Fogg et al., 2013\\
-North Atlantic & B & 774 & 2.9 & 2.89 & -4.54 & - & Barbour et al.,2011\\
+North Atlantic & B & 774 & 2.9 & 2.89 & -4.54 & - & Barbour et al., 2011\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}
 \centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-6-1.pdf}
-\caption{\label{fig:all_allo}Length-weight relationships (n = 18) for 12
-studies and this study. Colors indicate studies from which the
-parameters were extracted. Dotted, dashed and solid lines show models
-for males, females, and combined sexes, respectively. The dashed black
-line represents the relationship estimated in this study.}
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-12-1.pdf}
+\caption{\label{fig:unnamed-chunk-12}\label{fig:all_allo}Length-weight
+relationships (n = 18) for 12 studies and this study. Colors indicate
+studies from which the parameters were extracted. Dotted, dashed and
+solid lines show models for males, females, and combined sexes,
+respectively. The dashed black line represents the relationship
+estimated in this study.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf}
-\caption{\label{fig:bio_ratio}Violin plot of predicted-to-observed
-weight ratios for 18 pairs of allometric parameters. Red and blue
-circles indicate median and mean values, respectively. Like letters
-indicate values that do not differ significantly.}
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-13-1.pdf}
+\caption{\label{fig:unnamed-chunk-13}\label{fig:bio_ratio}Violin plot of
+predicted-to-observed weight ratios for 18 pairs of allometric
+parameters. Red and blue circles indicate median and mean values,
+respectively. Like letters indicate values that do not differ
+significantly.}
 \end{figure}
 
-\clearpage
-
-\section*{Discussion}
-
-We detected substantial differences in weight-at-length between
-organisms from the Caribbean and Gulf of Mexico / North-Western
-Atlantic. The groupings of predicted-to-observed weight ratios were
-consistent with the spatial distribution of the studies, suggesting that
-these differences are mediated by space. These length-weight differences
-mirror similar findings of regional variability in age-at-length
-relationships of lionfish across both their invaded and native regions
-\citep{pusack_2016}. These patterns may be driven by genetic variation
-or by organisms being exposed to distinct environmental conditions. For
-example, \citet{betancurr_2011} used mitochondrial DNA to demonstrate
-the existence of two distinct population groups, identified as the
-``Caribbean group'' and ``Northern Group'', and \citet{fogg_2015}
-alternatively suggested that age-at-length differences may be driven by
-climate. Differences in weight-at-length could also reflect differences
-in energy input or differential usage of this energy, or a combination
-of both. Future research is needed to determine which processes are at
-work here.
-
-Differences in length-weight relationships have traditionally been
-highlighted as potential pitfalls to fishery management. For example,
-\citet{wilson_2012} show that small-scale variations in length-at-age
-and fishing mortality in other Scorpaeniformes translate to differential
-landings, effort, and catch per unit effort in the live fish fishery of
-California, and that these differences must be taken into account in
-management plans. The lionfish case poses the opposite scenario, where
-the manager desires to erradicate species. To accurately gauge both the
-effectiveness of lionfish removal efforts and the resources needed to
-successfully manage an invasion, we must acknowledge and understand
-regional biological differences in important variables such as
-allometric growth parameters.
-
-The results presented here have major implications for management. For
-example, \citet{edwards_2014} simulated a lionfish culling program under
-two scenarios, one using length-at-age and length-to-weight parameters
-from North Carolina and one using parameters from Little Cayman. Their
-results show that using different parameters caused up to a four-year
-difference in the time required for the simulated lionfish population to
-recover to 90\% of its initial biomass after removals ceased. Here, we
-show that using one set of length-weight parameters versus another for a
-given length can result in up to a threefold TW overestimation. These
-spatially-driven differences become especially important when allocating
-resources for lionfish removal programs, incentivizing its fishery as a
-source of alternative livelihoods, or estimating ecosystem impacts.
-Research efforts focused on invasive lionfish populations need to use
-parameters calculated for their region to the extent possible, or at
-least use reasonable sets of different parameters that provide upper and
-lower bounds in their results.
-
-\section*{Aknowledgements}
-
-The authors would like to thank thank Nils Van Der Haar and Michael
-Doodey from Dive Aventuras as well as Guillermo Lotz-Cador who provided
-help to collect samples.
-
-\bibliography{references}
 
 \end{document}
