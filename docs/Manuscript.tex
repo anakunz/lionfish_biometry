@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[12pt,]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -72,7 +72,7 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{\LARGE{Allometric growth of invasive lionfish (\textit{Pterois spp}) varies by region in the Western Atlantic}}
+  \title{\LARGE{Allometric growth of invasive lionfish (\textit{Pterois spp}) varies by region}}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
   \author{}
@@ -87,6 +87,11 @@
 \linenumbers
 \usepackage{float}
 \floatplacement{figure}{H}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Lionfish allometric growth}
+\cfoot{\thepage}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -110,17 +115,20 @@ Fitzgerald\textsuperscript{1}
 
 \textsuperscript{1} Bren School of Environmental Science and Management,
 University of California Santa Barbara, Santa Barbara, California,
-United States
-
-*jvillasenor@bren.ucsb.edu
+United States, 93117
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \begin{abstract}
-Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics, so we review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
+Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics. We review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
 \end{abstract}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\textbf{Keywords:} Lionfish, invasive species, length-weight,
+allometric, regional variations
+
+*jvillasenor@bren.ucsb.edu
 
 \section{Introduction}\label{introduction}
 
@@ -132,25 +140,25 @@ Atlantic Caribbean coasts
 \citep{schofield_2009,schofield_2010,sabidoitza_2016} and their presence
 has been labeled as a major marine invasion because they threaten local
 biodiversity, spread rapidly, and are difficult to manage
-\citep{hixon_2016}.
+\citep{hixon_2016}. Lionfish have established invasive populations in
+coral reefs, estuaries, mangroves, hard-bottomed areas, and mesophotic
+reefs
+\citep{barbour_2010,jud_2011,muoz_2011,claydon_2012,andradibrown_2017,gress_2017}.
 
 A substantial amount of research describes lionfish impacts throughout
-its invaded range.For example, field experiments by \citet{albins_2008}
-showed that lionfish establishment led to reduced recruitment of native
-fishes by nearly 80\% over a five week period in Florida.
-\citet{green_2012} reported that prey fish biomass declined by 65\% over
-two years as lionfish biomass increased along Bahamian coral reefs. A
-meta-analysis by \citet{peake_2018} showed that invasive lionfish prey
-on at least 167 different species across the tropical and temperate
-North Atlantic. Lionfish have also established invasive populations in
-other habitats such as estuaries, mangroves, hard-bottomed areas, and
-mesophotic reefs
-\citep{barbour_2010,jud_2011,muoz_2011,claydon_2012,andradibrown_2017}.
-Their feeding behavior and high consumption rates can reduce recruitment
-and population sizes of native reef-fish species, and can further
-endanger reef fish (\citet{green_2012,rocha_2015}; but see
-\citet{hackerott_2017}). These trophic impacts can be minimized if local
-lionfish biomass is controlled by culling \citep{ariasgonzalez_2011}.
+its invaded range. A meta-analysis by \citet{peake_2018} showed that
+invasive lionfish prey on at least 167 different species across the
+tropical and temperate North Atlantic. Their feeding behavior and high
+consumption rates can reduce recruitment and population sizes of native
+reef-fish species, and can further endanger reef fish
+(\citet{green_2012,rocha_2015}; but see \citet{hackerott_2017}). For
+example, field experiments by \citet{albins_2008} showed that lionfish
+establishment led to reduced recruitment of native fishes by nearly 80\%
+over a five week period in Florida. \citet{green_2012} reported that
+prey fish biomass declined by 65\% over two years as lionfish biomass
+increased along Bahamian coral reefs. Their trophic impacts can be
+minimized if local lionfish biomass is controlled by culling
+\citep{ariasgonzalez_2011}.
 
 Governments and non-profit organizations have sought to reduce lionfish
 densities through removal programs and incentivizing its consumption
@@ -170,10 +178,11 @@ programs has been extensively evaluated through field observations and
 empirical modeling
 \citep{barbour_2011,morris_2011,deleon_2013,johnston_2015,sandel_2015,usseglio_2017}.
 Determining the feasibility of such initiatives requires modeling the
-change in biomass in response to changes in mortality (\emph{i.e.}
-culling). A common way to model this is via length-structured population
-models, where fish lengths are converted to weight to calculate total
-biomass \citep{barbour_2011,cote_2014,andradibrown_2017}. The allometric
+change in biomass in response to changes in fishing mortality
+(\emph{i.e.} culling). A common way to model this is via
+length-structured population models, where fish lengths are converted to
+weight to calculate total biomass
+\citep{barbour_2011,cote_2014,andradibrown_2017}. The allometric
 length-weight relationship is thus an essential component of these
 models, but this relationship can vary across regions as a response to
 biotic and abiotic conditions \citep{johnson_2016}.
@@ -244,7 +253,7 @@ and allowed better representation of small sizes by eliminating gear
 selectivity. Organisms were euthanized via pithing and Total Length (TL;
 mm) and Total Weight (TW; g) were recorded.
 
-The weight at length relationship for lionfish in the central Mexican
+The weight-at-length relationship for lionfish in the central Mexican
 Caribbean was calculated with the allometric growth function:
 
 \begin{equation}
@@ -253,7 +262,8 @@ TW = aTL^b
 \end{equation}
 
 Where \(a\) is the ponderal index and \(b\) is the scaling exponent or
-allometric parameter. Transforming this equation via base-10 logarithms:
+allometric parameter. Transforming this equation via base-10 logarithms
+we obtain:
 
 \begin{equation}
 \label{eq:log-alo}
@@ -284,7 +294,7 @@ parameters as mm-to-g conversions when they were in fact cm-to-g
 conversions. We standardized each study by converting coefficients and
 report all parameters as TL(mm) to TW (gr) conversions. Locations where
 allometric studies have been performed are shown in Figure \ref{fig:map}
-and Table \ref{tab:all_params}.
+and summarized in Table \ref{tab:all_params}.
 
 We obtained a total of 18 parameter pairs by combining length-weight
 parameters extracted from the literature and the additional pair
@@ -296,9 +306,9 @@ the 18 parameter pairs and divided predicted weights by known observed
 weights to obtain a simple measure of over- or underestimation.
 Difference in mean weight ratios across the different parameter pairs
 were tested with a one-way analysis of variance (ANOVA) and Tukey's test
-was used for post-hoc tests. All analyses were performed in R version
-3.5.0 \citep{rcore_2018}. Raw data and code used in this work are
-available at dryad.org.
+was used for \emph{post-hoc} tests. All analyses were performed in R
+version 3.5.0 \citep{rcore_2018}. Raw data and code used in this work
+are available on github.
 
 \section{Results}\label{results}
 
@@ -312,7 +322,7 @@ lionfish present allometric growth. The length-weight coefficients
 estimated in this study were within the range identified by studies in
 other regions (Table \ref{tab:all_params}). Figure \ref{fig:l-w-carib}
 shows the relationship between TL and TW for this region, and model fit
-statistics is presented in Table \ref{tab:reg_table}.
+statistics are presented in Table \ref{tab:reg_table}.
 
 There were significant differences in our predicted weights for the
 central Mexican Caribbean when using the different pairs of parameters
@@ -320,18 +330,18 @@ central Mexican Caribbean when using the different pairs of parameters
 resulted from using the allometric parameters from Banco Chinchorro in
 the Caribbean, with mean \(\pm\) SD of 40.37 \(\pm\) 58.74 gr
 \citep{sabidoitz_2016}, and the highest weight estimates came from the
-Northern Atlantic 73.76 \(\pm\) 96.11 gr \citep{barbour_2011}. To put
-this in context, true observed weights were 52.56 \(\pm\) 76.58 gr.
+Northern Atlantic with 73.76 \(\pm\) 96.11 gr \citep{barbour_2011}. To
+put this in context, true observed weights were 52.56 \(\pm\) 76.58 gr.
 These correspond to predicted-to-observed weights ratios of 0.80 \(\pm\)
 0.19 and 1.76 \(\pm\) 0.50 (mean \(\pm\) SD), respectively.
 
 The calculated ratio of predicted-to-observed weight ranged from 0.36 to
 3.51, indicating that \emph{ex situ} parameters can result in major
-under- and overestimations. Tukey's post-hoc test suggests that weight
-ratios for the central Mexican Caribbean were not different from those
-obtained with parameters from Little Cayman, the Bahamas, and some sites
-in the Gulf of Mexico (Tukeys HSD \(p > 0.05\)). Weight estimates using
-parameters from the Gulf of Mexico and North-Western Atlantic were
+under- and overestimations. Tukey's \emph{post-hoc} test suggests that
+weight ratios for the central Mexican Caribbean were not different from
+those obtained with parameters from Little Cayman, the Bahamas, and some
+sites in the Gulf of Mexico (Tukeys HSD \(p > 0.05\)). Weight estimates
+using parameters from the Gulf of Mexico and North-Western Atlantic were
 higher on average than those from the Caribbean (Fig
 \ref{fig:all_allo}). The average (\(\pm\) SD) predicted-to-observed
 weight ratios from these three regions were 1.24 \(\pm\) 0.309, 1.76
@@ -379,10 +389,10 @@ results show that using different parameters caused up to a four-year
 difference in the time required for the simulated lionfish population to
 recover to 90\% of its initial biomass after removals ceased. Here, we
 show that using one set of length-weight parameters versus another for a
-given length can result in up to a threefold overestimation of TW. These
-spatially-driven differences become especially important when allocating
-resources for lionfish removal programs, incentivizing lionfish
-fisheries as a source of alternative livelihoods, or estimating
+given length can result in more than a threefold overestimation of TW.
+These spatially-driven differences become especially important when
+allocating resources for lionfish removal programs, incentivizing
+lionfish fisheries as a source of alternative livelihoods, or estimating
 ecosystem impacts. Research efforts focused on invasive lionfish
 populations need to use parameters calculated for their region to the
 extent possible, or at least use reasonable sets of different parameters
@@ -396,8 +406,6 @@ help to collect samples.
 
 \bibliography{references}
 
-\clearpage
-
 \section{Figures and Tables}\label{figures-and-tables}
 
 \begin{figure}
@@ -407,6 +415,15 @@ help to collect samples.
 allometric growth parameters of lionfish (\emph{Pterois spp}) have been
 reported. Circle sizes indicate sample size from each study, colors
 indicate the \(b\) coefficient from Eq. \ref{eq:allometric}.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-9-1.pdf}
+\caption{\label{fig:unnamed-chunk-9}\label{fig:l-w-carib}Length-weight
+relationship for 109 lionfish sampled in the central Mexican Caribbean.
+Points indicate samples, dashed black line indicates curve of best fit,
+marginal plots represent the density distribution of each variable.}
 \end{figure}
 
 \begin{table}[!htbp] \centering 
@@ -431,22 +448,13 @@ Residual Std. Error & 0.096 (df = 107) \\
 \end{tabular} 
 \end{table}
 
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-10-1.pdf}
-\caption{\label{fig:unnamed-chunk-10}\label{fig:l-w-carib}Length-weight
-relationship for 109 lionfish sampled in the central Mexican Caribbean.
-Points indicate samples, dashed black line indicates curve of best fit,
-marginal plots represent the density distribution of each variable.}
-\end{figure}
-
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-11}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The $R^2$ column indicates reported model fit.}
+\caption{\label{tab:unnamed-chunk-11}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.}
 \centering
 \begin{tabular}[t]{llllrrll}
 \toprule
-Region & Sex & n & a & b & c & \$R\textasciicircum{}2\$ & Reference\\
+Region & Sex & n & a & b & c & Fit & Reference\\
 \midrule
 Caribbean & B & 458 & 3.6 & 2.81 & -4.44 & - & Sandel et al., 2015\\
 Caribbean & B & 419 & 2.8 & 2.85 & -4.56 & 0.8715 & Chin et al., 2016\\
