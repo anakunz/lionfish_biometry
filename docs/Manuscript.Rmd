@@ -1,45 +1,33 @@
 ---
-header-includes:
-  - \usepackage{natbib}
-  - \usepackage{setspace}
-  - \doublespacing
-  - \usepackage{lineno}
-  - \linenumbers
-  - \usepackage{float}
-  - \floatplacement{figure}{H}
-  - \usepackage{fancyhdr}
-  - \pagestyle{fancy}
-  - \fancyhf{}
-  - \rhead{Lionfish allometric growth}
-  - \cfoot{\thepage}
-title: \LARGE{Allometric growth of invasive lionfish (\textit{Pterois spp}) varies by region}
-abstract:
-output:
-  bookdown::pdf_document2:
-    keep_tex: yes
-    number_sections: no
-    # template: peerj_template.tex
-    toc: no
+title: Spatial variation in allometric growth of invasive lionfish has management implications
+titlerunning: Lionfish allometric growth
+authorrunning: Villaseñor-Derbez & Fitzgerald
+authors: 
+- name: Juan Carlos Villaseñor-Derbez
+  address: "Bren School of Environmental Science and Management, University of California Santa Barbara, Santa Barbara, California, United States, 93117 | ORCID: 0000-0003-1245-589X"
+  email: jvillasenor@bren.ucsb.edu
+- name: Sean Fitzgerald
+  address: Bren School of Environmental Science and Management, University of California Santa Barbara, Santa Barbara, California, United States, 93117
+
+keywords:
+  - Lionfish
+  - invasive species
+  - length-weight
+  - allometric growht
+  - regional variations
+
+abstract: |
+  Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics. We review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold under- or overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
+  
 bibliography: references.bib
-csl: elsevier-harvard.csl
-fontsize: 12pt
+output: rticles::springer_article
+header-includes:
+   - \journalname{Biological Invasions}
+   - \usepackage{natbib}
+   - \usepackage{float}
+   - \floatplacement{figure}{H}
+   # - \restylefloat{table}
 ---
-
-Juan Carlos Villaseñor-Derbez^1^*, Sean Fitzgerald^1^
-
-^1^ Bren School of Environmental Science and Management, University of California Santa Barbara, Santa Barbara, California, United States, 93117
-
----
-
-\begin{abstract}
-Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics. We review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
-\end{abstract}
-
----
-
-**Keywords:** Lionfish, invasive species, length-weight, allometric, regional variations
-
-*jvillasenor\@bren.ucsb.edu
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
@@ -129,7 +117,11 @@ fig_map <- ggplot() +
   
 ```
 
-We also collected data from 10 sampling sites along the central Mexican Caribbean coast in 2010 (Table S1). Sampling locations included wall and carpet reefs at depths between 5.7 m and 38.1 m. All observed lionfish (n = 109) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed better representation of small sizes by eliminating gear selectivity. Organisms were euthanized via pithing and Total Length (TL; mm) and Total Weight (TW; g) were recorded.
+```{r, fig.cap = "\\label{fig:map}Locations where allometric growth parameters of lionfish (*Pterois spp*) have been reported. Circle sizes indicate sample size from each study, colors indicate the $b$ coefficient from Eq. \\ref{eq:allometric}.", fig.height = 3.5}
+fig_map
+```
+
+We also collected data from 10 sampling sites along the central Mexican Caribbean coast in 2010 (Supplementary Table 1). Sampling locations included wall and carpet reefs at depths between 5.7 m and 38.1 m. All observed lionfish (n = 109) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed better representation of small sizes by eliminating gear selectivity. Organisms were euthanized via pithing and Total Length (TL; mm) and Total Weight (TW; g) were recorded.
 
 The weight-at-length relationship for lionfish in the central Mexican Caribbean was calculated with the allometric growth function:
 
@@ -197,6 +189,8 @@ Fstring <- waldtest(model, vcov = vcovHC(model, type = "HC1")) %>%
 
 Fstring <- paste0("F(df = 1; ", nobs(model)-2, ") = ", formatC(Fstring$statistic[2], digits = 2, format = "f"))
 ```
+
+<!-- \clearpage -->
 
 # Results
 
@@ -278,9 +272,47 @@ fig_l_w_carib <- ggExtra::ggMarginal(p = fit,
                                      alpha = 0.5)
 ```
 
+```{r,  fig.height = 3.5, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
+fig_l_w_carib
+```
+
+
+```{r, results = "asis"}
+stargazer(model,
+          dep.var.caption = "$log_{10}(TW)$",
+          dep.var.labels.include = F,
+          header = F,
+          se = list(robust_se),
+          type = "latex",
+          t.auto = T,
+          p.auto = T,
+          intercept.bottom = F,
+          single.row = T,
+          report = "vcs*",
+          omit.stat = c("f", "rsq"),
+          add.lines = list(f_string),
+          covariate.labels = c("c", "b"),
+          dep.var.labels = "log10(TW)", title = "\\label{tab:reg_table}Coefficients of the linear model fit to Eq \\ref{eq:log-alo-trans}. Numbers in parenthesees represent heteroskedastic-robust standard errors.")
+```
+
 There were significant differences in our predicted weights for the central Mexican Caribbean when using the different pairs of parameters ($F(df = 17; 1944) = 61.55; p < 0.001$). The lowest weight estimates resulted from using the allometric parameters from Banco Chinchorro in the Caribbean, with mean $\pm$ SD of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` gr \citep{sabidoitz_2016}, and the highest weight estimates came from the Northern Atlantic with `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` gr \citep{barbour_2011}. To put this in context, true observed weights were `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Weight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Weight) %>% formatC(digits = 2, format = "f")` gr. These correspond to predicted-to-observed weights ratios of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` and `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` (mean $\pm$ SD), respectively.
 
 The calculated ratio of predicted-to-observed weight ranged from `r min(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")` to `r max(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")`, indicating that *ex situ* parameters can result in major under- and overestimations. Tukey's *post-hoc* test suggests that weight ratios for the central Mexican Caribbean were not different from those obtained with parameters from Little Cayman, the Bahamas, and some sites in the Gulf of Mexico (Tukeys HSD $p > 0.05$). Weight estimates using parameters from the Gulf of Mexico and North-Western Atlantic were higher on average than those from the Caribbean (Fig \ref{fig:all_allo}). The average ($\pm$ SD) predicted-to-observed weight ratios from these three regions were 1.24 $\pm$ 0.309, 1.76 $\pm$ 0.496, and 1.17 $\pm$ 0.398, respectively. Predicted-to-observed weight ratios are presented in Figure \ref{fig:bio_ratio}. Spineless weight parameters from \citet{fogg_2013} still produced predicted-to-observed weight ratios > 1.
+
+```{r}
+review %>% 
+  select(Region, Gender2, N, a, b, c, r2, Study) %>% 
+  filter(!Study == "Fishbase") %>% 
+  arrange(Region) %>% 
+  mutate(r2 = ifelse(is.na(r2), "-", r2),
+         N = ifelse(is.na(N), "-", N),
+         a = formatC((a*1e5), digits = 2)) %>% 
+  knitr::kable(row.names = F,
+               digits =  c(0, 0, 0, 0, 2, 2),
+               # longtable = T,
+               col.names = c("Region", "Sex", "n", "a", "b", "c", "Fit", "Reference"),
+               caption = "\\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.", escape = T)
+```
 
 ```{r}
 fig_all_allo <- review %>% 
@@ -313,6 +345,9 @@ fig_all_allo <- review %>%
   scale_size_manual(values = c(1, 1.5))
 ```
 
+```{r, fig.height = 3.8, fig.pos = "H", fig.cap = "\\label{fig:all_allo}Length-weight relationships (n = 18) for 12 studies and this study. Colors indicate studies from which the parameters were extracted. Dotted, dashed and solid lines show models for males, females, and combined sexes, respectively. The dashed black line represents the relationship estimated in this study."}
+fig_all_allo
+```
 
 ```{r}
 groups$groups%<>%
@@ -331,8 +366,7 @@ fig_bio_ratio <- Predicted_biomass %>%
   rename(Sex = Gender) %>% 
   ggplot(aes(x = Study, y = Biomass_ratio, group = Study_id)) +
   geom_violin(aes(fill = Sex), alpha = 0.8) +
-  stat_summary(geom = "point", fun.y = "mean", size = 1, color = "blue") +
-  stat_summary(geom = "point", fun.y = "median", size = 1, color = "red") +
+  stat_summary(geom = "point", fun.y = "median", size = 2, color = "black", fill = "steelblue", shape = 21) +
   geom_hline(yintercept = 1, linetype = "dashed") +
   labs(y = "Weight ratio (Predicted/Observed)", x = "") +
   coord_flip() +
@@ -346,9 +380,15 @@ fig_bio_ratio <- Predicted_biomass %>%
         axis.text = element_text(size = 10),
         axis.title = element_text(size = 12)) +
   geom_text(aes(y = 3.7, label = groups), family = "Times", fontface = "plain") +
-  scale_y_continuous(limits = c(NA, 3.7))
+  scale_y_continuous(limits = c(NA, 3.7)) +
+  guides(fill = guide_legend(title.position = "top"))
 ```
 
+```{r, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Blue circles indicate median values and Like letters indicate values that do not differ significantly."}
+fig_bio_ratio
+```
+
+\clearpage
 
 # Discussion
 
@@ -356,62 +396,12 @@ We  detected substantial differences in weight-at-length between organisms from 
 
 Differences in length-weight relationships have traditionally been highlighted as potential pitfalls to fishery management. For example, \citet{wilson_2012} show that small-scale variations in length-at-age and fishing mortality in other Scorpaeniformes translate to differential landings, effort, and catch per unit effort in the live fish fishery of California, and that these differences must be taken into account in management plans. The lionfish case poses the opposite scenario, where the manager desires to eradicate species. To accurately gauge both the effectiveness of lionfish removal efforts and the resources needed to successfully manage an invasion, we must acknowledge and understand regional biological differences in important variables such as allometric growth parameters.
 
-The results presented here have major implications for management. For example, \citet{edwards_2014} simulated a lionfish culling program under two scenarios, one using length-at-age and length-to-weight parameters from North Carolina and one using parameters from Little Cayman. Their results show that using different parameters caused up to a four-year difference in the time required for the simulated lionfish population to recover to 90% of its initial biomass after removals ceased. Here, we show that using one set of length-weight parameters versus another for a given length can result in more than a threefold overestimation of TW. These spatially-driven differences become especially important when allocating resources for lionfish removal programs, incentivizing lionfish fisheries as a source of alternative livelihoods, or estimating ecosystem impacts. Research efforts focused on invasive lionfish populations need to use parameters calculated for their region to the extent possible, or at least use reasonable sets of different parameters that provide upper and lower bounds in their results.
+The results presented here have major implications for management. For example, \citet{edwards_2014} simulated a lionfish culling program under two scenarios, one using length-at-age and length-to-weight parameters from North Carolina and one using parameters from Little Cayman. Their results show that using different parameters caused up to a four-year difference in the time required for the simulated lionfish population to recover to 90% of its initial biomass after removals ceased. Here, we show that using one set of length-weight parameters versus another for a given length can result in more than a threefold under- or overestimation of total weight. These spatially-driven differences become especially important when allocating resources for lionfish removal programs, incentivizing lionfish fisheries as a source of alternative livelihoods, or estimating ecosystem impacts. Research efforts focused on invasive lionfish populations need to use parameters calculated for their region to the extent possible, or at least use reasonable sets of different parameters that provide upper and lower bounds in their results.
 
 # Acknowledgements
 
 The authors would like to thank thank Nils Van Der Haar and Michael Doodey from Dive Aventuras as well as Guillermo Lotz-Cador who provided help to collect samples.
 
-\bibliography{references}
+Conflict of Interest: The authors declare that they have no conflict of interest.
 
-# Figures and Tables
-
-```{r, fig.cap = "\\label{fig:map}Locations where allometric growth parameters of lionfish (*Pterois spp*) have been reported. Circle sizes indicate sample size from each study, colors indicate the $b$ coefficient from Eq. \\ref{eq:allometric}.", fig.height = 3.5}
-fig_map
-```
-
-```{r,  fig.height = 3.5, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
-fig_l_w_carib
-```
-
-```{r, results = "asis"}
-stargazer(model,
-          dep.var.caption = "$log_{10}(TW)$",
-          dep.var.labels.include = F,
-          header = F,
-          se = list(robust_se),
-          type = "latex",
-          t.auto = T,
-          p.auto = T,
-          intercept.bottom = F,
-          single.row = T,
-          report = "vcs*",
-          omit.stat = c("f", "rsq"),
-          add.lines = list(f_string),
-          covariate.labels = c("c", "b"),
-          dep.var.labels = "log10(TW)", title = "\\label{tab:reg_table}Coefficients of the linear model fit to Eq \\ref{eq:log-alo-trans}. Numbers in parenthesees represent heteroskedastic-robust standard errors.")
-```
-
-```{r}
-review %>% 
-  select(Region, Gender2, N, a, b, c, r2, Study) %>% 
-  filter(!Study == "Fishbase") %>% 
-  arrange(Region) %>% 
-  mutate(r2 = ifelse(is.na(r2), "-", r2),
-         N = ifelse(is.na(N), "-", N),
-         a = formatC((a*1e5), digits = 2)) %>% 
-  knitr::kable(row.names = F,
-               digits =  c(0, 0, 0, 0, 2, 2),
-               booktabs = T,
-               # longtable = T,
-               col.names = c("Region", "Sex", "n", "a", "b", "c", "Fit", "Reference"),
-               caption = "\\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.", escape = T)
-```
-
-```{r, fig.height = 3.8, fig.pos = "H", fig.cap = "\\label{fig:all_allo}Length-weight relationships (n = 18) for 12 studies and this study. Colors indicate studies from which the parameters were extracted. Dotted, dashed and solid lines show models for males, females, and combined sexes, respectively. The dashed black line represents the relationship estimated in this study."}
-fig_all_allo
-```
-
-```{r, fig.height = 5, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Red and blue circles indicate median and mean values, respectively. Like letters indicate values that do not differ significantly."}
-fig_bio_ratio
-```
+<!-- \bibliography{references} -->

@@ -1,7 +1,9 @@
 ---
-title: "Supplementary Table S1"
-author: "Juan Carlos Villaseñor-Derbez"
-output: pdf_document
+title: Spatial variation in allometric growth of invasive lionfish has management implications
+subtitle: "Supplementary Table 1"
+author: "Villaseñor-Derbez & Fitzgerald"
+output: bookdown::pdf_document2
+fontsize: 12pt
 ---
 
 Coordinates, minimum, maximum and mean depth (m), and number of samples for each location.
@@ -27,7 +29,7 @@ suppressPackageStartupMessages({
 ```
 
 ```{r}
-fish <- read_csv("./lionfish_data.csv", col_types = cols()) %>% 
+fish <- read_csv(here::here("data", "lionfish_data.csv"), col_types = cols()) %>% 
   group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
   summarize(Length = 10*mean(TotalLength_cm),
             Weight = mean(TotalWeigth_gr),
@@ -48,6 +50,7 @@ fish %>%
             n = n()) %>% 
   rbind(total) %>% 
   knitr::kable(row.names = F,
+               booktabs = T,
                col.names = c("Location", "Lat.", "Long.", "Min. Depth", "Max. Depth", "Mean Depth", "n"))
 ```
 

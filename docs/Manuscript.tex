@@ -1,134 +1,109 @@
-\documentclass[12pt,]{article}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\fi
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\usepackage[margin=1in]{geometry}
+% !TeX program = pdfLaTeX
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[hyphens]{url} % not crucial - just used below for the URL
 \usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
 
-%%% Change title format to be more compact
-\usepackage{titling}
+%% load any required packages here
 
-% Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
 
-\setlength{\droptitle}{-2em}
-  \title{\LARGE{Allometric growth of invasive lionfish (\textit{Pterois spp}) varies by region}}
-  \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \author{}
-  \preauthor{}\postauthor{}
-  \date{}
-  \predate{}\postdate{}
 
+\journalname{Biological Invasions}
 \usepackage{natbib}
-\usepackage{setspace}
-\doublespacing
-\usepackage{lineno}
-\linenumbers
 \usepackage{float}
 \floatplacement{figure}{H}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Lionfish allometric growth}
-\cfoot{\thepage}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{corollary}{Corollary}
-\newtheorem{proposition}{Proposition}
-\theoremstyle{definition}
-\newtheorem{example}{Example}
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
+
+\title{Spatial variation in allometric growth of invasive lionfish has
+management implications }
+
+
+    \titlerunning{Lionfish allometric growth}
+
+\author{  Juan Carlos Villaseñor-Derbez \and  Sean Fitzgerald \and  }
+
+    \authorrunning{ Villaseñor-Derbez \& Fitzgerald }
+
+\institute{
+        Juan Carlos Villaseñor-Derbez \at
+     Bren School of Environmental Science and Management, University of
+ California Santa Barbara, Santa Barbara, California, United States,
+ 93117 \textbar{} ORCID: 0000-0003-1245-589X \\
+     \email{\href{mailto:jvillasenor@bren.ucsb.edu}{\nolinkurl{jvillasenor@bren.ucsb.edu}}}  %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+    \and
+        Sean Fitzgerald \at
+     Bren School of Environmental Science and Management, University of
+ California Santa Barbara, Santa Barbara, California, United States,
+ 93117 \\
+     %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+    \and
+    }
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
 \maketitle
 
-Juan Carlos Villaseñor-Derbez\textsuperscript{1}*, Sean
-Fitzgerald\textsuperscript{1}
-
-\textsuperscript{1} Bren School of Environmental Science and Management,
-University of California Santa Barbara, Santa Barbara, California,
-United States, 93117
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \begin{abstract}
-Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth. Sedentary species like lionfish often exhibit high levels of spatial variation in life history characterstics. We review 17 published length-weight relationships for lionfish taken throughout their invasive range and found substantial regional differences in allometric growth parameters. The spatial pattern we observed is consistent with findings from other studies focusing on genetics or age-at-length. We show that the use of \textit{ex situ} parameters can result in up to a threefold overestimation of total weight, but using parameters from nearby regions reduces this error. These findings can have major implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
+Lionfish (\textit{Pterois volitans / miles}) are an invasive species in
+the Western Atlantic and the Caribbean. Improving management of invasive
+lionfish populations requires accurate total biomass estimates, which
+depend on accurate estimates of allometric growth. Sedentary species
+like lionfish often exhibit high levels of spatial variation in life
+history characterstics. We review 17 published length-weight
+relationships for lionfish taken throughout their invasive range and
+found substantial regional differences in allometric growth parameters.
+The spatial pattern we observed is consistent with findings from other
+studies focusing on genetics or age-at-length. We show that the use of
+\textit{ex situ} parameters can result in up to a threefold under- or
+overestimation of total weight, but using parameters from nearby regions
+reduces this error. These findings can have major implications for
+management in terms of predicting effects on local ecosystems,
+evaluating the effectiveness of removal programs, or estimating biomass
+available for harvest.
+\\
+\keywords{
+        Lionfish \and
+        invasive species \and
+        length-weight \and
+        allometric growht \and
+        regional variations \and
+    }
+
+
 \end{abstract}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Keywords:} Lionfish, invasive species, length-weight,
-allometric, regional variations
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
 
-*jvillasenor@bren.ucsb.edu
 
 \section{Introduction}\label{introduction}
 
@@ -244,14 +219,23 @@ in their calculations, so their parameters likely underestimated total
 wieght. Since no spineless to total weight conversions were available,
 these parameters were taken as reported.
 
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-2-1.pdf}
+\caption{\label{fig:map}Locations where allometric growth parameters of
+lionfish (\emph{Pterois spp}) have been reported. Circle sizes indicate
+sample size from each study, colors indicate the \(b\) coefficient from
+Eq. \ref{eq:allometric}.}
+\end{figure}
+
 We also collected data from 10 sampling sites along the central Mexican
-Caribbean coast in 2010 (Table S1). Sampling locations included wall and
-carpet reefs at depths between 5.7 m and 38.1 m. All observed lionfish
-(n = 109) were collected using hand nets and numbered collection
-bottles. The use of hand nets prevented any weight loss due to bleeding
-and allowed better representation of small sizes by eliminating gear
-selectivity. Organisms were euthanized via pithing and Total Length (TL;
-mm) and Total Weight (TW; g) were recorded.
+Caribbean coast in 2010 (Supplementary Table 1). Sampling locations
+included wall and carpet reefs at depths between 5.7 m and 38.1 m. All
+observed lionfish (n = 109) were collected using hand nets and numbered
+collection bottles. The use of hand nets prevented any weight loss due
+to bleeding and allowed better representation of small sizes by
+eliminating gear selectivity. Organisms were euthanized via pithing and
+Total Length (TL; mm) and Total Weight (TW; g) were recorded.
 
 The weight-at-length relationship for lionfish in the central Mexican
 Caribbean was calculated with the allometric growth function:
@@ -324,6 +308,37 @@ other regions (Table \ref{tab:all_params}). Figure \ref{fig:l-w-carib}
 shows the relationship between TL and TW for this region, and model fit
 statistics are presented in Table \ref{tab:reg_table}.
 
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-7-1.pdf}
+\caption{\label{fig:l-w-carib}Length-weight relationship for 109
+lionfish sampled in the central Mexican Caribbean. Points indicate
+samples, dashed black line indicates curve of best fit, marginal plots
+represent the density distribution of each variable.}
+\end{figure}
+
+\begin{table}[!htbp] \centering 
+  \caption{\label{tab:reg_table}Coefficients of the linear model fit to Eq \ref{eq:log-alo-trans}. Numbers in parenthesees represent heteroskedastic-robust standard errors.} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{$log_{10}(TW)$} \\ 
+\cline{2-2} 
+\hline \\[-1.8ex] 
+ c & $-$5.494 (0.083)$^{***}$ \\ 
+  b & 3.235 (0.039)$^{***}$ \\ 
+ \hline \\[-1.8ex] 
+F Statistic & 6928.67*** (df = 1; 107) \\ 
+Observations & 109 \\ 
+Adjusted R$^{2}$ & 0.976 \\ 
+Residual Std. Error & 0.096 (df = 107) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
 There were significant differences in our predicted weights for the
 central Mexican Caribbean when using the different pairs of parameters
 (\(F(df = 17; 1944) = 61.55; p < 0.001\)). The lowest weight estimates
@@ -349,6 +364,74 @@ weight ratios from these three regions were 1.24 \(\pm\) 0.309, 1.76
 Predicted-to-observed weight ratios are presented in Figure
 \ref{fig:bio_ratio}. Spineless weight parameters from \citet{fogg_2013}
 still produced predicted-to-observed weight ratios \textgreater{} 1.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-9}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.}
+\centering
+\begin{tabular}[t]{l|l|l|l|r|r|l|l}
+\hline
+Region & Sex & n & a & b & c & Fit & Reference\\
+\hline
+Caribbean & B & 458 & 3.6 & 2.81 & -4.44 & - & Sandel et al., 2015\\
+\hline
+Caribbean & B & 419 & 2.8 & 2.85 & -4.56 & 0.8715 & Chin et al., 2016\\
+\hline
+Caribbean & B & 1450 & 2.3 & 2.89 & -4.64 & 0.96 & de Leon et al., 2013\\
+\hline
+Caribbean & B & 1887 & 0.3 & 3.24 & -5.52 & 0.97 & Edwards et al., 2014\\
+\hline
+Caribbean & B & - & 0.25 & 3.29 & -5.60 & - & Darling et al., 2011\\
+\hline
+Caribbean & B & 2143 & 0.52 & 3.18 & -5.28 & 0.9907 & Sabido-Itza et al., 2016\\
+\hline
+Caribbean & B & 227 & 0.8 & 3.11 & -5.10 & 0.958 & Toledo-Hernández et al., 2014\\
+\hline
+Caribbean & B & 449 & 0.23 & 3.25 & -5.64 & 0.97 & Sabido-Itza et al., 2016b\\
+\hline
+Caribbean & B & 368 & 0.32 & 3.19 & -5.50 & 0.98 & Sabido-Itza et al., 2016b\\
+\hline
+Caribbean & B & 109 & 0.32 & 3.23 & -5.49 & 0.9766 & This study\\
+\hline
+GoM & B & 934 & 0.21 & 3.34 & -5.68 & 0.98 & Dahl \& Patterson, 2014\\
+\hline
+GoM & B & 472 & 0.29 & 3.30 & -5.54 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
+\hline
+GoM & F & 67 & 0.12 & 3.47 & -5.93 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
+\hline
+GoM & M & 59 & 0.42 & 3.23 & -5.38 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
+\hline
+GoM & B & 582 & 0.14 & 3.43 & -5.86 & 0.99 & Fogg et al., 2013\\
+\hline
+GoM & M & 119 & 0.27 & 3.31 & -5.57 & 0.97 & Fogg et al., 2013\\
+\hline
+GoM & F & 115 & 0.68 & 3.14 & -5.17 & 0.94 & Fogg et al., 2013\\
+\hline
+North Atlantic & B & 774 & 2.9 & 2.89 & -4.54 & - & Barbour et al., 2011\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-11-1.pdf}
+\caption{\label{fig:all_allo}Length-weight relationships (n = 18) for 12
+studies and this study. Colors indicate studies from which the
+parameters were extracted. Dotted, dashed and solid lines show models
+for males, females, and combined sexes, respectively. The dashed black
+line represents the relationship estimated in this study.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-13-1.pdf}
+\caption{\label{fig:bio_ratio}Violin plot of predicted-to-observed
+weight ratios for 18 pairs of allometric parameters. Blue circles
+indicate median values and Like letters indicate values that do not
+differ significantly.}
+\end{figure}
+
+\clearpage
 
 \section{Discussion}\label{discussion}
 
@@ -389,14 +472,15 @@ results show that using different parameters caused up to a four-year
 difference in the time required for the simulated lionfish population to
 recover to 90\% of its initial biomass after removals ceased. Here, we
 show that using one set of length-weight parameters versus another for a
-given length can result in more than a threefold overestimation of TW.
-These spatially-driven differences become especially important when
-allocating resources for lionfish removal programs, incentivizing
-lionfish fisheries as a source of alternative livelihoods, or estimating
-ecosystem impacts. Research efforts focused on invasive lionfish
-populations need to use parameters calculated for their region to the
-extent possible, or at least use reasonable sets of different parameters
-that provide upper and lower bounds in their results.
+given length can result in more than a threefold under- or
+overestimation of total weight. These spatially-driven differences
+become especially important when allocating resources for lionfish
+removal programs, incentivizing lionfish fisheries as a source of
+alternative livelihoods, or estimating ecosystem impacts. Research
+efforts focused on invasive lionfish populations need to use parameters
+calculated for their region to the extent possible, or at least use
+reasonable sets of different parameters that provide upper and lower
+bounds in their results.
 
 \section{Acknowledgements}\label{acknowledgements}
 
@@ -404,103 +488,10 @@ The authors would like to thank thank Nils Van Der Haar and Michael
 Doodey from Dive Aventuras as well as Guillermo Lotz-Cador who provided
 help to collect samples.
 
-\bibliography{references}
+Conflict of Interest: The authors declare that they have no conflict of
+interest.
 
-\section{Figures and Tables}\label{figures-and-tables}
-
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-8-1.pdf}
-\caption{\label{fig:unnamed-chunk-8}\label{fig:map}Locations where
-allometric growth parameters of lionfish (\emph{Pterois spp}) have been
-reported. Circle sizes indicate sample size from each study, colors
-indicate the \(b\) coefficient from Eq. \ref{eq:allometric}.}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-9-1.pdf}
-\caption{\label{fig:unnamed-chunk-9}\label{fig:l-w-carib}Length-weight
-relationship for 109 lionfish sampled in the central Mexican Caribbean.
-Points indicate samples, dashed black line indicates curve of best fit,
-marginal plots represent the density distribution of each variable.}
-\end{figure}
-
-\begin{table}[!htbp] \centering 
-  \caption{\label{tab:reg_table}Coefficients of the linear model fit to Eq \ref{eq:log-alo-trans}. Numbers in parenthesees represent heteroskedastic-robust standard errors.} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{1}{c}{$log_{10}(TW)$} \\ 
-\cline{2-2} 
-\hline \\[-1.8ex] 
- c & $-$5.494 (0.083)$^{***}$ \\ 
-  b & 3.235 (0.039)$^{***}$ \\ 
- \hline \\[-1.8ex] 
-F Statistic & 6928.67*** (df = 1; 107) \\ 
-Observations & 109 \\ 
-Adjusted R$^{2}$ & 0.976 \\ 
-Residual Std. Error & 0.096 (df = 107) \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table}
-
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-11}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.}
-\centering
-\begin{tabular}[t]{llllrrll}
-\toprule
-Region & Sex & n & a & b & c & Fit & Reference\\
-\midrule
-Caribbean & B & 458 & 3.6 & 2.81 & -4.44 & - & Sandel et al., 2015\\
-Caribbean & B & 419 & 2.8 & 2.85 & -4.56 & 0.8715 & Chin et al., 2016\\
-Caribbean & B & 1450 & 2.3 & 2.89 & -4.64 & 0.96 & de Leon et al., 2013\\
-Caribbean & B & 1887 & 0.3 & 3.24 & -5.52 & 0.97 & Edwards et al., 2014\\
-Caribbean & B & - & 0.25 & 3.29 & -5.60 & - & Darling et al., 2011\\
-\addlinespace
-Caribbean & B & 2143 & 0.52 & 3.18 & -5.28 & 0.9907 & Sabido-Itza et al., 2016\\
-Caribbean & B & 227 & 0.8 & 3.11 & -5.10 & 0.958 & Toledo-Hernández et al., 2014\\
-Caribbean & B & 449 & 0.23 & 3.25 & -5.64 & 0.97 & Sabido-Itza et al., 2016b\\
-Caribbean & B & 368 & 0.32 & 3.19 & -5.50 & 0.98 & Sabido-Itza et al., 2016b\\
-Caribbean & B & 109 & 0.32 & 3.23 & -5.49 & 0.9766 & This study\\
-\addlinespace
-GoM & B & 934 & 0.21 & 3.34 & -5.68 & 0.98 & Dahl \& Patterson, 2014\\
-GoM & B & 472 & 0.29 & 3.30 & -5.54 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-GoM & F & 67 & 0.12 & 3.47 & -5.93 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-GoM & M & 59 & 0.42 & 3.23 & -5.38 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-GoM & B & 582 & 0.14 & 3.43 & -5.86 & 0.99 & Fogg et al., 2013\\
-\addlinespace
-GoM & M & 119 & 0.27 & 3.31 & -5.57 & 0.97 & Fogg et al., 2013\\
-GoM & F & 115 & 0.68 & 3.14 & -5.17 & 0.94 & Fogg et al., 2013\\
-North Atlantic & B & 774 & 2.9 & 2.89 & -4.54 & - & Barbour et al., 2011\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-12-1.pdf}
-\caption{\label{fig:unnamed-chunk-12}\label{fig:all_allo}Length-weight
-relationships (n = 18) for 12 studies and this study. Colors indicate
-studies from which the parameters were extracted. Dotted, dashed and
-solid lines show models for males, females, and combined sexes,
-respectively. The dashed black line represents the relationship
-estimated in this study.}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{Manuscript_files/figure-latex/unnamed-chunk-13-1.pdf}
-\caption{\label{fig:unnamed-chunk-13}\label{fig:bio_ratio}Violin plot of
-predicted-to-observed weight ratios for 18 pairs of allometric
-parameters. Red and blue circles indicate median and mean values,
-respectively. Like letters indicate values that do not differ
-significantly.}
-\end{figure}
-
+\bibliographystyle{spbasic}
+\bibliography{references.bib}
 
 \end{document}
