@@ -1,75 +1,26 @@
-% !TeX program = pdfLaTeX
-\documentclass[smallextended]{svjour3}       % onecolumn (second format)
-%\documentclass[twocolumn]{svjour3}          % twocolumn
-%
-\smartqed  % flush right qed marks, e.g. at end of proof
-%
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[utf8]{inputenc}
+%% Submissions for peer-review must enable line-numbering 
+%% using the lineno option in the \documentclass command.
+%%
+%% Preprints and camera-ready submissions do not need 
+%% line numbers, and should have this option removed.
+%%
+%% Please note that the line numbering option requires
+%% version 1.1 or newer of the wlpeerj.cls file, and
+%% the corresponding author info requires v1.2
 
-\usepackage[hyphens]{url} % not crucial - just used below for the URL
-\usepackage{hyperref}
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-%
-% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
-%
-% insert here the call for the packages your document requires
-%\usepackage{latexsym}
-% etc.
-%
-% please place your own definitions here and don't use \def but
-% \newcommand{}{}
-%
-% Insert the name of "your journal" with
-% \journalname{myjournal}
-%
-
-%% load any required packages here
-
-
-
-\journalname{Biological Invasions}
-\usepackage{natbib}
-\usepackage{float}
-\floatplacement{figure}{H}
-
-\begin{document}
+\documentclass[fleqn,10pt,lineno]{wlpeerj} % for journal submissions
+% \documentclass[fleqn,10pt]{wlpeerj} % for preprint submissions
 
 \title{Spatial variation in allometric growth of invasive lionfish has
-management implications }
+management implications}
 
+\author[1]{Juan Carlos Villaseñor-Derbez}
+\author[1]{Sean Fitzgerald}
+\affil[1]{Bren School of Environmental Sciences and Management, University of California
+  Santa Barbara, Santa Barbara, California, USA}
+\corrauthor[1]{Juan Carlos Villaseñor-Derbez}{jvillasenor@ucsb.edu}
 
-    \titlerunning{Lionfish allometric growth}
-
-\author{  Juan Carlos Villaseñor-Derbez \and  Sean Fitzgerald \and  }
-
-    \authorrunning{ Villaseñor-Derbez \& Fitzgerald }
-
-\institute{
-        Juan Carlos Villaseñor-Derbez \at
-     Bren School of Environmental Science and Management, University of
- California Santa Barbara, Santa Barbara, California, United States,
- 93117 \textbar{} ORCID: 0000-0003-1245-589X \\
-     \email{\href{mailto:jvillasenor@bren.ucsb.edu}{\nolinkurl{jvillasenor@bren.ucsb.edu}}}  %  \\
-%             \emph{Present address:} of F. Author  %  if needed
-    \and
-        Sean Fitzgerald \at
-     Bren School of Environmental Science and Management, University of
- California Santa Barbara, Santa Barbara, California, United States,
- 93117 \\
-     %  \\
-%             \emph{Present address:} of F. Author  %  if needed
-    \and
-    }
-
-\date{Received: date / Accepted: date}
-% The correct dates will be entered by the editor
-
-
-\maketitle
+\keywords{Lionfish, invasive species, length-weight, allometric, regional variations}
 
 \begin{abstract}
 Lionfish (\textit{Pterois volitans / miles}) are an invasive species in
@@ -77,7 +28,7 @@ the Western Atlantic and the Caribbean. Improving management of invasive
 lionfish populations requires accurate total biomass estimates, which
 depend on accurate estimates of allometric growth. Sedentary species
 like lionfish often exhibit high levels of spatial variation in life
-history characterstics. We review 17 published length-weight
+history characteristics. We review 17 published length-weight
 relationships for lionfish taken throughout their invasive range and
 found substantial regional differences in allometric growth parameters.
 The spatial pattern we observed is consistent with findings from other
@@ -88,24 +39,15 @@ reduces this error. These findings can have major implications for
 management in terms of predicting effects on local ecosystems,
 evaluating the effectiveness of removal programs, or estimating biomass
 available for harvest.
-\\
-\keywords{
-        Lionfish \and
-        invasive species \and
-        length-weight \and
-        allometric growht \and
-        regional variations \and
-    }
-
-
 \end{abstract}
 
+\begin{document}
 
-\def\spacingset#1{\renewcommand{\baselinestretch}%
-{#1}\small\normalsize} \spacingset{1}
+\flushbottom
+\maketitle
+\thispagestyle{empty}
 
-
-\section{Introduction}\label{introduction}
+\section*{Introduction}
 
 Lionfish (\emph{Pterois volitans/miles} complex) are an invasive species
 in the western Atlantic and Caribbean Sea, likely introduced through
@@ -129,7 +71,7 @@ reef-fish species, and can further endanger reef fish
 (\citet{green_2012,rocha_2015}; but see \citet{hackerott_2017}). For
 example, field experiments by \citet{albins_2008} showed that lionfish
 establishment led to reduced recruitment of native fishes by nearly 80\%
-over a five week period in Florida. \citet{green_2012} reported that
+over a five-week period in Florida. \citet{green_2012} reported that
 prey fish biomass declined by 65\% over two years as lionfish biomass
 increased along Bahamian coral reefs. Their trophic impacts can be
 minimized if local lionfish biomass is controlled by culling
@@ -196,7 +138,9 @@ of length-weight relationships of lionfish across the Caribbean and
 Western Atlantic and to discuss implications of these spatial
 differences.
 
-\section{Materials and Methods}\label{materials-and-methods}
+\clearpage
+
+\section*{Methods}
 
 We reviewed 12 published studies and obtained 17 length-weight
 relationships for the North Atlantic (n = 1), Gulf of Mexico (n = 7),
@@ -246,8 +190,11 @@ TW = aTL^b
 \end{equation}
 
 Where \(a\) is the ponderal index and \(b\) is the scaling exponent or
-allometric parameter. Transforming this equation via base-10 logarithms
-we obtain:
+allometric parameter.
+
+\clearpage
+
+Transforming this equation via base-10 logarithms we obtain:
 
 \begin{equation}
 \label{eq:log-alo}
@@ -285,16 +232,16 @@ parameters extracted from the literature and the additional pair
 calculated here. We used the central Mexican Caribbean as a case study
 of how the use of \emph{ex situ} parameters influences the accuracy of
 weight estimates for lionfish. We estimated TW from the TL observations
-we collected in the central Mexican Caribbean (n = 109) using each of
-the 18 parameter pairs and divided predicted weights by known observed
-weights to obtain a simple measure of over- or underestimation.
-Difference in mean weight ratios across the different parameter pairs
-were tested with a one-way analysis of variance (ANOVA) and Tukey's test
-was used for \emph{post-hoc} tests. All analyses were performed in R
-version 3.5.0 \citep{rcore_2018}. Raw data and code used in this work
-are available on github.
+we collected in the central Mexican Caribbean (n = 109, with
+\(TL \in (34, 310)\)) using each of the 18 parameter pairs and divided
+predicted weights by known observed weights to obtain a simple measure
+of over- or underestimation. Difference in mean weight ratios across the
+different parameter pairs were tested with a one-way analysis of
+variance (ANOVA) and Tukey's test was used for \emph{post-hoc} tests.
+All analyses were performed in R version 3.5.1 \citep{rcore_2018}. Raw
+data and code used in this work are available on github.
 
-\section{Results}\label{results}
+\section*{Results}
 
 The length-weight relationship for organisms from the central Mexican
 Caribbean resulted in the coefficient values
@@ -369,46 +316,32 @@ still produced predicted-to-observed weight ratios \textgreater{} 1.
 
 \caption{\label{tab:unnamed-chunk-9}\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter for Eq. 1 (presented in $\times 10^{-5}$), c = y-intercept for Eq. 3, b = exponent or slope for Eq. 1 or Eq. 3, respectively. The Fit column contains the reported $R^2$ of the model fit.}
 \centering
-\begin{tabular}[t]{l|l|l|l|r|r|l|l}
-\hline
+\begin{tabular}[t]{llllrrll}
+\toprule
 Region & Sex & n & a & b & c & Fit & Reference\\
-\hline
+\midrule
 Caribbean & B & 458 & 3.6 & 2.81 & -4.44 & - & Sandel et al., 2015\\
-\hline
 Caribbean & B & 419 & 2.8 & 2.85 & -4.56 & 0.8715 & Chin et al., 2016\\
-\hline
 Caribbean & B & 1450 & 2.3 & 2.89 & -4.64 & 0.96 & de Leon et al., 2013\\
-\hline
 Caribbean & B & 1887 & 0.3 & 3.24 & -5.52 & 0.97 & Edwards et al., 2014\\
-\hline
 Caribbean & B & - & 0.25 & 3.29 & -5.60 & - & Darling et al., 2011\\
-\hline
+\addlinespace
 Caribbean & B & 2143 & 0.52 & 3.18 & -5.28 & 0.9907 & Sabido-Itza et al., 2016\\
-\hline
 Caribbean & B & 227 & 0.8 & 3.11 & -5.10 & 0.958 & Toledo-Hernández et al., 2014\\
-\hline
 Caribbean & B & 449 & 0.23 & 3.25 & -5.64 & 0.97 & Sabido-Itza et al., 2016b\\
-\hline
 Caribbean & B & 368 & 0.32 & 3.19 & -5.50 & 0.98 & Sabido-Itza et al., 2016b\\
-\hline
 Caribbean & B & 109 & 0.32 & 3.23 & -5.49 & 0.9766 & This study\\
-\hline
+\addlinespace
 GoM & B & 934 & 0.21 & 3.34 & -5.68 & 0.98 & Dahl \& Patterson, 2014\\
-\hline
 GoM & B & 472 & 0.29 & 3.30 & -5.54 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-\hline
 GoM & F & 67 & 0.12 & 3.47 & -5.93 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-\hline
 GoM & M & 59 & 0.42 & 3.23 & -5.38 & 0.95 & Aguilar-Perera \& Quijano-Puerto, 2016\\
-\hline
 GoM & B & 582 & 0.14 & 3.43 & -5.86 & 0.99 & Fogg et al., 2013\\
-\hline
+\addlinespace
 GoM & M & 119 & 0.27 & 3.31 & -5.57 & 0.97 & Fogg et al., 2013\\
-\hline
 GoM & F & 115 & 0.68 & 3.14 & -5.17 & 0.94 & Fogg et al., 2013\\
-\hline
 North Atlantic & B & 774 & 2.9 & 2.89 & -4.54 & - & Barbour et al., 2011\\
-\hline
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -433,7 +366,17 @@ differ significantly.}
 
 \clearpage
 
-\section{Discussion}\label{discussion}
+\section*{Discussion}
+
+Our results suggest that lionfish exhibit highly variable allometric
+relationships across the invaded range, and that this variation is
+related to space. Moreover, we shot that the use of \emph{ex situ}
+parameters may lead to highly biased weight estimates. Our comparison of
+observed weights to those predicted with locally-informed parameters and
+\emph{ex situ} parameters showed that weight can be overestimated by
+more than a three-fold, and highlights the need to use local
+information. Here we discuss the implications of our findings and
+highlight potential future research directions.
 
 We detected substantial differences in weight-at-length between
 organisms from the Caribbean, Gulf of Mexico, and North-Western
@@ -458,9 +401,9 @@ and fishing mortality in other Scorpaeniformes translate to differential
 landings, effort, and catch per unit effort in the live fish fishery of
 California, and that these differences must be taken into account in
 management plans. The lionfish case poses the opposite scenario, where
-the manager desires to eradicate species. To accurately gauge both the
-effectiveness of lionfish removal efforts and the resources needed to
-successfully manage an invasion, we must acknowledge and understand
+the manager desires to eradicate the species. To accurately gauge both
+the effectiveness of lionfish removal efforts and the resources needed
+to successfully manage an invasion, we must acknowledge and understand
 regional biological differences in important variables such as
 allometric growth parameters.
 
@@ -482,7 +425,7 @@ calculated for their region to the extent possible, or at least use
 reasonable sets of different parameters that provide upper and lower
 bounds in their results.
 
-\section{Acknowledgements}\label{acknowledgements}
+\section*{Aknowledgements}
 
 The authors would like to thank thank Nils Van Der Haar and Michael
 Doodey from Dive Aventuras as well as Guillermo Lotz-Cador who provided
@@ -491,7 +434,6 @@ help to collect samples.
 Conflict of Interest: The authors declare that they have no conflict of
 interest.
 
-\bibliographystyle{spbasic}
-\bibliography{references.bib}
+\bibliography{references}
 
 \end{document}

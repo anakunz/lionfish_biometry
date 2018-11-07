@@ -1,315 +1,288 @@
-\begin{thebibliography}{44}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{{#1}}
-\providecommand{\urlprefix}{URL }
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-\providecommand{\eprint}[2][]{\url{#2}}
+\begin{thebibliography}{}
 
-\bibitem[{Aguilar-Perera and Quijano-Puerto(2016)}]{aguilarperera_2016}
-Aguilar-Perera A, Quijano-Puerto L (2016) Relations between fish length to
-  weight, and otolith length and weight, of the lionfish pterois volitans in
-  the parque nacional arrecife alacranes, southern gulf of mexico. Rev biol mar
-  oceanogr 51(2):469--474, \doi{10.4067/S0718-19572016000200025},
-  \urlprefix\url{http://www.scielo.cl/scielo.php?script=sci\_arttext\&pid=S0718-19572016000200025\&lng=en\&nrm=iso\&tlng=en}
+\bibitem[Aguilar-Perera and Quijano-Puerto, 2016]{aguilarperera_2016}
+Aguilar-Perera, A. and Quijano-Puerto, L. (2016).
+\newblock Relations between fish length to weight, and otolith length and
+  weight, of the lionfish pterois volitans in the parque nacional arrecife
+  alacranes, southern gulf of mexico.
+\newblock {\em Rev. biol. mar. oceanogr.}, 51(2):469--474.
 
-\bibitem[{Albins and Hixon(2008)}]{albins_2008}
-Albins M, Hixon M (2008) Invasive indo-pacific lionfish pterois volitans reduce
-  recruitment of atlantic coral-reef fishes. Mar Ecol Prog Ser 367:233--238,
-  \doi{10.3354/meps07620},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v367/p233-238/}
+\bibitem[Albins and Hixon, 2008]{albins_2008}
+Albins, M. and Hixon, M. (2008).
+\newblock Invasive indo-pacific lionfish pterois volitans reduce recruitment of
+  atlantic coral-reef fishes.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 367:233--238.
 
-\bibitem[{Andradi-Brown et~al(2017)Andradi-Brown, Grey, Hendrix, Hitchner,
-  Hunt, Gress, Madej, Parry, R{\a'e}gnier-McKellar, Jones, a~Arteaga,
-  Izaguirre, Rogers, and Exton}]{andradibrown_2017}
-Andradi-Brown DA, Grey R, Hendrix A, Hitchner D, Hunt CL, Gress E, Madej K,
-  Parry RL, R{\a'e}gnier-McKellar C, Jones OP, a~Arteaga M, Izaguirre AP,
-  Rogers AD, Exton DA (2017) Depth-dependent effects of culling-do mesophotic
-  lionfish populations undermine current management? R Soc Open Sci
-  4(5):170027, \doi{10.1098/rsos.170027},
-  \urlprefix\url{http://dx.doi.org/10.1098/rsos.170027}
+\bibitem[Andradi-Brown et~al., 2017]{andradibrown_2017}
+Andradi-Brown, D.~A., Grey, R., Hendrix, A., Hitchner, D., Hunt, C.~L., Gress,
+  E., Madej, K., Parry, R.~L., R{\a'e}gnier-McKellar, C., Jones, O.~P.,
+  a~Arteaga, M., Izaguirre, A.~P., Rogers, A.~D., and Exton, D.~A. (2017).
+\newblock Depth-dependent effects of culling-do mesophotic lionfish populations
+  undermine current management?
+\newblock {\em R Soc Open Sci}, 4(5):170027.
 
-\bibitem[{Arias-Gonzalez et~al(2011)Arias-Gonzalez, Gonzalez-Gandara, {Luis
-  Cabrera}, and Christensen}]{ariasgonzalez_2011}
-Arias-Gonzalez JE, Gonzalez-Gandara C, {Luis Cabrera} J, Christensen V (2011)
-  Predicted impact of the invasive lionfish pterois volitans on the food web of
-  a caribbean coral reef. Environ Res 111(7):917--925,
-  \doi{10.1016/j.envres.2011.07.008},
-  \urlprefix\url{http://dx.doi.org/10.1016/j.envres.2011.07.008}
+\bibitem[Arias-Gonzalez et~al., 2011]{ariasgonzalez_2011}
+Arias-Gonzalez, J.~E., Gonzalez-Gandara, C., {Luis Cabrera}, J., and
+  Christensen, V. (2011).
+\newblock Predicted impact of the invasive lionfish pterois volitans on the
+  food web of a caribbean coral reef.
+\newblock {\em Environ Res}, 111(7):917--925.
 
-\bibitem[{Barbour et~al(2010)Barbour, Montgomery, Adamson, Diaz-Ferguson, and
-  Silliman}]{barbour_2010}
-Barbour A, Montgomery M, Adamson A, Diaz-Ferguson E, Silliman B (2010) Mangrove
-  use by the invasive lionfish pterois volitans. Mar Ecol Prog Ser
-  401:291--294, \doi{10.3354/meps08373},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v401/p291-294/}
+\bibitem[Barbour et~al., 2010]{barbour_2010}
+Barbour, A., Montgomery, M., Adamson, A., Diaz-Ferguson, E., and Silliman, B.
+  (2010).
+\newblock Mangrove use by the invasive lionfish pterois volitans.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 401:291--294.
 
-\bibitem[{Barbour et~al(2011)Barbour, Allen, Frazer, and
-  Sherman}]{barbour_2011}
-Barbour AB, Allen MS, Frazer TK, Sherman KD (2011) Evaluating the potential
-  efficacy of invasive lionfish (pterois volitans) removals. PLoS ONE
-  6(5):e19666, \doi{10.1371/journal.pone.0019666},
-  \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0019666}
+\bibitem[Barbour et~al., 2011]{barbour_2011}
+Barbour, A.~B., Allen, M.~S., Frazer, T.~K., and Sherman, K.~D. (2011).
+\newblock Evaluating the potential efficacy of invasive lionfish (pterois
+  volitans) removals.
+\newblock {\em PLoS ONE}, 6(5):e19666.
 
-\bibitem[{Betancur-R et~al(2011)Betancur-R, Hines, Acero, Orti, Wilbur, and
-  Freshwater}]{betancurr_2011}
-Betancur-R R, Hines A, Acero A, Orti G, Wilbur A, Freshwater D (2011)
-  Reconstructing the lionfish invasion: insights into greater caribbean
-  biogeography. J Biogeography 38:1281--1293,
-  \doi{10.1111/j.1365-2699.2011.02496.x},
-  \urlprefix\url{http://dx.doi.org/10.1111/j.1365-2699.2011.02496.x}
+\bibitem[Betancur-R et~al., 2011]{betancurr_2011}
+Betancur-R, R., Hines, A., Acero, A., Orti, G., Wilbur, A., and Freshwater, D.
+  (2011).
+\newblock Reconstructing the lionfish invasion: insights into greater caribbean
+  biogeography.
+\newblock {\em J Biogeography}, 38:1281--1293.
 
-\bibitem[{Chin et~al(2016)Chin, Aiken, and Buddo}]{chin_2016}
-Chin DA, Aiken KA, Buddo D (2016) Lionfish population density in discovery bay,
-  jamaica. International Journal of Scientific \& Engineering Research
-  7(12):1327 -- 1331
+\bibitem[Chin et~al., 2016]{chin_2016}
+Chin, D.~A., Aiken, K.~A., and Buddo, D. (2016).
+\newblock Lionfish population density in discovery bay, jamaica.
+\newblock {\em International Journal of Scientific \& Engineering Research},
+  7(12):1327 -- 1331.
 
-\bibitem[{Claydon et~al(2012)Claydon, Calosso, and Traiger}]{claydon_2012}
-Claydon J, Calosso M, Traiger S (2012) Progression of invasive lionfish in
-  seagrass, mangrove and reef habitats. Mar Ecol Prog Ser 448:119--129,
-  \doi{10.3354/meps09534},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v448/p119-129/}
+\bibitem[Claydon et~al., 2012]{claydon_2012}
+Claydon, J., Calosso, M., and Traiger, S. (2012).
+\newblock Progression of invasive lionfish in seagrass, mangrove and reef
+  habitats.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 448:119--129.
 
-\bibitem[{Côté et~al(2014)Côté, Akins, Underwood, Curtis-Quick, and
-  Green}]{cote_2014}
-Côté IM, Akins L, Underwood E, Curtis-Quick J, Green SJ (2014) Setting the
-  record straight on invasive lionfish control: Culling works. PeerJ
-  \doi{10.7287/peerj.preprints.398v1},
-  \urlprefix\url{https://peerj.com/preprints/398v1}
+\bibitem[Côté et~al., 2014]{cote_2014}
+Côté, I.~M., Akins, L., Underwood, E., Curtis-Quick, J., and Green, S.~J.
+  (2014).
+\newblock Setting the record straight on invasive lionfish control: Culling
+  works.
+\newblock {\em PeerJ}.
 
-\bibitem[{Dahl and Patterson(2014)}]{dahl_2014}
-Dahl KA, Patterson WF (2014) Habitat-specific density and diet of rapidly
-  expanding invasive red lionfish, pterois volitans, populations in the
-  northern gulf of mexico. PLoS ONE 9(8):e105852,
-  \doi{10.1371/journal.pone.0105852},
-  \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0105852}
+\bibitem[Dahl and Patterson, 2014]{dahl_2014}
+Dahl, K.~A. and Patterson, W.~F. (2014).
+\newblock Habitat-specific density and diet of rapidly expanding invasive red
+  lionfish, pterois volitans, populations in the northern gulf of mexico.
+\newblock {\em PLoS ONE}, 9(8):e105852.
 
-\bibitem[{Darling et~al(2011)Darling, Green, O'Leary, and
-  Côté}]{darling_2011}
-Darling ES, Green SJ, O'Leary JK, Côté IM (2011) Indo-pacific lionfish are
-  larger and more abundant on invaded reefs: a comparison of kenyan and
-  bahamian lionfish populations. Biol Invasions 13(9):2045--2051,
-  \doi{10.1007/s10530-011-0020-0},
-  \urlprefix\url{http://link.springer.com/10.1007/s10530-011-0020-0}
+\bibitem[Darling et~al., 2011]{darling_2011}
+Darling, E.~S., Green, S.~J., O'Leary, J.~K., and Côté, I.~M. (2011).
+\newblock Indo-pacific lionfish are larger and more abundant on invaded reefs:
+  a comparison of kenyan and bahamian lionfish populations.
+\newblock {\em Biol Invasions}, 13(9):2045--2051.
 
-\bibitem[{{de Leon} et~al(2013){de Leon}, Vane, Bertuol, Chamberland, Simal,
-  Imms, and Vermeij}]{deleon_2013}
-{de Leon} R, Vane K, Bertuol P, Chamberland VC, Simal F, Imms E, Vermeij MJA
-  (2013) Effectiveness of lionfish removal efforts in the southern caribbean.
-  Endanger Species Res 22(2):175--182, \doi{10.3354/esr00542},
-  \urlprefix\url{http://www.int-res.com/abstracts/esr/v22/n2/p175-182/}
+\bibitem[{de Leon} et~al., 2013]{deleon_2013}
+{de Leon}, R., Vane, K., Bertuol, P., Chamberland, V.~C., Simal, F., Imms, E.,
+  and Vermeij, M. J.~A. (2013).
+\newblock Effectiveness of lionfish removal efforts in the southern caribbean.
+\newblock {\em Endanger Species Res}, 22(2):175--182.
 
-\bibitem[{Edwards et~al(2014)Edwards, Frazer, and Jacoby}]{edwards_2014}
-Edwards MA, Frazer TK, Jacoby CA (2014) Age and growth of invasive lionfish
-  (pterois spp.) in the caribbean sea, with implications for management. BMS
-  90(4):953--966, \doi{10.5343/bms.2014.1022},
-  \urlprefix\url{http://openurl.ingenta.com/content/xref?genre=article\&issn=0007-4977\&volume=90\&issue=4\&spage=953}
+\bibitem[Edwards et~al., 2014]{edwards_2014}
+Edwards, M.~A., Frazer, T.~K., and Jacoby, C.~A. (2014).
+\newblock Age and growth of invasive lionfish (pterois spp.) in the caribbean
+  sea, with implications for management.
+\newblock {\em BMS}, 90(4):953--966.
 
-\bibitem[{Fishelson(1997)}]{Fishelson_1997}
-Fishelson L (1997) Experiments and observations on food consumption, growth and
+\bibitem[Fishelson, 1997]{Fishelson_1997}
+Fishelson, L. (1997).
+\newblock Experiments and observations on food consumption, growth and
   starvation in dendrochirus brachypterus and pterois volitans (pteroinae,
-  scorpaenidae). Environmental Biology of Fishes 50(4):391--403,
-  \doi{10.1023/A:1007331304122},
-  \urlprefix\url{https://doi.org/10.1023/A:1007331304122}
+  scorpaenidae).
+\newblock {\em Environmental Biology of Fishes}, 50(4):391--403.
 
-\bibitem[{Fogg et~al(2013)Fogg, Hoffmayer, Driggers, Campbell, Pellegrin, and
-  Stein}]{fogg_2013}
-Fogg AQ, Hoffmayer ER, Driggers WB, Campbell MD, Pellegrin GJ, Stein W (2013)
-  Distribution and length frequency of invasive lionfish (pterois sp.) in the
-  northern gulf of mexico. GCR 25, \doi{10.18785/gcr.2501.08},
-  \urlprefix\url{http://aquila.usm.edu/gcr/vol25/iss1/9}
+\bibitem[Fogg et~al., 2015]{fogg_2015}
+Fogg, A.~Q., Evans, J.~T., {Ingram JR}, G.~W., Peterson, M.~S., and
+  Brown-Peterson, N.~J. (2015).
+\newblock Comparing age and growth patterns of invasive lionfish among three
+  ecoregions of the northern gulf of mexico.
+\newblock In GCFI, G. and Institute, C.~F., editors, {\em Proceedings of the 68
+  th Gulf and Caribbean Fisheries Institute}, Panama City. Gulf and Caribbean
+  Fisheries Institute.
 
-\bibitem[{Fogg et~al(2015)Fogg, Evans, {Ingram JR}, Peterson, and
-  Brown-Peterson}]{fogg_2015}
-Fogg AQ, Evans JT, {Ingram JR} GW, Peterson MS, Brown-Peterson NJ (2015)
-  Comparing age and growth patterns of invasive lionfish among three ecoregions
-  of the northern gulf of mexico. In: GCFI G, Institute CF (eds) Proceedings of
-  the 68 th Gulf and Caribbean Fisheries Institute, Gulf and Caribbean
-  Fisheries Institute, Panama City
+\bibitem[Fogg et~al., 2013]{fogg_2013}
+Fogg, A.~Q., Hoffmayer, E.~R., Driggers, W.~B., Campbell, M.~D., Pellegrin,
+  G.~J., and Stein, W. (2013).
+\newblock Distribution and length frequency of invasive lionfish (pterois sp.)
+  in the northern gulf of mexico.
+\newblock {\em GCR}, 25.
 
-\bibitem[{Green et~al(2012)Green, Akins, Maljkovi{\a'c}, and
-  C{\^o}t{\a'e}}]{green_2012}
-Green SJ, Akins JL, Maljkovi{\a'c} A, C{\^o}t{\a'e} IM (2012) Invasive lionfish
-  drive atlantic coral reef fish declines. PLoS ONE 7(3):e32596,
-  \doi{10.1371/journal.pone.0032596},
-  \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0032596}
+\bibitem[Green et~al., 2012]{green_2012}
+Green, S.~J., Akins, J.~L., Maljkovi{\a'c}, A., and C{\^o}t{\a'e}, I.~M.
+  (2012).
+\newblock Invasive lionfish drive atlantic coral reef fish declines.
+\newblock {\em PLoS ONE}, 7(3):e32596.
 
-\bibitem[{Gress et~al(2017)Gress, Andradi-Brown, Woodall, Schofield, Stanley,
-  and Rogers}]{gress_2017}
-Gress E, Andradi-Brown DA, Woodall L, Schofield PJ, Stanley K, Rogers AD (2017)
-  Lionfish (pterois spp.) invade the upper-bathyal zone in the western
-  atlantic. PeerJ 5:e3683, \doi{10.7717/peerj.3683},
-  \urlprefix\url{http://dx.doi.org/10.7717/peerj.3683}
+\bibitem[Gress et~al., 2017]{gress_2017}
+Gress, E., Andradi-Brown, D.~A., Woodall, L., Schofield, P.~J., Stanley, K.,
+  and Rogers, A.~D. (2017).
+\newblock Lionfish (pterois spp.) invade the upper-bathyal zone in the western
+  atlantic.
+\newblock {\em PeerJ}, 5:e3683.
 
-\bibitem[{Guan et~al(2013)Guan, Cao, Chen, and Cieri}]{guan_2013}
-Guan W, Cao J, Chen Y, Cieri M (2013) Impacts of population and fishery spatial
-  structures on fishery stock assessment. Can J Fish Aquat Sci
-  70(8):1178--1189, \doi{10.1139/cjfas-2012-0364},
-  \urlprefix\url{http://www.nrcresearchpress.com/doi/10.1139/cjfas-2012-0364}
+\bibitem[Guan et~al., 2013]{guan_2013}
+Guan, W., Cao, J., Chen, Y., and Cieri, M. (2013).
+\newblock Impacts of population and fishery spatial structures on fishery stock
+  assessment.
+\newblock {\em Can. J. Fish. Aquat. Sci.}, 70(8):1178--1189.
 
-\bibitem[{Gunderson et~al(2008)Gunderson, Parma, Hilborn, Cope, Fluharty,
-  Miller, Vetter, Heppell, and Greene}]{gunderson_2008}
-Gunderson DR, Parma AM, Hilborn R, Cope JM, Fluharty DL, Miller ML, Vetter RD,
-  Heppell SS, Greene HG (2008) The challenge of managing nearshore rocky reef
-  resources. Fisheries 33(4):172--179, \doi{10.1577/1548-8446-33.4.172},
-  \urlprefix\url{http://doi.wiley.com/10.1577/1548-8446-33.4.172}
+\bibitem[Gunderson et~al., 2008]{gunderson_2008}
+Gunderson, D.~R., Parma, A.~M., Hilborn, R., Cope, J.~M., Fluharty, D.~L.,
+  Miller, M.~L., Vetter, R.~D., Heppell, S.~S., and Greene, H.~G. (2008).
+\newblock The challenge of managing nearshore rocky reef resources.
+\newblock {\em Fisheries}, 33(4):172--179.
 
-\bibitem[{Hackerott et~al(2017)Hackerott, Valdivia, Cox, Silbiger, and
-  Bruno}]{hackerott_2017}
-Hackerott S, Valdivia A, Cox CE, Silbiger NJ, Bruno JF (2017) Invasive lionfish
-  had no measurable effect on prey fish community structure across the belizean
-  barrier reef. PeerJ 5:e3270, \doi{10.7717/peerj.3270},
-  \urlprefix\url{http://dx.doi.org/10.7717/peerj.3270}
+\bibitem[Hackerott et~al., 2017]{hackerott_2017}
+Hackerott, S., Valdivia, A., Cox, C.~E., Silbiger, N.~J., and Bruno, J.~F.
+  (2017).
+\newblock Invasive lionfish had no measurable effect on prey fish community
+  structure across the belizean barrier reef.
+\newblock {\em PeerJ}, 5:e3270.
 
-\bibitem[{Hixon et~al(2016)Hixon, Green, Albins, Akins, and
-  Morris}]{hixon_2016}
-Hixon M, Green S, Albins M, Akins J, Morris J (2016) Lionfish: a major marine
-  invasion. Mar Ecol Prog Ser 558:161--165, \doi{10.3354/meps11909},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v558/p161-165/}
+\bibitem[Hixon et~al., 2016]{hixon_2016}
+Hixon, M., Green, S., Albins, M., Akins, J., and Morris, J. (2016).
+\newblock Lionfish: a major marine invasion.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 558:161--165.
 
-\bibitem[{Hutchinson(2008)}]{hutchinson_2008}
-Hutchinson WF (2008) The dangers of ignoring stock complexity in fishery
-  management: the case of the north sea cod. Biol Lett 4(6):693--695,
-  \doi{10.1098/rsbl.2008.0443},
-  \urlprefix\url{http://rsbl.royalsocietypublishing.org/cgi/doi/10.1098/rsbl.2008.0443}
+\bibitem[Hutchinson, 2008]{hutchinson_2008}
+Hutchinson, W.~F. (2008).
+\newblock The dangers of ignoring stock complexity in fishery management: the
+  case of the north sea cod.
+\newblock {\em Biol Lett}, 4(6):693--695.
 
-\bibitem[{Johnson and Swenarton(2016)}]{johnson_2016}
-Johnson EG, Swenarton MK (2016) Age, growth and population structure of
-  invasive lionfish (pterois volitans/miles) in northeast florida using a
-  length-based, age-structured population model. PeerJ 4:e2730,
-  \doi{10.7717/peerj.2730},
-  \urlprefix\url{http://dx.doi.org/10.7717/peerj.2730}
+\bibitem[Johnson and Swenarton, 2016]{johnson_2016}
+Johnson, E.~G. and Swenarton, M.~K. (2016).
+\newblock Age, growth and population structure of invasive lionfish (pterois
+  volitans/miles) in northeast florida using a length-based, age-structured
+  population model.
+\newblock {\em PeerJ}, 4:e2730.
 
-\bibitem[{Johnston and Purkis(2015)}]{johnston_2015}
-Johnston M, Purkis S (2015) A coordinated and sustained international strategy
-  is required to turn the tide on the atlantic lionfish invasion. Mar Ecol Prog
-  Ser 533:219--235, \doi{10.3354/meps11399},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v533/p219-235/}
+\bibitem[Johnston and Purkis, 2015]{johnston_2015}
+Johnston, M. and Purkis, S. (2015).
+\newblock A coordinated and sustained international strategy is required to
+  turn the tide on the atlantic lionfish invasion.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 533:219--235.
 
-\bibitem[{Jud et~al(2011)Jud, Layman, Lee, and Arrington}]{jud_2011}
-Jud Z, Layman C, Lee J, Arrington D (2011) Recent invasion of a florida (usa)
-  estuarine system by lionfish pterois volitans / p. miles. Aquat Biol
-  13(1):21--26, \doi{10.3354/ab00351},
-  \urlprefix\url{http://www.int-res.com/abstracts/ab/v13/n1/p21-26/}
+\bibitem[Jud et~al., 2011]{jud_2011}
+Jud, Z., Layman, C., Lee, J., and Arrington, D. (2011).
+\newblock Recent invasion of a florida (usa) estuarine system by lionfish
+  pterois volitans / p. miles.
+\newblock {\em Aquat. Biol.}, 13(1):21--26.
 
-\bibitem[{Jud and Layman(2012)}]{jud_2012}
-Jud ZR, Layman CA (2012) Site fidelity and movement patterns of invasive
-  lionfish, pterois spp., in a florida estuary. Journal of Experimental Marine
-  Biology and Ecology 414-415:69--74, \doi{10.1016/j.jembe.2012.01.015},
-  \urlprefix\url{http://linkinghub.elsevier.com/retrieve/pii/S0022098112000305}
+\bibitem[Jud and Layman, 2012]{jud_2012}
+Jud, Z.~R. and Layman, C.~A. (2012).
+\newblock Site fidelity and movement patterns of invasive lionfish, pterois
+  spp., in a florida estuary.
+\newblock {\em Journal of Experimental Marine Biology and Ecology},
+  414-415:69--74.
 
-\bibitem[{Kochzius and Blohm(2005)}]{kochzius_2005}
-Kochzius M, Blohm D (2005) Genetic population structure of the lionfish pterois
-  miles (scorpaenidae, pteroinae) in the gulf of aqaba and northern red sea.
-  Gene 347(2):295--301, \doi{10.1016/j.gene.2004.12.032},
-  \urlprefix\url{http://dx.doi.org/10.1016/j.gene.2004.12.032}
+\bibitem[Kochzius and Blohm, 2005]{kochzius_2005}
+Kochzius, M. and Blohm, D. (2005).
+\newblock Genetic population structure of the lionfish pterois miles
+  (scorpaenidae, pteroinae) in the gulf of aqaba and northern red sea.
+\newblock {\em Gene}, 347(2):295--301.
 
-\bibitem[{Morris et~al(2011)Morris, Shertzer, and Rice}]{morris_2011}
-Morris JA, Shertzer KW, Rice JA (2011) A stage-based matrix population model of
-  invasive lionfish with implications for control. Biol Invasions 13(1):7--12,
-  \doi{10.1007/s10530-010-9786-8},
-  \urlprefix\url{http://link.springer.com/10.1007/s10530-010-9786-8}
+\bibitem[Morris et~al., 2011]{morris_2011}
+Morris, J.~A., Shertzer, K.~W., and Rice, J.~A. (2011).
+\newblock A stage-based matrix population model of invasive lionfish with
+  implications for control.
+\newblock {\em Biol Invasions}, 13(1):7--12.
 
-\bibitem[{Mu{\~n}oz et~al(2011)Mu{\~n}oz, Currin, and Whitfield}]{muoz_2011}
-Mu{\~n}oz R, Currin C, Whitfield P (2011) Diet of invasive lionfish on hard
-  bottom reefs of the southeast usa: insights from stomach contents and stable
-  isotopes. Mar Ecol Prog Ser 432:181--193, \doi{10.3354/meps09154},
-  \urlprefix\url{http://www.int-res.com/abstracts/meps/v432/p181-193/}
+\bibitem[Mu{\~n}oz et~al., 2011]{muoz_2011}
+Mu{\~n}oz, R., Currin, C., and Whitfield, P. (2011).
+\newblock Diet of invasive lionfish on hard bottom reefs of the southeast usa:
+  insights from stomach contents and stable isotopes.
+\newblock {\em Mar. Ecol. Prog. Ser.}, 432:181--193.
 
-\bibitem[{Peake et~al(2018)Peake, Bogdanoff, Layman, Castillo, Reale-Munroe,
-  Chapman, Dahl, Patterson~III, Eddy, Ellis, Faletti, Higgs, Johnston, Muñoz,
-  Sandel, Villaseñor-Derbez, and Morris}]{peake_2018}
-Peake J, Bogdanoff AK, Layman CA, Castillo B, Reale-Munroe K, Chapman J, Dahl
-  K, Patterson~III WF, Eddy C, Ellis RD, Faletti M, Higgs N, Johnston MA,
-  Muñoz RC, Sandel V, Villaseñor-Derbez JC, Morris JA (2018) Feeding ecology
-  of invasive lionfish (pterois volitans and pterois miles) in the temperate
-  and tropical western atlantic. Biol Invasions
-  \doi{10.1007/s10530-018-1720-5},
-  \urlprefix\url{http://link.springer.com/10.1007/s10530-018-1720-5}
+\bibitem[Peake et~al., 2018]{peake_2018}
+Peake, J., Bogdanoff, A.~K., Layman, C.~A., Castillo, B., Reale-Munroe, K.,
+  Chapman, J., Dahl, K., Patterson~III, W.~F., Eddy, C., Ellis, R.~D., Faletti,
+  M., Higgs, N., Johnston, M.~A., Muñoz, R.~C., Sandel, V.,
+  Villaseñor-Derbez, J.~C., and Morris, J.~A. (2018).
+\newblock Feeding ecology of invasive lionfish (pterois volitans and pterois
+  miles) in the temperate and tropical western atlantic.
+\newblock {\em Biol Invasions}.
 
-\bibitem[{Pusack et~al(2016)Pusack, Benkwitt, Cure, and
-  Kindinger}]{pusack_2016}
-Pusack TJ, Benkwitt CE, Cure K, Kindinger TL (2016) Invasive red lionfish
-  (pterois volitans) grow faster in the atlantic ocean than in their native
-  pacific range. Environ Biol Fishes 99(6-7):571--579,
-  \doi{10.1007/s10641-016-0499-4},
-  \urlprefix\url{http://link.springer.com/10.1007/s10641-016-0499-4}
+\bibitem[Pusack et~al., 2016]{pusack_2016}
+Pusack, T.~J., Benkwitt, C.~E., Cure, K., and Kindinger, T.~L. (2016).
+\newblock Invasive red lionfish (pterois volitans) grow faster in the atlantic
+  ocean than in their native pacific range.
+\newblock {\em Environ. Biol. Fishes}, 99(6-7):571--579.
 
-\bibitem[{{R Core Team}(2018)}]{rcore_2018}
-{R Core Team} (2018) R: A Language and Environment for Statistical Computing. R
-  Foundation for Statistical Computing, Vienna, Austria,
-  \urlprefix\url{https://www.R-project.org/}
+\bibitem[{R Core Team}, 2018]{rcore_2018}
+{R Core Team} (2018).
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
 
-\bibitem[{Rocha et~al(2015)Rocha, Rocha, Baldwin, Weigt, and
-  McField}]{rocha_2015}
-Rocha LA, Rocha CR, Baldwin CC, Weigt LA, McField M (2015) Invasive lionfish
-  preying on critically endangered reef fish. Coral Reefs 34(3):803--806,
-  \doi{10.1007/s00338-015-1293-z},
-  \urlprefix\url{http://link.springer.com/10.1007/s00338-015-1293-z}
+\bibitem[Rocha et~al., 2015]{rocha_2015}
+Rocha, L.~A., Rocha, C.~R., Baldwin, C.~C., Weigt, L.~A., and McField, M.
+  (2015).
+\newblock Invasive lionfish preying on critically endangered reef fish.
+\newblock {\em Coral Reefs}, 34(3):803--806.
 
-\bibitem[{Sabido-Itzá et~al(2016)Sabido-Itzá, Aguilar-Perera, and
-  Medina-Quej}]{sabidoitz_2016}
-Sabido-Itzá M, Aguilar-Perera A, Medina-Quej A (2016) Length–weight and
-  length–length relations, and relative condition factor of red lionfish,
-  pterois volitans (actinopterygii: Scorpaeniformes: Scorpaenidae), from two
-  natural protected areas in the mexican caribbean. Acta Icth et Piscat
-  46(4):279--285, \doi{10.3750/{AIP2016}.46.4.01},
-  \urlprefix\url{http://www.aiep.pl/volumes/2010/7\_4/txt/txt\_01.php}
+\bibitem[Sabido-Itzá et~al., 2016]{sabidoitz_2016}
+Sabido-Itzá, M., Aguilar-Perera, A., and Medina-Quej, A. (2016).
+\newblock Length–weight and length–length relations, and relative condition
+  factor of red lionfish, pterois volitans (actinopterygii: Scorpaeniformes:
+  Scorpaenidae), from two natural protected areas in the mexican caribbean.
+\newblock {\em Acta Icth et Piscat}, 46(4):279--285.
 
-\bibitem[{Sabido-Itza et~al(2016)Sabido-Itza, Medina-Quej, {De
-  Jesus-Navarrete}, Gomez-Poot, and Garcia-Rivas}]{sabidoitza_2016}
-Sabido-Itza M, Medina-Quej A, {De Jesus-Navarrete} A, Gomez-Poot J,
-  Garcia-Rivas M (2016) Uso de la estructura de tallas como evidencia del
-  establecimiento poblacional del pez le?n pterois volitans (scorpaeniformes:
-  Scorpaenidae) en el sur del caribe mexicano. RBT 64(1):353,
-  \doi{10.15517/rbt.v64i1.18943},
-  \urlprefix\url{http://revistas.ucr.ac.cr/index.php/rbt/article/view/18943}
+\bibitem[Sabido-Itza et~al., 2016]{sabidoitza_2016}
+Sabido-Itza, M., Medina-Quej, A., {De Jesus-Navarrete}, A., Gomez-Poot, J., and
+  Garcia-Rivas, M. (2016).
+\newblock Uso de la estructura de tallas como evidencia del establecimiento
+  poblacional del pez le?n pterois volitans (scorpaeniformes: Scorpaenidae) en
+  el sur del caribe mexicano.
+\newblock {\em RBT}, 64(1):353.
 
-\bibitem[{Sandel et~al(2015)Sandel, Mart{\a'\i}nez-Fern{\a'a}ndez,
-  Wangpraseurt, and Sierra}]{sandel_2015}
-Sandel V, Mart{\a'\i}nez-Fern{\a'a}ndez D, Wangpraseurt D, Sierra L (2015)
-  Ecology and management of the invasive lionfish pterois volitans/miles
-  complex (perciformes: Scorpaenidae) in southern costa rica. Rev Biol Trop
-  63(1):213--221, \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/26299126}
+\bibitem[Sandel et~al., 2015]{sandel_2015}
+Sandel, V., Mart{\a'\i}nez-Fern{\a'a}ndez, D., Wangpraseurt, D., and Sierra, L.
+  (2015).
+\newblock Ecology and management of the invasive lionfish pterois
+  volitans/miles complex (perciformes: Scorpaenidae) in southern costa rica.
+\newblock {\em Rev Biol Trop}, 63(1):213--221.
 
-\bibitem[{Schofield(2009)}]{schofield_2009}
-Schofield P (2009) Geographic extent and chronology of the invasion of
-  non-native lionfish (pterois volitans [linnaeus 1758] and p. miles [bennett
-  1828]) in the western north atlantic and caribbean sea. AI 4(3):473--479,
-  \doi{10.3391/ai.2009.4.3.5},
-  \urlprefix\url{http://www.aquaticinvasions.net/2009/index3.html}
+\bibitem[Schofield, 2009]{schofield_2009}
+Schofield, P. (2009).
+\newblock Geographic extent and chronology of the invasion of non-native
+  lionfish (pterois volitans [linnaeus 1758] and p. miles [bennett 1828]) in
+  the western north atlantic and caribbean sea.
+\newblock {\em AI}, 4(3):473--479.
 
-\bibitem[{Schofield(2010)}]{schofield_2010}
-Schofield P (2010) Update on geographic spread of invasive lionfishes (pterois
-  volitans [linnaeus, 1758] and p. miles [bennett, 1828]) in the western north
-  atlantic ocean, caribbean sea and gulf of mexico. AI 5(Supplement
-  1):S117--S122, \doi{10.3391/ai.2010.5.S1.024},
-  \urlprefix\url{http://www.aquaticinvasions.net/2010/supplement1.html}
+\bibitem[Schofield, 2010]{schofield_2010}
+Schofield, P. (2010).
+\newblock Update on geographic spread of invasive lionfishes (pterois volitans
+  [linnaeus, 1758] and p. miles [bennett, 1828]) in the western north atlantic
+  ocean, caribbean sea and gulf of mexico.
+\newblock {\em AI}, 5(Supplement 1):S117--S122.
 
-\bibitem[{Toledo-Hernández(2014)}]{toledohernndez_2014}
-Toledo-Hernández C (2014) Population ecology and genetics of the invasive
-  lionfish in puerto rico. AI 9(2):227--237, \doi{10.3391/ai.2014.9.2.12},
-  \urlprefix\url{http://www.aquaticinvasions.net/2014/issue2.html}
+\bibitem[Toledo-Hernández, 2014]{toledohernndez_2014}
+Toledo-Hernández, C. (2014).
+\newblock Population ecology and genetics of the invasive lionfish in puerto
+  rico.
+\newblock {\em AI}, 9(2):227--237.
 
-\bibitem[{Usseglio et~al(2017)Usseglio, Selwyn, Downey-Wall, and
-  Hogan}]{usseglio_2017}
-Usseglio P, Selwyn JD, Downey-Wall AM, Hogan JD (2017) Effectiveness of
-  removals of the invasive lionfish: how many dives are needed to deplete a
-  reef? PeerJ 5:e3043, \doi{10.7717/peerj.3043},
-  \urlprefix\url{http://dx.doi.org/10.7717/peerj.3043}
+\bibitem[Usseglio et~al., 2017]{usseglio_2017}
+Usseglio, P., Selwyn, J.~D., Downey-Wall, A.~M., and Hogan, J.~D. (2017).
+\newblock Effectiveness of removals of the invasive lionfish: how many dives
+  are needed to deplete a reef?
+\newblock {\em PeerJ}, 5:e3043.
 
-\bibitem[{Wilson et~al(2012)Wilson, Kay, Colgate, Qi, and
-  Lenihan}]{wilson_2012}
-Wilson JR, Kay MC, Colgate J, Qi R, Lenihan HS (2012) Small-scale spatial
-  variation in population dynamics and fishermen response in a coastal marine
-  fishery. PLoS ONE 7(12):e52837, \doi{10.1371/journal.pone.0052837},
-  \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0052837}
+\bibitem[Wilson et~al., 2012]{wilson_2012}
+Wilson, J.~R., Kay, M.~C., Colgate, J., Qi, R., and Lenihan, H.~S. (2012).
+\newblock Small-scale spatial variation in population dynamics and fishermen
+  response in a coastal marine fishery.
+\newblock {\em PLoS ONE}, 7(12):e52837.
 
-\bibitem[{Zeileis(2004)}]{zeileis_2004}
-Zeileis A (2004) Econometric computing with hc and hac covariance matrix
-  estimators. J Stat Softw 11(10), \doi{10.18637/jss.v011.i10},
-  \urlprefix\url{http://www.jstatsoft.org/v11/i10/}
+\bibitem[Zeileis, 2004]{zeileis_2004}
+Zeileis, A. (2004).
+\newblock Econometric computing with hc and hac covariance matrix estimators.
+\newblock {\em J Stat Softw}, 11(10).
 
 \end{thebibliography}
