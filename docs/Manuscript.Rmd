@@ -111,11 +111,11 @@ fig_map <- ggplot() +
   
 ```
 
-```{r, fig.cap = "\\label{fig:map}Locations where allometric growth parameters of lionfish (*Pterois spp*) have been reported. Circle sizes indicate sample size from each study, colors indicate the $b$ coefficient from Eq. \\ref{eq:allometric}.", fig.height = 3.5}
+```{r map, fig.cap = "\\label{fig:map}Locations where allometric growth parameters of lionfish (*Pterois spp*) have been reported. Circle sizes indicate sample size from each study, colors indicate the $b$ coefficient from Eq. \\ref{eq:allometric}.", fig.height = 3.5}
 fig_map
 ```
 
-We also collected data from 10 sampling sites along the central Mexican Caribbean coast in 2010 (Supplementary Table 1). Sampling locations included wall and carpet reefs at depths between 5.7 m and 38.1 m. All observed lionfish (n = 109) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed better representation of small sizes by eliminating gear selectivity. Organisms were euthanized via pithing and Total Length (TL; mm) and Total Weight (TW; g) were recorded.
+We also used data from \citet{villaseorderbez_2014}, who collected organisms from 10 sampling sites along the central Mexican Caribbean coast in 2010 (Supplementary Table 1). Sampling locations included wall and carpet reefs at depths between 5.7 m and 38.1 m. All observed lionfish (n = 109) were collected using hand nets and numbered collection bottles. The use of hand nets prevented any weight loss due to bleeding and allowed better representation of small sizes by eliminating gear selectivity. Organisms were euthanized via pithing and Total Length (TL; mm) and Total Weight (TW; g) were recorded.
 
 The weight-at-length relationship for lionfish in the central Mexican Caribbean was calculated with the allometric growth function:
 
@@ -268,7 +268,7 @@ fig_l_w_carib <- ggExtra::ggMarginal(p = fit,
                                      alpha = 0.5)
 ```
 
-```{r,  fig.height = 3.5, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
+```{r fit1,  fig.height = 3.5, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
 fig_l_w_carib
 ```
 
@@ -341,7 +341,7 @@ fig_all_allo <- review %>%
   scale_size_manual(values = c(1, 1.5))
 ```
 
-```{r, fig.height = 3.8, fig.pos = "H", fig.cap = "\\label{fig:all_allo}Length-weight relationships (n = 18) for 12 studies and this study. Colors indicate studies from which the parameters were extracted. Dotted, dashed and solid lines show models for males, females, and combined sexes, respectively. The dashed black line represents the relationship estimated in this study."}
+```{r fit2, fig.height = 3.8, fig.pos = "H", fig.cap = "\\label{fig:all_allo}Length-weight relationships (n = 18) for 12 studies and this study. Colors indicate studies from which the parameters were extracted. Dotted, dashed and solid lines show models for males, females, and combined sexes, respectively. The dashed black line represents the relationship estimated in this study."}
 fig_all_allo
 ```
 
@@ -380,7 +380,7 @@ fig_bio_ratio <- Predicted_biomass %>%
   guides(fill = guide_legend(title.position = "top"))
 ```
 
-```{r, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Blue circles indicate median values and Like letters indicate values that do not differ significantly."}
+```{r pred_obs, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Blue circles indicate median values and Like letters indicate values that do not differ significantly."}
 fig_bio_ratio
 ```
 
