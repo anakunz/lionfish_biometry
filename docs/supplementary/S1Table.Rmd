@@ -2,7 +2,9 @@
 title: Spatial variation in allometric growth of invasive lionfish has management implications
 subtitle: "Supplementary Table 1"
 author: "Villaseñor-Derbez & Fitzgerald"
-output: bookdown::pdf_document2
+output:
+  bookdown::pdf_document2:
+    toc: no
 fontsize: 12pt
 ---
 

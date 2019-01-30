@@ -1,0 +1,75 @@
+---
+title: Spatial variation in allometric growth of invasive lionfish has management implications
+subtitle: "Supplementary Table 2"
+author: "Villaseñor-Derbez & Fitzgerald"
+output:
+  bookdown::pdf_document2:
+    toc: no
+    keep_tex: yes
+fontsize: 12pt
+---
+
+Extension of data from Table 1 in the main text. This table includes all the variables collected in each study.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+
+options(knitr.table.format = "latex")
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+```
+
+```{r load packages}
+suppressPackageStartupMessages({
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(knitr)
+  library(tidyverse)
+})
+```
+
+```{r load data}
+review <- read.csv(here::here("data", "biometric_review.csv"), 
+                  stringsAsFactors = F,
+                  strip.white = T,
+                  blank.lines.skip = T) %>% 
+  mutate(c = log10(a),
+         Gender2 = case_when(Gender == "Male" ~ "M",
+                             Gender == "Female" ~ "F",
+                             TRUE ~"B"))
+```
+
+```{r}
+review %>% 
+  filter(!Study == "Fishbase") %>% 
+  arrange(desc(Region)) %>% 
+  mutate(r2 = ifelse(is.na(r2), "-", r2),
+         N = ifelse(is.na(N), "-", N),
+         a = formatC((a*1e5), digits = 2),
+         tl_range = paste(tl_min, tl_max, sep = " - "),
+         tl_range = ifelse(is.na(tl_min), "-", tl_range),
+         d_range = paste(minD, maxD, sep = " - "),
+         d_range = ifelse(is.na(minD), "-", d_range)) %>% 
+  select(Region, Gender2, N, tl_range, a, b, r2, d_range, Years, Spear, Study) %>% 
+  knitr::kable(row.names = F,
+               digits =  c(0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0),
+               booktabs = T,
+               col.names = c("Region",
+                             "Sex",
+                             "n",
+                             "TL range (mm)",
+                             "a",
+                             "b",
+                             "$R^2$",
+                             "Depth range (m)",
+                             "Years",
+                             "Spear",
+                             "Study"),
+               caption = "Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter, b = exponent. Total Lenth ranges for Barbour et al (2011) and Sandel et al (2015) were estimated from figures since they did not explicitly report these parameters. An asterisk (*) in the Spear column indicates that at least some samples were obtained with pole spears.",
+               escape = T) %>% 
+  kableExtra::kable_styling(font_size = 10) %>% 
+  kableExtra::landscape()
+```
+

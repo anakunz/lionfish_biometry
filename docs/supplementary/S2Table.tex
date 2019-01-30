@@ -1,0 +1,141 @@
+\documentclass[12pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Spatial variation in allometric growth of invasive lionfish has management implications},
+            pdfauthor={Villaseñor-Derbez \& Fitzgerald},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Spatial variation in allometric growth of invasive lionfish has management implications}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{Supplementary Table 2}
+  \author{Villaseñor-Derbez \& Fitzgerald}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+\begin{document}
+\maketitle
+
+Extension of data from Table 1 in the main text. This table includes all the variables collected in each study.
+
+\begin{landscape}\begin{table}[t]
+
+\caption{\label{tab:unnamed-chunk-1}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both genders combined (B), a = scaling parameter, b = exponent. Total Lenth ranges for Barbour et al (2011) and Sandel et al (2015) were estimated from figures since they did not explicitly report these parameters. An asterisk (*) in the Spear column indicates that at least some samples were obtained with pole spears.}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}{lllllrlllll}
+\toprule
+Region & Sex & n & TL range (mm) & a & b & $R^2$ & Depth range (m) & Years & Spear & Study\\
+\midrule
+Western Atlantic & B & 774 & 75 - 475 & 2.9 & 2.89 & - & 27 - 45 & 2004 - 2009 & Yes* & Barbour et al., 2011\\
+Western Atlantic & B & - & - & 0.25 & 3.29 & - & - & NA & NA & Darling et al., 2011\\
+GoM & B & 934 & 67 - 377 & 0.21 & 3.34 & 0.98 & - & 2013 - 2014 & Yes & Dahl \& Patterson, 2014\\
+GoM & B & 472 & 98 - 358 & 0.29 & 3.30 & 0.95 & 5 - 20 & 2011 - 2013 & Yes & Aguilar-Perera \& Quijano-Puerto, 2016\\
+GoM & F & 67 & 152 - 345 & 0.12 & 3.47 & 0.95 & 5 - 20 & 2011 - 2013 & Yes & Aguilar-Perera \& Quijano-Puerto, 2016\\
+GoM & M & 59 & 151 - 325 & 0.42 & 3.23 & 0.95 & 5 - 20 & 2011 - 2013 & Yes & Aguilar-Perera \& Quijano-Puerto, 2016\\
+GoM & B & 582 & 80 - 385 & 0.14 & 3.43 & 0.99 & - & 2012 & Yes* & Fogg et al., 2013\\
+GoM & M & 119 & 126 - 385 & 0.27 & 3.31 & 0.97 & - & 2012 & Yes* & Fogg et al., 2013\\
+GoM & F & 115 & 157 - 337 & 0.68 & 3.14 & 0.94 & - & 2012 & Yes* & Fogg et al., 2013\\
+Caribbean & B & 458 & 60 - 380 & 3.6 & 2.81 & - & - & 2011 & Yes* & Sandel et al., 2015\\
+Caribbean & B & 419 & 93 - 410 & 2.8 & 2.85 & 0.8715 & 18.3 - 18.3 & 2012 - 2014 & Yes & Chin et al., 2016\\
+Caribbean & B & 1450 & - & 2.3 & 2.89 & 0.9216 & - & - & - & de Leon et al., 2013\\
+Caribbean & B & 1887 & 27 - 391 & 0.3 & 3.24 & 0.97 & 15 - 30 & 2011 & Yes* & Edwards et al., 2014\\
+Caribbean & B & 2143 & 25 - 375 & 0.52 & 3.18 & 0.9907 & 0.5 - 57 & 2009-2012 & Yes* & Sabido-Itza et al., 2016\\
+Caribbean & B & 227 & 57.09 - 349 & 0.8 & 3.11 & 0.958 & 1 - 30 & 2010 - 2011 & Yes* & Toledo-Hernández et al., 2014\\
+Caribbean & B & 449 & 100 - 395 & 0.23 & 3.25 & 0.97 & - & 2012-2013 & Yes & Sabido-Itza et al., 2016b\\
+Caribbean & B & 368 & 60 - 380 & 0.32 & 3.19 & 0.98 & - & 2012-2013 & Yes & Sabido-Itza et al., 2016b\\
+Caribbean & B & 109 & 34 - 310 & 0.32 & 3.23 & 0.9766 & 5.7 - 38.1 & 2010 & No & This study\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\end{document}

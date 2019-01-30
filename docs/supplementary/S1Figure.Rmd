@@ -1,0 +1,95 @@
+---
+title: Spatial variation in allometric growth of invasive lionfish has management implications
+subtitle: "Supplementary Figure 1"
+author: "Villaseñor-Derbez & Fitzgerald"
+output:
+  bookdown::pdf_document2:
+    toc: no
+fontsize: 12pt
+header-includes:
+   - \usepackage{float}
+   - \floatplacement{figure}{H}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+
+options(knitr.table.format = "latex")
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+```
+
+```{r load packages}
+suppressPackageStartupMessages({
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(knitr)
+  library(cowplot)
+  library(tidyverse)
+})
+```
+
+```{r load data}
+fish <- read_csv(here::here("data", "lionfish_data.csv"), col_types = cols()) %>%
+  group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
+  summarize(Length = 10*mean(TotalLength_cm),
+            Weight = mean(TotalWeigth_gr),
+            Stomach = mean(StomachLength_cm)) %>% 
+  ungroup()
+
+review <- read.csv(here::here("data", "biometric_review.csv"), 
+                  stringsAsFactors = F,
+                  strip.white = T,
+                  blank.lines.skip = T) %>% 
+  mutate(c = log10(a),
+         Gender2 = case_when(Gender == "Male" ~ "M",
+                             Gender == "Female" ~ "F",
+                             TRUE ~"B"),
+         tl_min = ifelse(is.na(tl_min), 34, tl_min),
+         tl_max = ifelse(is.na(tl_max), 310, tl_max))
+```
+
+```{r}
+model <- lm(log10(Weight) ~ log10(Length), data = fish)
+
+This <- data.frame(Length = c(34:310)) %>% 
+  mutate(Weight = 10^(coefficients(model)[1] + coefficients(model)[2]*log10(Length)))
+
+fig_all_allo <- review %>% 
+  filter(!Study == "This study") %>%
+  mutate(Length = list(seq(1, 400))) %>% 
+  unnest() %>% 
+  filter(Length > tl_min & Length < tl_max) %>% 
+  mutate(Weight = a*(Length^b)) %>%
+  group_by(Length) %>% 
+  mutate(min = min(Weight),
+         max = max(Weight)) %>% 
+  ungroup() %>% 
+  ggplot(aes(x = Length)) +
+  geom_line(aes(y = Weight, color = Study, linetype = Gender, group = Study_id), size = 1) +
+  geom_line(data = This, aes(x = Length, y = Weight),
+            size = 1.2, color = "black", linetype = "dashed") +
+  labs(x = "Total length (mm)", y = "Total Weight (g)") +
+  theme_cowplot() +
+  theme(text = element_text(family = "Times"),
+        legend.justification = c(0,1),
+        legend.position = c(0.01, 1.05),
+        legend.background = element_rect(fill = "transparent"),
+        legend.box = "horizontal",
+        legend.text = element_text(size = 9),
+        legend.title = element_text(size = 10)) +
+  guides(color = guide_legend(order = 1),
+         linetype = guide_legend(order = 0, ncol = 2, override.aes = list(size = 0.5)),
+         size = "none") +
+  scale_color_brewer(palette = "Paired", direction = -1) +
+  scale_linetype_manual(values=c("solid", "dashed", "dotted"), name = "Sex") +
+  scale_size_manual(values = c(1, 1.5)) +
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10")
+```
+
+```{r fit2, fig.width = 8, fig.height = 4.5, fig.pos = "H", fig.cap = "\\label{fig:all_allo}Length-weight relationships (n = 18) for 12 studies and this study. The curves are shown for the range of lengths reported in each study (See Supplementary Table 2); when ranges were not present, we use the ones found in this study (34mm - 310 mm). Colors indicate studies from which the parameters were extracted. Dotted, dashed and solid lines show models for males, females, and combined sexes, respectively. The dashed black line represents the relationship estimated in this study. There are two solid green lines for Sabido-Itza et al, 2016b, one for each of the two sites for which they report parameters. A linear-linear version of this figure is presented in Figure 3 of the main text."}
+fig_all_allo
+```
