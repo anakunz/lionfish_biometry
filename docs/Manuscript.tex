@@ -30,15 +30,15 @@ depend on accurate estimates of allometric growth. Sedentary species
 like lionfish often exhibit high levels of spatial variation in life
 history characteristics. We review 17 published length-weight
 relationships for lionfish taken throughout their invasive range and
-found significant regional differences in allometric growth parameters.
-The spatial pattern we observed is consistent with findings from other
-studies focusing on genetics or length-at-age. We show that the use of
-\textit{ex situ} parameters can result in up to a threefold under- or
-overestimation of total weight, but using parameters from nearby regions
-reduces this error. These findings can have substantial implications for
-management in terms of predicting effects on local ecosystems,
-evaluating the effectiveness of removal programs, or estimating biomass
-available for harvest.
+found regional differences that led to significant under- and
+overestimation of weight estimates. The spatial pattern we observed is
+consistent with findings from other studies focusing on genetics or
+length-at-age. We show that the use of \textit{ex situ} parameters can
+result in up to a threefold under- or overestimation of total weight,
+but using parameters from nearby regions reduces this error. These
+findings can have substantial implications for management in terms of
+predicting effects on local ecosystems, evaluating the effectiveness of
+removal programs, or estimating biomass available for harvest.
 \end{abstract}
 
 \begin{document}
@@ -121,8 +121,8 @@ of lionfish provide variable estimates. These differences may be
 increasingly important when estimating the potential effectiveness of
 lionfish culling programs
 \citep{barbour_2011,morris_2011,cote_2014,johnston_2015}. However, the
-extent to which using \emph{ex situ} parameters to estimate total weight
-from length observations remains unexplored.
+magnitude of the error caused by using \emph{ex situ} parameters to
+estimate total weight from length observations remains unexplored.
 
 Here, we use previously published length-weight relationships for
 lionfish populations in North Carolina, Northern and Southern Gulf of
@@ -140,14 +140,15 @@ length-weight relationship for this region.
 We reviewed 12 published studies and obtained 17 length-weight
 relationships for the Western Atlantic (n = 2), Gulf of Mexico (n = 7),
 and Caribbean (n = 8, Table \ref{tab:all_params}, Fig \ref{fig:map}). We
-collected information on sampling methods, sex differentiation,
-location, and depth ranges from each study when available. Only two
+collected information on sex differentiation, location, length and depth
+ranges and sampling methods from each study when available. Only two
 studies reported parameters for each gender
 \citep{aguilarperera_2016,fogg_2013}, so we assumed both genders were
 included in a study if gender was unspecified. Reviewed studies
-presented information for organisms obtained at depths between 0.5 m and
-57 m. Four studies explicitly stated that their organisms were sampled
-with pole spears
+presented information for organisms ranging between 25 mm and 475 mm in
+Total Length (\(TL\)), and that were obtained at depths between 0.5 m
+and 57 m. Four studies explicitly stated that their organisms were
+sampled with pole spears
 \citep{dahl_2014,aguilarperera_2016,chin_2016,sabidoitz_2016}, and six
 studies mentioned that some of their organisms were obtained with pole
 spears (or other type of harpoon) but also hand-held nets or fish traps
@@ -201,41 +202,41 @@ ponderal index from Eq. \ref{eq:allometric} or the y-intercept from the
 linearized log-transformed equation. Other studies incorrectly reported
 parameters as mm-to-g conversions when they were in fact cm-to-g
 conversions. We standardized each study by converting coefficients and
-report all parameters as TL(mm) to TW (g) conversions. Locations where
+report all parameters as TL (mm) to TW (g) conversions. Locations where
 allometric studies have been performed are shown in Figure \ref{fig:map}
 and summarized in Table \ref{tab:all_params}.
 
 We obtained a total of 18 parameter pairs by combining length-weight
 parameters extracted from the literature and the additional pair
 calculated here. Recall that the objective of this study is not to
-describe population-level variations, but rather to estimate how the use
-of \emph{ex situ} parameters influences weight estimates. We used the
-central Mexican Caribbean as a case study of how the use of \emph{ex
+describe variations between populations, but rather to estimate how the
+use of \emph{ex situ} parameters influences weight estimates. We used
+the central Mexican Caribbean as a case study of how the use of \emph{ex
 situ} parameters influences the accuracy of weight estimates for
 lionfish. We estimated \(TW\) from the \(TL\) observations we collected
 in the central Mexican Caribbean (n = 109, with \(TL\) ranging from 34
 mm to 310 mm) using each of the 18 parameter pairs and divided predicted
 weights by known observed weights to obtain a simple measure of over- or
 underestimation. Difference in mean weight ratios were tested with an
-analysis of covariance (ANCOVA) using study and \(TL\) as covariates.
-Ratios were logit-transformed prior to analysis, and a \emph{post-hoc}
-Tukey's test was used to identify groups where mean ratios did not
-differ. All analyses were performed in R version 3.5.2
+analysis of covariance (ANCOVA), where the sources of variation were the
+study and \(TL\). Ratios were logit-transformed prior to analysis, and a
+\emph{post-hoc} Tukey's test was used to identify groups where mean
+ratios did not differ. All analyses were performed in R version 3.5.2
 \citep{rcore_2018}. Raw data and code used in this work are available on
 github at github.com/jcvdav/lionfish\_biometry.
 
 \section*{Results}
 
 The length-weight relationship for organisms from the central Mexican
-Caribbean resulted in the coefficient values
-\(a = 3.2056297\times 10^{-6}\), \(b = 3.2347391\) and
-\(c = -5.4940866\) (\(R^2 = 0.977\), F(df = 1; 107) = 6928.67,
-\(p < 0.001\)). The allometric factor (\(b\)) was significantly
-different from \(b = 3\) (\(t(107) = 6.04; p<0.001\)) indicating that
-lionfish present allometric growth. The length-weight coefficients
-estimated in this study were within the range identified by studies in
-other regions (Table \ref{tab:all_params}). Figure \ref{fig:l-w-carib}
-shows the relationship between TL and TW for this region.
+Caribbean resulted in coefficient values of
+\(a = 3.2056297\times 10^{-6}\) and \(b = 3.2347391\) (\(R^2 = 0.977\),
+F(df = 1; 107) = 6928.67, \(p < 0.001\)). The allometric factor (\(b\))
+was significantly different from \(b = 3\) (\(t(107) = 6.04; p<0.001\))
+corroborating that lionfish present allometric growth. The length-weight
+coefficients estimated in this study were within the range identified by
+studies in other regions (Table \ref{tab:all_params}). Figure
+\ref{fig:l-w-carib} shows the relationship between TL and TW for this
+region.
 
 \begin{figure}
 \centering
@@ -248,19 +249,19 @@ represent the density distribution of each variable.}
 
 There were significant differences in our predicted weights for the
 central Mexican Caribbean when using each of the different pairs of
-parameters (\(F(df = 17; 1944) = 61.55; p < 0.001\)). The lowest weight
+parameters (\(F(df = 17; 1943) = 24.96; p < 0.001\)). The lowest weight
 estimates for the observed lengths resulted from using the allometric
 parameters from Banco Chinchorro in the Caribbean, with mean \(\pm\) SD
 of 40.37 \(\pm\) 58.74 g \citep{sabidoitz_2016}. In contrast, the
 highest weight estimates came from the Western Atlantic with 73.76
 \(\pm\) 96.11 g \citep{barbour_2011}. To put this in context, true
-observed weights have a mean of 52.56 \(\pm\) 76.58 g. Weigths predicted
+observed weights have a mean of 52.56 \(\pm\) 76.58 g. Weights predicted
 from these extreme parameters correspond to mean \(\pm\) SD
 predicted-to-observed weights ratios of 0.80 \(\pm\) 0.19 and 1.76
-\(\pm\) 0.50 (mean \(\pm\) SD), respectively. At its extremes, other
-parameters resulted in under- and overestimations in the order of 0.36
-to 3.51 of the actual observed weight, indicating that \emph{ex situ}
-parameters can result in substantial weight under- and overestimation.
+\(\pm\) 0.50 (mean \(\pm\) SD), respectively. The largest under- and
+overestimations resulted in ratios of 0.36 and 3.51 of the actual
+observed weight, indicating that \emph{ex situ} parameters can result in
+substantial weight under- and overestimation.
 
 Tukey's \emph{post-hoc} test suggests that weight ratios for the central
 Mexican Caribbean were not different from those obtained with parameters
@@ -270,8 +271,9 @@ Gulf of Mexico and Western Atlantic were higher on average than those
 from the Caribbean (Fig \ref{fig:all_allo}). The average (\(\pm\) SD)
 predicted-to-observed weight ratios from these three regions were 1.24
 \(\pm\) 0.309, 1.76 \(\pm\) 0.496, and 1.17 \(\pm\) 0.398, respectively.
-Predicted-to-observed weight ratios are presented in Figure
-\ref{fig:bio_ratio}.
+This suggest that the smallest errors are observed when using parameters
+other locations in the Caribbean. Predicted-to-observed weight ratios
+are presented in Figure \ref{fig:bio_ratio}.
 
 \begin{table}[t]
 
@@ -279,7 +281,7 @@ Predicted-to-observed weight ratios are presented in Figure
 \centering
 \begin{tabular}{llllrll}
 \toprule
-Region & Sex & n & a & b & \$R\textasciicircum{}2\$ & Reference\\
+Region & Sex & n & a & b & $R^2$ & Reference\\
 \midrule
 Western Atlantic & B & 774 & 2.9 & 2.89 & - & Barbour et al., 2011\\
 Western Atlantic & B & - & 0.25 & 3.29 & - & Darling et al., 2011\\
@@ -309,17 +311,16 @@ Caribbean & B & 109 & 0.32 & 3.23 & 0.98 & This study\\
 \begin{figure}
 \centering
 \includegraphics{Manuscript_files/figure-latex/fit2-1.pdf}
-\caption{\label{fig:all_allo}log-log transformation of the length-weight
-relationships (n = 18) for 12 studies and this study. The curves are
-shown for the range of lengths reported in each study (See Supplementary
-Table 2); when ranges were not present, we use the ones found in this
-study (34mm - 310 mm). Colors indicate studies from which the parameters
-were extracted. Dotted, dashed and solid lines show models for males,
-females, and combined sexes, respectively. The dashed black line
-represents the relationship estimated in this study. There are two solid
-green lines for Sabido-Itza et al, 2016b, one for each of the two sites
-for which they report parameters. A log-log version of this figure is
-presented in Figure S4.}
+\caption{\label{fig:all_allo}Length-weight relationships (n = 18) for 12
+studies and this study. The curves are shown for the range of lengths
+reported in each study (See Supplementary Table 2); when ranges were not
+present, we use the ones found in this study (34 mm - 310 mm). Colors
+indicate studies from which the parameters were extracted. Dotted,
+dashed, and solid lines show models for males, females, and combined
+sexes, respectively. The dashed black line represents the relationship
+estimated in this study. There are two solid green lines for Sabido-Itza
+et al, 2016b, one for each of the two sites for which they report
+parameters. A log-log version of this figure is presented in Figure S4.}
 \end{figure}
 
 \begin{figure}
@@ -345,8 +346,8 @@ highly biased weight estimates. Our comparison of observed weights to
 those predicted with locally-informed parameters and \emph{ex situ}
 parameters showed that weight can be overestimated by more than a
 three-fold, and highlights the need to use local information. Here we
-discuss the implications of our findings and highlight potential future
-research directions.
+discuss the implications of our findings, possible shortcommings in our
+analyses, and highlight potential future research directions.
 
 Differences in length-weight relationships have traditionally been
 highlighted as potential pitfalls to fishery management. For example,
@@ -367,18 +368,18 @@ Groupings of predicted-to-observed weight ratios identified in our
 \emph{post hoc} testing aligned with the spatial distribution of the
 examined studies, suggesting that these differences may be mediated by
 space. These regional allometric differences mirror similar patterns in
-age-at-length of lionfish across both their invaded and native regions
+length-at-age of lionfish across both their invaded and native regions
 \citep{pusack_2016}. Variation may be driven by genetics or by
 organisms' exposure to distinct environmental conditions. For example,
 \citet{betancurr_2011} used mitochondrial DNA to demonstrate the
 existence of two distinct population groups, identified as the
 ``Caribbean group'' and ``Northern Group'', and \citet{fogg_2015}
-alternatively suggested that age-at-length differences may be driven by
+alternatively suggested that length-at-age differences may be driven by
 the environment.
 
 We might be inclined to attribute all variation to the spatial origin of
 these parameters. However, these were not only collected for different
-locations, but also using a range of different sampling methods and for
+locations, but also using a range of different sampling methods and at
 different points in time (See Supplementary Table 2 for an extended
 version of Table 1). While we are not able to evaluate how these factors
 influence previous estimates (raw data from all studies would be
@@ -387,26 +388,25 @@ may induce significant bias when calculating weight from length
 observations. Differences in weight-at-length could also reflect
 differential energy input or usage, or a combination of both. The
 magnitude of the bias and our lack of understanding of the source of
-variation hihglights the need to simultaneously collect length-weight
+variation highlights the need to simultaneously collect length-weight
 information across the invaded range to test for spatially-induced
 patterns and link these to previously suggested environmental and
 genetic structures. Such an endeavor would provide insights into
 lionfish biology and better inform management.
 
-Applying parameters estimates to lengths that may be outside the range
-of lengths originally used to estimate the parameters may also induce
-variation lead to over- and underestimation. Our smallest observed
-length was for an organism 34 mm in TL. However, only two studies
+Applying parameters estimates to lengths outside the range of lengths
+originally used to estimate the parameters may also induce error. Our
+smallest observed organism was 34 mm in \(TL\), and only two studies
 estimated parametrs with smaller organisms
 \citep{sabidoitza_2016,edwards_2014}. On the other hand, our largest
-organism had a TL of 310 mm, which is well within the range of all other
-studies (maximum observed lengths varied from 325 mm to 475 mm; See
-Supplementary Table 2). Due to the exponential nature of the allometric
-relationship, the error is higher when extrapolation is done for TLs
-that are larger than the maximum. This means that not only must managers
-use locally-informed data, but that these local data must also include
-the full range of lengths present in the region to reduce error caused
-by extrapolation.
+organism had a \(TL\) of 310 mm, which is well within the range of all
+other studies (maximum observed lengths varied from 325 mm to 475 mm;
+See Supplementary Table 2). Due to the power-function describing the
+allometric relationship, the error is higher when extrapolation is done
+for lengths that are larger than the maximum length used to estimate the
+parameters. This means that not only must managers use locally-informed
+data, but that these local data must also include the full range of
+lengths present in the region to reduce error caused by extrapolation.
 
 The results presented here have fundamental implications for management.
 For example, \citet{edwards_2014} simulated a lionfish culling program
@@ -417,14 +417,14 @@ a four-year difference in the time required for the simulated lionfish
 population to recover to 90\% of its initial biomass after removals
 ceased. Here, we show that using one set of length-weight parameters
 versus another for a given length can result in more than a threefold
-under- or overestimation of total weight. These spatially-driven
-differences become especially important when allocating resources for
-lionfish removal programs, incentivizing lionfish fisheries as a source
-of alternative livelihoods, or estimating ecosystem impacts. Research
-efforts focused on invasive lionfish populations need to use parameters
-calculated for their region to the extent possible, or at least use
-reasonable sets of different parameters that provide upper and lower
-bounds in their results.
+under- or overestimation of total weight. These differences become
+especially important when allocating resources for lionfish removal
+programs, incentivizing lionfish fisheries as a source of alternative
+livelihoods, or estimating ecosystem impacts. Research efforts focused
+on invasive lionfish populations need to use parameters calculated for
+their region to the extent possible, or at least use reasonable sets of
+different parameters that provide upper and lower bounds in their
+results.
 
 \section*{Acknowledgements}
 

@@ -7,7 +7,7 @@ Dear Dr. Pawlik
 
 Enclosed please find our revised manuscript “Spatial variation in allometric growth of invasive lionfish has management implications”(#2018:11:32569:0:0:REVIEW).
 
-We appreciate the professional way in which our manuscript has been handled. Here we address the issues, suggestions, and comments raised by you and the reviewers. We include the original comment in plain text, and our responses in itallics.
+We appreciate the professional way in which our manuscript has been handled. Here we address the issues, suggestions, and comments raised by you and the reviewers. We include the original comment in plain text, and our responses in italics.
 
 We believe that we have fully addressed questions and incorporated all comments. The quality of our manuscript has significantly improved thanks to the feedback from everyone.
 
@@ -26,6 +26,9 @@ University of California Santa Barbara
 jvillasenor@bren.ucsb.edu
 
 ---
+
+\vskip 1in
+
 
 # Editor
 
@@ -97,7 +100,7 @@ L 121: It is not clear to me what the TL (34,310) means. Can you re-write or cla
 
 L125: Will you add the github URL so the readers can find the data and code. It was not clear where the raw data would be shared either.
 
-*We have included the url in the main text, but the decission to leave it there depends on the editorial formatting. However, PeerJ has an "Additional Information and Declarations" section with a subsection on "Data Availability", where we expect the url to be incuded.*
+*We have included the URL in the main text, but the decision to leave it there depends on the editorial formatting. However, PeerJ has an "Additional Information and Declarations" section with a subsection on "Data Availability", where we expect the URL to be included.*
 
 ### Results:
 
@@ -107,11 +110,11 @@ L 134-135: Did you use all of the “different pairs of parameters” from all o
 
 L 134-135: It is not clear what you mean by the lowest and highest weight estimates. For what size did you estimate these? These are pretty low weights so It must have been a small length, why just do it for a small length? Would you assume the effect to be the same among at all lengths? I suspect not with the exponential relationship.
 
-*Here we report the mean $\pm$ standard deviation of the estimated weights for the 109 organisms from the central Mexican Caribbean. We have modified the text to clearify our point.*
+*Here we report the mean $\pm$ standard deviation of the estimated weights for the 109 organisms from the central Mexican Caribbean. We have modified the text to clarify our point.*
 
 - Fig. 3. Why are there two solid light green lines for the Sabido-Itza et al. 2016b? IN the legend for sex make sure that there are two dashed lines for female not just one short dashed line.
 
-*abido-Itza et al. 2016b report parameters from two locations in their study. We have included that information in the figure caption ("There are two solid green lines for Sabido-Itza et al, 2016b, one for each of the two sites for which they report parameters"). The legend for Sex now shows distinct linetypes for Female and Males.*
+*Sabido-Itza et al. 2016b report parameters from two locations in their study. We have included that information in the figure caption ("There are two solid green lines for Sabido-Itza et al, 2016b, one for each of the two sites for which they report parameters"). The legend for Sex now shows distinct line types for Female and Males.*
 
 - Fig. 4. In the caption please indicate what “BC” and “PNAX” mean for the Sabido-Itza 2016b refer to. It is not clear to the reader.
 
@@ -137,15 +140,15 @@ L 82-92: The authors do a good job indicating many of the differences among the 
 
 L 92-94: Why include the Fogg et al. (2013) data when you already know that it is likely to underestimate the weight due to the use of spineless weight. What effect did this have on the analysis using data that you know to be different than the other data? Interestingly, Fig. 3 shows that the Fogg data has some of the largest weights-at-length, not the smallest.
 
-*We also expected estimates from spineless weight to underestimate of total weight, however this wasn't the case, and data from Fogg et al. (2013) produced some of the largest estimates. After a careful evaulation of their paper, we noted that their Table 1, in fact, reports TW to TL conversions by gender and for pooled genders. The corresponding modifications have been made in the text. Their paper can be found in this link: https://lionfish.co/wp-content/uploads/2013/05/Distribution-of-Lionfish-in-the-Gulf-of-Mexico.pdf*
+*We also expected estimates from spineless weight to underestimate of total weight, however this wasn't the case, and data from Fogg et al. (2013) produced some of the largest estimates. After a careful evaluation of their paper, we noted that their Table 1, in fact, reports TW to TL conversions by gender and for pooled genders. The corresponding modifications have been made in the text. Their paper can be found in this link: https://lionfish.co/wp-content/uploads/2013/05/Distribution-of-Lionfish-in-the-Gulf-of-Mexico.pdf*
 
 ## Validity of the findings
 
 L 107-108: There appear to be quite a few differences in the sampling and processing methods among all of the studies (lines 82-92). Which the authors rightly discuss and support the conclusion that using local in situ, not ex situ parameters are critical to use. However, I wonder how this affects the data analysis. To use an ordinary least squares regression when all of the locations and study methods are likely to have an effect does not seem appropriate. I suggest using a mixed modeling technique with "study" as a random effect and the other parameters from equation (3) as the fixed effects, so running a LMM. If the error is not normal, as I suspect because you used a standard error correction you could then use a GLMM with a Gamma error distribution since the response variables are continuous and strictly positive. Doing this type of analysis would allow you to talk more specifically about the amount of variation the occurs based on the ex situ parameters to a site.
 
-*As stated above, we have expanded on the role of these different sampling and processing methods and devoted a paragraph in the duscission (L175). We must clarify, however, that our OLS regression was only performed to estimate the length-weight relationship for the 109 organisms from the central Mexican Caribbean (Fig 2). The fact that similar comments were raised by Rev2 suggests that the text needed further clarification from our side. The objective of our study is not to describe the biological differences in length-weight relationshisp, but to estimate the effect that using ex situ parameter has and determine if this results in large errors.*
+*As stated above, we have expanded on the role of these different sampling and processing methods and devoted a paragraph in the discussion (L175). We must clarify, however, that our OLS regression was only performed to estimate the length-weight relationship for the 109 organisms from the central Mexican Caribbean (Fig 2). The fact that similar comments were raised by Rev2 suggests that the text needed further clarification from our side. The objective of our study is not to describe the biological differences in length-weight relationships, but to estimate the effect that using ex situ parameter has and determine if this results in large errors.*
 
-*We agree, however, that to estimate the "location effect" of the length-weight relationship, these should be modeled as a random effect. The GLMM would not only identify if differences exis, but also tell us the magnitude of these differences. This is a common approach in population biology and would in fact identify the random effect of the location in shaping the length-weight relationship. However, for this we would need to either have the raw data from all the reviewed studies or perform a region-wide collection that would allow us to have standardized data. We believe that after modifying the text to clearly state our objectives and including a discussion paragraph about this, we have addressed this concern.*
+*We agree, however, that to estimate the "location effect" of the length-weight relationship, these should be modeled as a random effect. The GLMM would not only identify if differences exist, but also tell us the magnitude of these differences. This is a common approach in population biology and would in fact identify the random effect of the location in shaping the length-weight relationship. However, for this we would need to either have the raw data from all the reviewed studies or perform a region-wide collection that would allow us to have standardized data. We believe that after modifying the text to clearly state our objectives and including a discussion paragraph about this, we have addressed this concern.*
 
 L175: Remove the word major from the main conclusion. Use either key, central, or fundamental. Major seems to be too strong and subjective of a word.
 
@@ -153,7 +156,7 @@ L175: Remove the word major from the main conclusion. Use either key, central, o
 
 # Reviewer 2
 
-In this manuscript, the authors present an analysis of 17 previously published weight-length relationships for lionfish throughout the species invasive range, along with new data on the weightlength relationship for a population along the central Mexican coast. The authors report important differences in allometric scaling among studies and highlight the effects of applying mis-specified growth parameters to stocks lacking this information. The overall question is relevant to fisheries management and control of invasive lionfish populations, and the paper is well referenced. However, there are several aspects of the paper that would improve the contribution, both in their methodological approach and discussion of their findings. I outline areas for major improvement below.
+In this manuscript, the authors present an analysis of 17 previously published weight-length relationships for lionfish throughout the species invasive range, along with new data on the length-weight relationship for a population along the central Mexican coast. The authors report important differences in allometric scaling among studies and highlight the effects of applying mis-specified growth parameters to stocks lacking this information. The overall question is relevant to fisheries management and control of invasive lionfish populations, and the paper is well referenced. However, there are several aspects of the paper that would improve the contribution, both in their methodological approach and discussion of their findings. I outline areas for major improvement below.
 
 The authors don’t compare the weight-length relationships statistically; instead they compare mean ratios of predicted to observed weight when the estimated parameters from each different study are applied to the range of body lengths they collected in their central Mexican regional study. The violin plot (Fig. 4) that shows these ratios is illustrative, but this isn’t the best approach for several reasons.
 
@@ -163,15 +166,15 @@ First, ratio data isn’t distributed normally, and has unqiue behaviors near th
 
 *Our analyses of ratios now uses logit-transformed ratios. Additionally, and in recognition of the second point, we now use an ANCOVA with site and total length as sources of variation. Our results remain the same: using ex-situ parameters produces significantly different weight estimates. In fact, our post hoc test identifies even more groupings, suggesting that our previous attempt underestimated the differences.*
 
-Second, the parameter estimates from other studies are being applied to lengths of fish outside of the range of lengths that were used to generate the parameters. ANCOVA is the most powerful approach for comparing multiple linear relationships, as it specifically accounts for variation in the covariate (total length) among groups. The application of ANCOVA to the logtransformed weight-length relationships would identify if the beta (b) coefficient varied significantly among populations, and then which populations differed could be discerned using post-hoc tests.
+Second, the parameter estimates from other studies are being applied to lengths of fish outside of the range of lengths that were used to generate the parameters. ANCOVA is the most powerful approach for comparing multiple linear relationships, as it specifically accounts for variation in the covariate (total length) among groups. The application of ANCOVA to the log-transformed weight-length relationships would identify if the beta (b) coefficient varied significantly among populations, and then which populations differed could be discerned using post-hoc tests.
 
 *The reviewer is correct in that we apply the parameters for lengths that may be outside the ranges originally used to estimate such parameters. We have included a paragraph in the discussion that touches on this (L 185).*
 
-*As for the use of ANCOVA, this is a similar comment to that raised by Rev1, who suggested the use of a GLMM with locations as random effects that induce variation in the length-weight estimates. As in that case, we agree that an ANCOVA applied to the raw length-weight information would identify if differences exist between locations. However, we do not have the raw thata from other studies and applying this to the predicted estimates would not help us answer this question. In a sense, we would be asking if the lines in Fig 3 (whith no variation around them) have significantly different slopes and intercepts. As mentioned in the response to R1, we have included a discussion paragraph (L175) highlighting this.*
+*As for the use of ANCOVA, this is a similar comment to that raised by Rev1, who suggested the use of a GLMM with locations as random effects that induce variation in the length-weight estimates. As in that case, we agree that an ANCOVA applied to the raw length-weight information would identify if differences exist between locations. However, we do not have the raw data from other studies and applying this to the predicted estimates would not help us answer this question. In a sense, we would be asking if the lines in Fig 3 (with no variation around them) have significantly different slopes and intercepts. As mentioned in the response to R1, we have included a discussion paragraph (L175) highlighting this.*
 
 The second major improvement would be inclusion in Table 2 of relevant information that would most likely have contributed to any differences in the weight-length relationships among the regions. Most importantly, this Table should include the range of total lengths that each study included, sex (which the authors already include), the depth at which most fish were captured (if reported in the original study), and the range of months (or seasons) during which fish were captured.
 
-*We have included all the information we collected from other studies in a supplementary table (Supplementary Table 2), an extention of Table 2, where other relevant variables are mentioned. Table 2 is now Table 1 after removing the regression table.*
+*We have included all the information we collected from other studies in a supplementary table (Supplementary Table 2), an extension of Table 2, where other relevant variables are mentioned. Table 2 is now Table 1 after removing the regression table.*
 
 The size range is likely a major factor in driving differences, since most of the differences are observed at the largest total lengths, where data is likely sparse for many studies. Importantly, the authors should include a plot of the log-transformed data (reflecting the ANCOVA), with the plotted lines for each study only extending across the range of total lengths included in that study.
 
@@ -217,7 +220,7 @@ The recommendation for major improvement is in the Discussion, related to the in
 
 7. Results line 140: stated predicted/observed ratios were 0.36 – 3.51, but in the sentences above the authors state the lowest was 0.80 and the highest was 1.76; if the above are means and the 0.36 – 3.51 refers to individual fish, this needs to be made clear, but I think reporting the means is sufficient, and most appropriate; particularly if the ANCOVA applied to the full relationships makes the analysis of the predicted/observed ratios redundant, and it is removed. Reporting the range in mean ratios would be sufficient along with an illustrative figure.
 
-*That is correct, the 0.80 and 1.76 values make refrence to the mean ratios. We have modified the text to make this clear, but believe that it is important to explicitly state that the maximum under- and overestimations were by a factor of 0.36 and 3.51. We believe the new text now justifies including these extremes.*
+*That is correct, the 0.80 and 1.76 values make reference to the mean ratios. We have modified the text to make this clear, but believe that it is important to explicitly state that the maximum under- and overestimations were by a factor of 0.36 and 3.51. We believe the new text now justifies including these extremes.*
 
 8. Remove the column for parameter c from Table 2. a = 10c, so there is no need to show both a and c in the Table. Change Fit to R2 in the Table heading, so it doesn’t need to be defined in the caption.
 
