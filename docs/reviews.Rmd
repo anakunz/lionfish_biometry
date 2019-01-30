@@ -2,7 +2,7 @@
 title: "Revision of MS #2018:11:32569:0:0:REVIEW"
 output: pdf_document
 ---
-
+<!-- BE REALLY CAREFUL to go through this and make sure the lines actually match up with the lines in the new manuscript - double check every one --> 
 Dear Dr. Pawlik
 
 Enclosed please find our revised manuscript “Spatial variation in allometric growth of invasive lionfish has management implications”(#2018:11:32569:0:0:REVIEW).
@@ -46,7 +46,7 @@ The word choice needs to be consistent throughout the paper when referring to va
 
 L 19: Using the word “major” is a subjective word and elicits an emotional response usually in those that read it. Please choose a less loaded word. Major to one person is not necessarily major to all people. Instead use substantial, significant, etc. Please make the appropriate changes throughout the manuscript as well (results L142; discussion: L 175).
 
-*We have changed the word from "major" to "substantial" in L19 and L142 and "fundamental" in L175 (now L183).*
+*We have changed the word from "major" to "substantial" in L19 and L142 (now L139) and "fundamental" in L175 (now L193).*
 
 
 ### Introduction:
@@ -189,8 +189,8 @@ Fish occupying shallow versus deep habitats could demonstrate differences in gro
 
 The recommendation for major improvement is in the Discussion, related to the interpretation of their findings. The authors focus mainly on the implications of their findings, in a general way, but offer no potential explanations for the results they observed. Do the patterns of variation in weightlength relationships for invasive lionfish align with the genetic results that have been published? Are they aligned spatially... do populations that are closer geographically have more similar growth relationships? Are there potential effects of depth/season? Did any studies demonstrate a sufficient lack of contrast in total length data to generate a weight-length relationships representative of the entire population in that region? A paragraph or two of Discussion on plausible explanations for the patterns they observed would be a valuable addition.
 
-*As stated above, these were also raised by Rev1. We believe that our modifications to the discussion now explicitly mention these issues. And while we can not test for the influence of all these factors on the length-weight relationship, we can still show that using ex situ parameters that follow different sampling collections and without a standardized collection date may lead to over- and underestimation of total weight.*
-
+*As stated above, these were also raised by Rev1. We believe that our modifications to the discussion in lines... now explicitly mention these issues. And while we can not test for the influence of all these factors on the length-weight relationship, we can still show that using ex situ parameters that follow different sampling collections and without a standardized collection date may lead to over- and underestimation of total weight.*
+<!-- modification in which lines? -->
 
 ## Minor edits
 
