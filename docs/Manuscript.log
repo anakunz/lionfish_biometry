@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  29 JAN 2019 18:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  5 FEB 2019 00:58
 entering extended mode
 **./Manuscript.tex
 (Manuscript.tex
@@ -900,49 +900,49 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 136.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 170.
  [2]
 <Manuscript_files/figure-latex/map-1.pdf, id=13, 397.485pt x 252.945pt>
 File: Manuscript_files/figure-latex/map-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/map-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/map-1.pdf used on input 
-line 161.
+line 174.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
  [3
 
  <./Manuscript_files/figure-latex/map-1.pdf>]
-<Manuscript_files/figure-latex/fit1-1.pdf, id=24, 397.485pt x 252.945pt>
+<Manuscript_files/figure-latex/fit1-1.pdf, id=25, 397.485pt x 252.945pt>
 File: Manuscript_files/figure-latex/fit1-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/fit1-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/fit1-1.pdf used on input
- line 243.
+ line 271.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
 
-<Manuscript_files/figure-latex/fit2-1.pdf, id=25, 397.485pt x 274.02374pt>
+<Manuscript_files/figure-latex/fit2-1.pdf, id=26, 397.485pt x 274.02374pt>
 File: Manuscript_files/figure-latex/fit2-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/fit2-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/fit2-1.pdf used on input
- line 313.
+ line 309.
 (pdftex.def)             Requested size: 397.48402pt x 274.02307pt.
 
-<Manuscript_files/figure-latex/pred_obs-1.pdf, id=26, 397.485pt x 375.4025pt>
+<Manuscript_files/figure-latex/pred_obs-1.pdf, id=27, 397.485pt x 375.4025pt>
 File: Manuscript_files/figure-latex/pred_obs-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/pred_obs-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/pred_obs-1.pdf used on i
-nput line 328.
+nput line 326.
 (pdftex.def)             Requested size: 397.48402pt x 375.40158pt.
- [4
-
-] [5 <./Manuscript_files/figure-latex/fit1-1.pdf>] [6 <./Manuscript_files/figur
-e-latex/fit2-1.pdf>]
+ [4] [5 <./Manuscript_files/figure-latex/fit1-1.pdf>] [6 <./Manuscript_files/fi
+gure-latex/fit2-1.pdf>]
 [7 <./Manuscript_files/figure-latex/pred_obs-1.pdf>] [8
 
 ] (Manuscript.bbl
-[9]
+Underfull \vbox (badness 1430) has occurred while \output is active []
+
+ [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10])
@@ -950,13 +950,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 AED: lastpage setting LastPage
 [11] (Manuscript.aux) ) 
 Here is how much of TeX's memory you used:
- 9073 strings out of 493329
- 131238 string characters out of 3139072
- 357873 words of memory out of 3000000
+ 9067 strings out of 493329
+ 131175 string characters out of 3139072
+ 353880 words of memory out of 3000000
  12180 multiletter control sequences out of 15000+200000
- 58498 words of font info for 243 fonts, out of 3000000 for 9000
+ 58254 words of font info for 239 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,11n,45p,798b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,11n,45p,922b,470s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
@@ -965,7 +965,7 @@ s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
 e1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helveti
 c/uhvro8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Manuscript.pdf (11 pages, 333836 bytes).
+Output written on Manuscript.pdf (11 pages, 333165 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
