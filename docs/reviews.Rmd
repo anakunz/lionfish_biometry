@@ -49,11 +49,11 @@ L 19: Using the word “major” is a subjective word and elicits an emotional r
 
 - *We have removed the word from "major" from L19 (now L20).*
 
-- *We chose to keep the word "major" in L26 to maintain consistency with the authors' original wording, but we have included quotations to denote this.*
+- *We chose to keep the word "major" in L26 (now L30) to maintain consistency with the authors' original wording, but we have included quotations to denote this.*
 
-- *In L142 (Now L145) We now say that "ex situ parameters can result in erroneous weight estimates"*
+- *In L142 (Now L150) We now say that "ex situ parameters can result in erroneous weight estimates"*
 
-- *Ass suggested, we have changed "major" from L175 to "key" (now L201).*
+- *Ass suggested, we have changed "major" from L175 to "key" (now L206).*
 
 
 ### Introduction:
@@ -70,7 +70,7 @@ L24: replace “liberation” with “release”.
 
 L 37: Albins and Hixon (2008) did their research in the Bahamas not Florida. Please correct.
 
-*The text now correctly states the research was performed in the Bahamas (L38).*
+*The text now correctly states the research was performed in the Bahamas (L37).*
 
 
 L47: Replace impacts with “negative effects”.
