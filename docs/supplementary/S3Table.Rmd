@@ -1,0 +1,83 @@
+---
+title: Spatial variation in allometric growth of invasive lionfish has management implications
+subtitle: "Supplementary Table 3"
+author: "Villaseñor-Derbez & Fitzgerald"
+output:
+  bookdown::pdf_document2:
+    toc: no
+    keep_tex: yes
+fontsize: 12pt
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+
+options(knitr.table.format = "latex")
+
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+```
+
+```{r load packages}
+suppressPackageStartupMessages({
+  library(stargazer)
+  library(sandwich)
+  library(lmtest)
+  library(broom)
+  library(knitr)
+  library(tidyverse)
+})
+```
+
+```{r load data}
+fish <- read_csv(here::here("data", "lionfish_data.csv"), col_types = cols()) %>%
+  group_by(Id, Site, Location, Latitude, Longitude, Depth_m) %>% 
+  summarize(Length = 10*mean(TotalLength_cm),
+            Weight = mean(TotalWeigth_gr),
+            Stomach = mean(StomachLength_cm)) %>% 
+  ungroup()
+
+review <- read.csv(here::here("data", "biometric_review.csv"), 
+                  stringsAsFactors = F,
+                  strip.white = T,
+                  blank.lines.skip = T) %>% 
+  mutate(c = log10(a),
+         Gender2 = case_when(Gender == "Male" ~ "M",
+                             Gender == "Female" ~ "F",
+                             TRUE ~"B"))
+```
+
+```{r}
+model <- lm(log10(Weight) ~ log10(Length), data = fish)
+c <- coefficients(model)[[1]]
+b <- coefficients(model)[[2]]
+```
+
+```{r}
+Predicted_biomass <- review %>% 
+  mutate(Length = list(fish$Length),
+         Weight = list(fish$Weight)) %>% 
+  unnest() %>% 
+  mutate(pWeight = a*(Length^b),
+    Biomass_ratio = pWeight / Weight,
+    logit_biomass_ratio = car::logit(Biomass_ratio))
+```
+
+```{r}
+Predicted_biomass %>% 
+  mutate(Study = paste0(Study, " (", Gender_site, ")"),
+         Region = case_when(Region == "Western Atlantic" ~ "WA",
+                            Region == "Caribbean" ~ "Ca",
+                            T ~ "GoM")) %>% 
+  group_by(Region, Study) %>%
+  summarize(Wp = sum(pWeight),
+            W = sum(Weight)) %>%
+  ungroup() %>%
+  mutate(error = Wp / W * 100) %>%
+  arrange(desc(error)) %>%
+  select(-W) %>% 
+  knitr::kable(col.names = c("Region", "Study", "Biomass (g)", "Percent of observed"),
+               booktabs = T,
+               digits = 2,
+               caption = "\\label{tab:errors}Comparison of errors of total biomass estimation for each pair of parameters. Numeric columns show the estimated total biomass for each pair of parameters (summing across all 109 organisms) and how these compare to true observed total biomass (5729.34 g). Rows are arranged in according to the percentages, in descending order.") %>% 
+  kableExtra::kable_styling(latex_options = "HOLD_position")
+```

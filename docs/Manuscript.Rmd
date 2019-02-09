@@ -3,8 +3,7 @@ title: "Spatial variation in allometric growth of invasive lionfish has manageme
 author: "Juan Carlos Villaseñor-Derbez, Sean P. Fitzgerald"
 institution: "Bren School of Environmental Sciences and Management, University of California Santa Barbara, Santa Barbara, California, U.S."
 abstract: |
-  Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth, but sedentary species like lionfish often exhibit high levels of spatial variation in life history characteristics. We reviewed 17 published length-weight relationships for lionfish taken throughout their invasive range and found regional differences that led to significant misestimates when calculating weight from length observations. The spatial pattern we observed is consistent with findings from other studies focused on genetics or length-at-age. We show that the use of \textit{ex situ} parameters can result in up to a threefold under- or overestimation of total weight, but using parameters from nearby regions substantially reduces this error. These findings can have implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
-# I'm not sure I like the word "misestimates" but I want to avoid repeating the phrase "under- or overestimation" twice in the abstract; if you can come up with something that sounds better, go for it.
+  Lionfish (\textit{Pterois volitans / miles}) are an invasive species in the Western Atlantic and the Caribbean. Improving management of invasive lionfish populations requires accurate total biomass estimates, which depend on accurate estimates of allometric growth, but sedentary species like lionfish often exhibit high levels of spatial variation in life history characteristics. We reviewed 17 published length-weight relationships for lionfish taken throughout their invasive range and found regional differences that led to significant misestimates when calculating weight from length observations. The spatial pattern we observed is consistent with findings from other studies focused on genetics or length-at-age. We show that the use of \textit{ex situ} parameters can result in up to a threefold under- or overestimation of total weight for an individual organism. When estimating total biomass, the use of other parameters may produce estimates between 76.2% and 140% of true observed biomass. These findings can have implications for management in terms of predicting effects on local ecosystems, evaluating the effectiveness of removal programs, or estimating biomass available for harvest.
 keywords:
   - Lionfish
   - invasive species
@@ -17,14 +16,14 @@ output:
     keep_tex: yes
     number_sections: no
     template: peerj_template.tex
-header-includes:
-   - \usepackage{float}
-   - \floatplacement{figure}{H}
-   - \restylefloat{table}
 ---
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.width = 5.5)
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F,
+                      fig.width = 5.5,
+                      fig.pos = "H")
 
 options(knitr.table.format = "latex")
 
@@ -51,7 +50,7 @@ suppressPackageStartupMessages({
 
 \section*{Introduction}
 
-Lionfish (*Pterois volitans/miles* complex) are an invasive species in the Western Atlantic Ocean and Caribbean Sea, likely introduced through release of aquarium-kept organisms \citep{betancurr_2011}. Lionfish are the first invasive marine vertebrates established along these coasts \citep{schofield_2009,schofield_2010,sabidoitza_2016}, and they have established invasive populations in coral reefs, estuaries, mangroves, hard-bottomed areas, and mesophotic reefs \citep{barbour_2010,jud_2011,muoz_2011,claydon_2012,andradibrown_2017,gress_2017}. Their presence has been labeled as a major marine invasion because they threaten local biodiversity, spread rapidly, and are difficult to manage \citep{hixon_2016}. 
+Lionfish (*Pterois volitans/miles* complex) are an invasive species in the Western Atlantic Ocean and Caribbean Sea, likely introduced through release of aquarium-kept organisms \citep{betancurr_2011}. Lionfish are the first invasive marine vertebrates established along these coasts \citep{schofield_2009,schofield_2010,sabidoitza_2016}, and they have established invasive populations in coral reefs, estuaries, mangroves, hard-bottomed areas, and mesophotic reefs \citep{barbour_2010,jud_2011,muoz_2011,claydon_2012,andradibrown_2017,gress_2017}. Their presence has been labeled as a "major marine invasion" because they threaten local biodiversity, spread rapidly, and are difficult to manage \citep{hixon_2016}. 
 
 A substantial amount of research describes lionfish impacts throughout their invaded range. A meta-analysis by \citet{peake_2018} showed that invasive lionfish prey on at least 167 different species across the tropical and temperate Western Atlantic. Their feeding behavior and high consumption rates can reduce recruitment and population sizes of native reef-fish species, and can further endanger reef fish \citep[][but see \citealt{hackerott_2017} for a counterexample]{green_2012,rocha_2015}. For example, field experiments showed that lionfish establishment in the Bahamas led to reduced recruitment of native fishes by nearly 80% over a five-week period \citep{albins_2008}, and prey fish biomass declined by 65% over two years as lionfish biomass increased along Bahamian coral reefs \citep{green_2012}. However, trophic impacts of lionfish can be minimized if their local biomass is controlled by culling \citep{ariasgonzalez_2011}.
 
@@ -88,8 +87,6 @@ review <- read.csv(here::here("data", "biometric_review.csv"),
 We reviewed 12 published studies and obtained 17 length-weight relationships for the Western Atlantic (n = 2), Gulf of Mexico (n = 7), and Caribbean (n = 8, Table \ref{tab:all_params}, Fig \ref{fig:map}). Study sites included North Carolina, the Northern and Southern Gulf of Mexico, the Southern Mexican Caribbean, the Bahamas, Little Cayman, Jamaica, Bonaire, Puerto Rico, and Costa Rica \citep{barbour_2011,darling_2011,deleon_2013,fogg_2013,dahl_2014,edwards_2014,toledohernndez_2014,sandel_2015,aguilarperera_2016,sabidoitza_2016,sabidoitz_2016,chin_2016}. We have access only to the summarized information published in these studies - not the raw data authors used to make length-weight calculations. We collected information on sex differentiation, location, length and depth ranges, and sampling methods from each study when available. Only two studies reported sex-specific length-weight parameters \citep{aguilarperera_2016,fogg_2013}, so we assumed data were reported for both sexes combined in all other studies. Reviewed studies presented information for organisms ranging from `r min(review$tl_min, na.rm = T)`-`r max(review$tl_max, na.rm = T)` mm in Total Length ($TL$) and were obtained at depths between `r min(review$minD, na.rm = T)` m and `r max(review$maxD, na.rm = T)` m. Four studies explicitly stated that their organisms were sampled with pole spears \citep{dahl_2014,aguilarperera_2016,chin_2016,sabidoitz_2016}, and six studies mentioned that some of their organisms were obtained with pole spears (or other type of harpoon) but also hand-held nets or fish traps \citep{barbour_2011,fogg_2013,edwards_2014,toledohernndez_2014,sandel_2015,sabidoitza_2016}. Two studies did not specify how organisms were sampled \citep{darling_2011,deleon_2013}.
 
 We also used data from 109 lionfish sampled by \citet{villaseorderbez_2014}, who used hand nets and numbered bottles to collect Total Length (TL; mm) and Total Weight (TW; g) for organisms from 10 sampling sites along the central Mexican Caribbean coast in the Summer of 2010 (Supplementary Table 1). Sampling locations included wall and carpet reefs at depths between 5.7 m and 38.1 m. The use of hand nets prevented any weight loss due to bleeding and allowed better representation of small sizes by avoiding gear selectivity. Organisms were euthanized via pithing.
-
-\clearpage
 
 ```{r}
 
@@ -131,9 +128,15 @@ TW = aTL^b
 
 where $a$ is the ponderal index and $b$ is the scaling exponent or allometric parameter. We linearized the equation using $log_{10}$-transformation and estimated the coefficients using an Ordinary Least Squares Regression with a heteroskedastic-robust standard error correction \citep{zeileis_2004}. Coefficients were tested with a two-tailed Student's t-test, and the significance of the regression was corroborated with an F-test. Some of the reviewed studies (Table \ref{tab:all_params}, Fig \ref{fig:map}) inconsistently defined $a$ as either the ponderal index from Eq. \ref{eq:allometric} or the y-intercept from the linearized log-transformed equation. Other studies incorrectly reported parameters as mm-to-g conversions when they were in fact cm-to-g conversions. We standardized each study by converting coefficients and report all parameters as TL (mm) to TW (g) conversions.
 
-We obtained a total of 18 parameter pairs by combining length-weight parameters extracted from the literature and the additional pair calculated here. Recall that the objective of this study is not to describe variations between populations (which would require access to raw data), but rather to assess how *ex situ* parameter values influence the accuracy of weight estimates for lionfish, using the central Mexican Caribbean as a case study. Using each of the 18 parameter pairs, we estimated $TW$ from the $TL$ observations collected in the central Mexican Caribbean (n = 109, with $TL$ ranging from 34 mm to 310 mm) and divided predicted weights by known observed weights to obtain a simple measure of over- or underestimation. Difference in mean weight ratios were tested with an analysis of covariance (ANCOVA), where the sources of variation were the study and $TL$. Ratios were logit-transformed prior to analysis, and a *post-hoc* Tukey's test was used to identify groups where mean ratios did not differ. All analyses were performed in R version `r paste(version$major, version$minor, sep = ".")` \citep{rcore_2018}. Raw data and code used in this work are available on github at github.com/jcvdav/lionfish_biometry.
+We obtained a total of 18 parameter pairs by combining length-weight parameters extracted from the literature and the additional pair calculated here (Fig \ref{fig:all_allo}). Recall that the objective of this study is not to describe variations between populations (which would require access to raw data), but rather to assess how *ex situ* parameter values influence the accuracy of weight estimates for lionfish, using the central Mexican Caribbean as a case study. Using each of the 18 parameter pairs, we estimated $TW$ from the $TL$ observations collected in the central Mexican Caribbean (n = 109, with $TL$ ranging from 34 mm to 310 mm) and divided predicted weights by known observed weights to obtain a simple measure of over- or underestimation. Difference in mean weight ratios were tested with an analysis of covariance (ANCOVA): 
 
-<!-- I think we need to write the ANCOVA model as an equation and include it in the text - will make it seem more robust; check out these slides http://users.stat.umn.edu/~helwig/notes/acov-Notes.pdf -->
+\begin{equation}
+R_{i,j} = \tilde{\mu} + \alpha_j + \beta TL_{ij} + e_{ij}
+\end{equation}
+
+\clearpage
+
+Where $R_{ij}$ is the weight ratio for the $i$-th organism obtained with parameters from the $j$-th study, $\tilde{\mu}$ is a constant for all individuals, $a_j$ is the treatment effect (*i.e.* the difference induced by each study), $TL_{ij}$ is the covariate (*i.e.* Total Length) for the $i$-th subject in the $j$-th group with slope $\beta$, and $e_{ij}$ is the error term of the regression. Ratios were logit-transformed prior to analysis, and a *post-hoc* Tukey's test was used to identify groups where mean ratios did not differ. All analyses were performed in R version `r paste(version$major, version$minor, sep = ".")` \citep{rcore_2018}. Raw data and code used in this work are available on github at github.com/jcvdav/lionfish_biometry.
 
 ```{r}
 review %>% 
@@ -148,7 +151,8 @@ review %>%
                digits =  c(0, 0, 0, 0, 2, 2),
                booktabs = T,
                col.names = c("Region", "Sex", "n", "a", "b", "$R^2$", "Reference"),
-               caption = "\\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both sexes combined (B), a = scaling parameter (presented in $\\times 10^{-5}$), b = exponent.")
+               caption = "\\label{tab:all_params}Summary of 18 allometric growth parameters available for lionfish in the invaded range from peer-reviewed literature and this study. All parameters have been adjusted to convert from millimeters to grams. n = Sample size, Sex specifies whether data was presented for Females (F), Males (M), or both sexes combined (B), a = scaling parameter (presented in $\\times 10^{-5}$), b = exponent.") %>% 
+  kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
 ```{r model fitting}
@@ -184,7 +188,7 @@ Predicted_biomass <- review %>%
     Biomass_ratio = pWeight / Weight,
     logit_biomass_ratio = car::logit(Biomass_ratio))
 
-anova <- aov(Biomass_ratio ~ Study_id, data = Predicted_biomass)
+# anova <- aov(Biomass_ratio ~ Study_id, data = Predicted_biomass)
 ancova <- aov(logit_biomass_ratio ~ Study_id + Length, data = Predicted_biomass)
 
 groups <- HSD.test(y = ancova, trt = "Study_id")
@@ -196,11 +200,11 @@ Fstring <- waldtest(model, vcov = vcovHC(model, type = "HC1")) %>%
 Fstring <- paste0("F(df = 1; ", nobs(model)-2, ") = ", formatC(Fstring$statistic[2], digits = 2, format = "f"))
 ```
 
+\clearpage
+
 \section*{Results}
 
-The length-weight relationship for organisms from the central Mexican Caribbean resulted in coefficient values of $a = `r a`$ and $b = `r bs`$ ($R^2 = `r Rsq`$, $F_{1, 107} = 6928.67; p < 0.001$). The allometric factor ($b$) was significantly different from $b = 3$ ($t_{107} = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.001$), corroborating that lionfish present allometric growth. The length-weight coefficients estimated here were within the range identified by studies from other regions (Table \ref{tab:all_params}). Figure \ref{fig:l-w-carib} shows the relationship between TL and TW for this region.
-
-<!-- Careful: the e-06 is being printed for the a value in the manuscript -->
+The length-weight relationship for organisms from the central Mexican Caribbean (\ref{fig:l-w-carib}) resulted in coefficient values of $a = 3.205 \times 10^{-6}$ and $b = `r bs`$ ($R^2 = `r Rsq`$, $F_{1, 107} = 6928.67; p < 0.001$). The allometric factor ($b$) was significantly different from $b = 3$ ($t_{107} = `r formatC((coef(model)[[2]]-3)/robust_se[[2]], digits = 2, format = "f")`; p<0.001$), corroborating that lionfish present allometric growth. The length-weight coefficients estimated here were within the range identified by studies from other regions (Table \ref{tab:all_params}).
 
 ```{r}
 TidyModel <- model %>%
@@ -246,7 +250,10 @@ fit <- ggplot(data = fish, mapping = aes(x = Length, y = Weight)) +
   theme(text = element_text(family = "Times")) +
   scale_color_brewer(palette = "Set3") +
   theme(text=element_text(family = "Times")) +
-  geom_smooth(method = "lm", formula = y ~ I(c*x^b), se = F, color = "black", linetype = "dashed") +
+  geom_smooth(method = "lm", formula = y ~ I(c*x^b),
+              se = F,
+              color = "black",
+              linetype = "dashed") +
   annotate(geom = "text",
             x = 125, y = 390,
             label = get_eqn(model),
@@ -278,36 +285,13 @@ fig_l_w_carib <- ggExtra::ggMarginal(p = fit,
                                      alpha = 0.5)
 ```
 
-```{r fit1,  fig.height = 3.5, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
+```{r fit1, fig.height = 3.2, fig.pos = "H", fig.cap = "\\label{fig:l-w-carib}Length-weight relationship for 109 lionfish sampled in the central Mexican Caribbean. Points indicate samples, dashed black line indicates curve of best fit, marginal plots represent the density distribution of each variable."}
 fig_l_w_carib
 ```
 
+ANCOVA results show that there were significant differences in our predicted weight ratios for the central Mexican Caribbean when using each of the different pairs of parameters ($F_{17, 1943} = 24.96; p < 0.001$; Fig \ref{fig:bio_ratio}). For example, the actual observed weights of the 109 lionfish from the Central Mexican Caribbean had a mean $\pm$ SD of `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Weight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Weight) %>% formatC(digits = 2, format = "f")` g. However, if we used allometric parameter values from Banco Chinchorro in the Caribbean to predict weights from our observed length observations, we estimated a mean $\pm$ SD of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` g \citep{sabidoitz_2016}. If we similarly used parameter values from North Carolina in the Western Atlantic to estimate lionfish weights in the Central Mexican Caribbean, we found a mean $\pm$ SD `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` g \citep{barbour_2011}. Weights predicted from these extreme parameters correspond to mean predicted-to-observed weight ratios of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` and `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` (mean $\pm$ SD), respectively. Furthermore, for individual organisms, the largest differences between predicted and observed values resulted in ratios of `r min(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")` and `r max(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")` (*i.e.* the tails of each violin in Fig \ref{fig:bio_ratio}). If instead of looking at the mean ratios we looked at the total biomass (*i.e.* summing across organisms), these cases would lead to estimated total biomasses of 76.2% (4,363.53 g) and 140% (8,039.96 g) of true observed biomass (5,729.34 g). These were the two most extreme sets of parameters, but results consistently varie Use of *ex situ* parameters can result in erroneous weight and total biomass estimates for lionfish.
 
-```{r, results = "asis", eval = F}
-stargazer(model,
-          dep.var.caption = "$log_{10}(TW)$",
-          dep.var.labels.include = F,
-          header = F,
-          se = list(robust_se),
-          type = "latex",
-          t.auto = T,
-          p.auto = T,
-          intercept.bottom = F,
-          single.row = T,
-          report = "vcs*",
-          omit.stat = c("f", "rsq"),
-          add.lines = list(f_string),
-          covariate.labels = c("c", "b"),
-          dep.var.labels = "log10(TW)", title = "\\label{tab:reg_table}Coefficients of the linear model fit to Eq 1. Numbers in parenthesees represent heteroskedastic-robust standard errors.")
-```
-
-There were significant differences in our predicted weight **RATIOS?**s for the central Mexican Caribbean when using each of the different pairs of parameters ($F_{17, 1943} = 24.96; p < 0.001$). The lowest weight estimates for the observed lengths resulted from using the allometric parameters from Banco Chinchorro in the Caribbean, with mean $\pm$ SD of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` g \citep{sabidoitz_2016}. In contrast, the highest weight estimates came from the Western Atlantic with `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(pWeight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(pWeight) %>% formatC(digits = 2, format = "f")` g \citep{barbour_2011}. True observed weights had a mean of `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Weight) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Weight) %>% formatC(digits = 2, format = "f")` g. Weights predicted from these extreme parameters correspond to predicted-to-observed weight ratios of `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Sabido2BC") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` and `r filter(Predicted_biomass, Study_id == "Barbour") %$% mean(Biomass_ratio) %>% formatC(digits = 2, format = "f")` $\pm$ `r filter(Predicted_biomass, Study_id == "Barbour") %$% sd(Biomass_ratio) %>% formatC(digits = 2, format = "f")` (mean $\pm$ SD), respectively. The largest under- and overestimations resulted in ratios of `r min(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")` and `r max(Predicted_biomass$Biomass_ratio) %>% formatC(digits = 2, format = "f")` of the actual observed weight, indicating that *ex situ* parameters can result in highly erroneous weight estimates.
-
-<!-- By "The largest under- and overestimations" in the paragraph above, do you mean the estimates at the far end of the size spectrum?  I.e., the estimates for the lionfish with the longest TL?  Need to clarify that.  It's confusing how the ratio goes from 0.8 and 1.76 to 0.36 and 3.51 -->
-
-Tukey's *post-hoc* test suggested that weight ratios for the central Mexican Caribbean were not different from those obtained with parameters from Little Cayman, the Bahamas, and some sites in the Gulf of Mexico (Tukey's HSD $p > 0.05$). All weight estimates using parameters from the Gulf of Mexico and Western Atlantic were higher than observed values, and only parameters from the Caribbean produced weights smaller than observed (Fig \ref{fig:bio_ratio}). The regional average ($\pm$ SD) of predicted-to-observed weight ratios from these three regions were 1.24 $\pm$ 0.309, 1.41 $\pm$ 0.523, and 1.20 $\pm$ 0.423 for the Gulf of Mexico, Western Atlantic, and Caribbean, respectively. This suggests that the smallest errors are observed when using parameters from other locations in the Caribbean. Predicted-to-observed weight ratios are presented in Figure \ref{fig:bio_ratio}.
-
-<!-- I think we need to explicitly say which results are referring to our ANCOVA outputs - it's the weight ratios at the beginning of the second paragraph in results, right?  I.e., just say "ANCOVA results show that There were significant differences in our predicted weight **RATIOS?**s for the central Mexican Caribbean when using each of the different pairs of parameters ($F_{17, 1943} = 24.96; p < 0.001$)."  Then I think we should put the in-text reference to the violin plot right after that (provides a clear/concise link of here are our ANCOVA results; here's the plot showing them.) -->
+Tukey's *post-hoc* test suggested that weight ratios for the central Mexican Caribbean were not different from those obtained with parameters from Little Cayman, the Bahamas, and some sites in the Gulf of Mexico (Tukey's HSD $p > 0.05$). All weight estimates using parameters from the Gulf of Mexico and Western Atlantic were higher than observed values, and only parameters from the Caribbean produced weights smaller than observed (Fig \ref{fig:bio_ratio}). The regional average ($\pm$ SD) of predicted-to-observed weight ratios from these three regions were 1.24 $\pm$ 0.309, 1.41 $\pm$ 0.523, and 1.20 $\pm$ 0.423 for the Gulf of Mexico, Western Atlantic, and Caribbean, respectively. This suggests that the smallest errors are observed when using parameters from other locations in the Caribbean.
 
 ```{r}
 This <- data.frame(Length = c(34:310)) %>% 
@@ -372,7 +356,9 @@ fig_bio_ratio <- Predicted_biomass %>%
             Study_id = reorder(Study_id, -Biomass_ratio)) %>%
   rename(Sex = Gender) %>% 
   ggplot(aes(x = Study, y = Biomass_ratio, group = Study_id)) +
-  geom_violin(aes(fill = Region), alpha = 0.8) +
+  geom_violin(aes(fill = Region),
+              alpha = 0.8,
+              color = "black") +
   stat_summary(geom = "point",
                fun.y = "median",
                size = 2,
@@ -391,13 +377,49 @@ fig_bio_ratio <- Predicted_biomass %>%
         legend.background = element_rect(fill = "transparent"),
         axis.text = element_text(size = 10),
         axis.title = element_text(size = 12)) +
-  geom_text(aes(y = 3.5, label = groups), family = "Times", fontface = "plain") +
+  geom_text(aes(y = 3.6, label = groups), family = "Times", fontface = "plain") +
   scale_y_continuous(limits = c(NA, 3.7)) +
   guides(fill = guide_legend(title.position = "top"))
 ```
 
-```{r pred_obs, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Blue circles indicate median values and like letters indicate values that do not differ significantly. For Sabido-Itza et al, 2016b, BC and PNAX make reference to Banco Chinchorro and Parque Nacional Arrecifes de Xcalak, two sites for which they report parameters."}
+```{r pred_obs, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:bio_ratio}Violin plot of predicted-to-observed weight ratios for 18 pairs of allometric parameters. Sex is indicated in parentheses. Blue circles indicate median values and like letters indicate values that do not differ significantly. For Sabido-Itza et al, 2016b, BC and PNAX make reference to Banco Chinchorro and Parque Nacional Arrecifes de Xcalak, two sites for which they report parameters."}
 fig_bio_ratio
+```
+
+```{r, fig.height = 5.2, fig.width = 5.5, fig.cap = "\\label{fig:errors}Estimated total biomas relative to observed biomass (5,729.34 g) for 18 pairs of allometric parameters. Sex is indicated in parentheses. For Sabido-Itza et al, 2016b, BC and PNAX make reference to Banco Chinchorro and Parque Nacional Arrecifes de Xcalak, two sites for which they report parameters."}
+errors <- Predicted_biomass %>% 
+  mutate(Study = paste0(Study, " (", Gender_site, ")"),
+         Region = case_when(Region == "Western Atlantic" ~ "WA",
+                            Region == "Caribbean" ~ "Ca",
+                            T ~ "GoM")) %>% 
+  group_by(Region, Study) %>%
+  summarize(Wp = sum(pWeight),
+            W = sum(Weight)) %>%
+  ungroup() %>% 
+  mutate(error = Wp / W)  %>% 
+  transform(Study = reorder(Study, -error)) %>%
+  select(-W) %>%
+  ggplot(aes(x = Study, y = error)) +
+  geom_col(aes(fill = Region),
+           alpha = 0.8,
+           color = "black") +
+  coord_flip() +
+  geom_hline(yintercept = 1, linetype = "dashed") +
+  labs(y = "Total biomass relative to observed", x = "") +
+  theme_cowplot() +
+  theme(text = element_text(family = "Times")) +
+  scale_fill_brewer(palette = "Set1") +
+  theme(text = element_text(family = "Times"),
+        legend.position = "top",
+        legend.text = element_text(size = 10),
+        legend.background = element_rect(fill = "transparent"),
+        axis.text = element_text(size = 10),
+        axis.title = element_text(size = 12)) +
+  guides(fill = guide_legend(title.position = "top")) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1),
+                     expand = c(0,0))
+
+errors
 ```
 
 \clearpage
@@ -412,13 +434,9 @@ We detected substantial differences in weight-at-length between organisms from t
 
 We might be inclined to attribute all variation in the lionfish length-weight relationship to the spatial origin of these parameters. However, samples from the 12 studies included here were not only collected in different locations, but also at different points in time and across different depth and size ranges (See Supplementary Table 2 for an extended version of Table 1). While we could not evaluate how these factors influenced length-weight estimates from previous studies without raw data, we still show that a lack of locally-calculated parameters can induce significant bias when calculating weight from length observations. The magnitude of the bias discovered in this study and our lack of understanding the sources driving spatial variation for lionfish highlights the need to simultaneously collect length-weight information across the invaded range to test for spatially-induced patterns and to link these findings to previously suggested environmental and genetic structures. Such an endeavor would provide insight into lionfish biology and better inform management.
 
-Applying parameter estimates to lengths outside the range of lengths originally used to estimate the parameters may also induce error. Our smallest observed organism was 34 mm in $TL$, and only two studies estimated parametrs with smaller organisms \citep{edwards_2014,sabidoitza_2016}. By contrast, our largest organism had a $TL$ of 310 mm, which is well within the range of all other studies (the next smallest maximum length was 325 mm; See Supplementary Table 2). Due to the power function describing the allometric relationship (*i.e.* Eq. 1), the error in weight estimates is larger when extrapolation is done for lengths that are larger than the maximum length used to estimate the parameters.
+Applying parameter estimates to lengths outside the range of lengths originally used to estimate the parameters may also induce error. Our smallest observed organism was 34 mm in $TL$, and only two studies estimated parametrs with smaller organisms \citep{edwards_2014,sabidoitza_2016}. By contrast, our largest organism had a $TL$ of 310 mm, which is well within the range of all other studies (the next smallest maximum length was 325 mm; See Supplementary Table 2). Due to the power function describing the allometric relationship (*i.e.* Eq. 1), the error in weight estimates is larger when extrapolation is done for lengths that are larger than the maximum length used to estimate the parameters. Our estimates are therefore conservative because we only used parameter pairs from other studies to estimate weights for lionfish up to 310 mm in the Central Mexican Caribbean, well within the range of lengths for which other parameters were estimated.
 
-<!-- I modified the paragraph above a bit, and think its a bit more clear, but please change it if you think there are better ways to explain it. I think the central idea is that we do not extrapolate from other predictions, so we are safe in that sense. -->
-
-<!-- Looks good.  There's one more thing that's really important for us to clarify - do we only make projections for lionfish up to 310 mm in size?  Like, the threefold over/underestimation isn't for a hypothetical lionfish that's 500 mm TL or something, right?  If so, we should tack on a sentence saying "we were conservative in our estimates in that we only used parameter pairs from other studies to estimate weights for lionfish up to 310mm in the Central Mexican Caribbean".  Or something like that.  Lmk if that makes sense. -->
-
-The results presented here have key implications for management. For example, \citet{edwards_2014} simulated a lionfish culling program under two scenarios, one using length-at-age and length-to-weight parameters from North Carolina and one using parameters from Little Cayman. Their results show that using different parameters caused up to a four-year difference in the time required for the simulated lionfish population to recover to 90% of its initial biomass after removals ceased. Here, we show that using one set of length-weight parameters versus another for a given length can result in more than a threefold under- or overestimation of total weight. These differences become especially important when allocating resources for lionfish removal programs, incentivizing lionfish fisheries as a source of alternative livelihoods, or estimating ecosystem impacts. Research efforts focused on invasive lionfish populations need to use parameters calculated for their region to the extent possible, or use different sets of parameters that provide appropriate upper and lower bounds in their results.
+The results presented here have key implications for management. For example, \citet{edwards_2014} simulated a lionfish culling program under two scenarios, one using length-at-age and length-to-weight parameters from North Carolina and one using parameters from Little Cayman. Their results show that using different parameters caused up to a four-year difference in the time required for the simulated lionfish population to recover to 90% of its initial biomass after removals ceased. Here, we show that using one set of length-weight parameters versus another for a given length can result in more than a threefold under- or overestimation of total weight for individual fish, and that total biomass estimates may range between 76% and 140% of true observed biomass. These differences become especially important when allocating resources for lionfish removal programs, incentivizing lionfish fisheries as a source of alternative livelihoods, or estimating ecosystem impacts. Research efforts focused on invasive lionfish populations need to use parameters calculated for their region to the extent possible, or use different sets of parameters that provide appropriate upper and lower bounds in their results.
 
 \section*{Acknowledgements}
 

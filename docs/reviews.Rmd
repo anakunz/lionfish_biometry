@@ -2,7 +2,6 @@
 title: "Revision of MS #2018:11:32569:0:0:REVIEW"
 output: pdf_document
 ---
-<!-- BE REALLY CAREFUL to go through this and make sure the lines actually match up with the lines in the new manuscript - double check every one --> 
 Dear Dr. Pawlik
 
 Enclosed please find our revised manuscript “Spatial variation in allometric growth of invasive lionfish has management implications”(#2018:11:32569:0:0:REVIEW).
@@ -34,7 +33,7 @@ jvillasenor@bren.ucsb.edu
 
 Both reviewers noted a need to consider different or additional analyses and to improve the writing of this contribution.
 
-*As suggested by Rev2, we have logit-transformed our ratios and now evaluate them using an ANCOVA with study and total length as sources of variation.*
+*As suggested by Rev2, we have logit-transformed our ratios and now evaluate them using an ANCOVA, with study and total length as sources of variation.*
 
 \clearpage
 
@@ -48,7 +47,13 @@ The word choice needs to be consistent throughout the paper when referring to va
 
 L 19: Using the word “major” is a subjective word and elicits an emotional response usually in those that read it. Please choose a less loaded word. Major to one person is not necessarily major to all people. Instead use substantial, significant, etc. Please make the appropriate changes throughout the manuscript as well (results L142; discussion: L 175).
 
-*We have changed the word from "major" to "substantial" in L19 and L142 (now L139) and "key" in L175 (now L193). We chose to keep the word "major" in L26 to maintain consistency with the authors' original wording.*
+- *We have removed the word from "major" from L19 (now L20).*
+
+- *We chose to keep the word "major" in L26 to maintain consistency with the authors' original wording, but we have included quotations to denote this.*
+
+- *In L142 (Now L145) We now say that "ex situ parameters can result in erroneous weight estimates"*
+
+- *Ass suggested, we have changed "major" from L175 to "key" (now L201).*
 
 
 ### Introduction:
@@ -60,26 +65,22 @@ Line (L) 23: Capitalized “western” as was written in the Abstract and insert
 
 L24: replace “liberation” with “release”.
 
-
 *We replaced "liberation" with "release"*
 
 
 L 37: Albins and Hixon (2008) did their research in the Bahamas not Florida. Please correct.
 
-
-*The text now correctly states the research was performed in the Bahamas.*
+*The text now correctly states the research was performed in the Bahamas (L38).*
 
 
 L47: Replace impacts with “negative effects”.
-
 
 *"impacts" has been replaced with "negative effects" in L47, now L48*
 
 
 L61: replace “know” with “known”.
 
-
-*We have improved the wording in the original sentence and no longer use the word "know"/"known".*
+*We have improved the wording in the original sentence and no longer use the word "know"/"known" (L59).*
 
 Fig 1. To stay consistent throughout the manuscript please refer to the general region of the Atlantic ocean the same way. Throughout the manuscript it is referred to as the Wester Atlantic, North Atlantic, North-Western Atlantic. Choose one way to refer to this throughout all text and figures (see lines: 11, 23, 23, 81, 145 158). Not sure I found them all.
 
@@ -89,7 +90,7 @@ Fig 1. To stay consistent throughout the manuscript please refer to the general 
 
 L 82: The Bahamas are actually part of the Western Atlantic Ocean, not the Caribbean, please update your sample sizes.
 
-*The Bahamas are now reported as part of the Western Atlantic Ocean. Text in L82 (now L78-79) and Table 2 (now Table 1) reflect these changes.*
+*The Bahamas are now reported as part of the Western Atlantic Ocean. Text in L82 (now L80-81) and Table 2 (now Table 1) reflect these changes.*
 
 
 L 115: You changed how you refer to grams, here you use (gr) where as you used (g) before (see lines 100, 113). For all references to grams, both in the text and figures, please use (g).
@@ -99,11 +100,11 @@ L 115: You changed how you refer to grams, here you use (gr) where as you used (
 
 L 121: It is not clear to me what the TL (34,310) means. Can you re-write or clarify what is meant by this?
 
-*We have modified this so it reads "with TL ranging from 34 mm to 310 mm" in what is now L120.*
+*We have modified this so it reads "with TL ranging from 34 mm to 310 mm" in what is now L119.*
 
 L125: Will you add the github URL so the readers can find the data and code. It was not clear where the raw data would be shared either.
 
-*We have included the URL in the main text, but the decision to leave it there depends on the editorial formatting. However, PeerJ has an "Additional Information and Declarations" section with a subsection on "Data Availability", where we expect the URL to be included.*
+*We have included the URL in the main text (L128), but the decision to leave it there depends on the editorial formatting. However, PeerJ has an "Additional Information and Declarations" section with a subsection on "Data Availability", where we expect the URL to be included.*
 
 ### Results:
 
