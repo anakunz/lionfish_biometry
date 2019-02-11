@@ -35,14 +35,13 @@ relationships for lionfish taken throughout their invasive range and
 found regional differences that led to significant misestimates when
 calculating weight from length observations. The spatial pattern we
 observed is consistent with findings from other studies focused on
-genetics or length-at-age. We show that the use of \textit{ex situ}
-parameters can result in up to a threefold under- or overestimation of
-total weight for an individual organism. When estimating total biomass,
-the use of other parameters may produce estimates between 76.2\% and
-140\% of true observed biomass. These findings can have implications for
-management in terms of predicting effects on local ecosystems,
-evaluating the effectiveness of removal programs, or estimating biomass
-available for harvest.
+genetics or length-at-age. Here, the use of \textit{ex situ} parameter
+values resulted in total biomass estimates between 76.2\% and 140\% of
+true observed biomass, and up to a threefold under- or overestimation of
+total weight for an individual organism. These findings can have
+implications for management in terms of predicting effects on local
+ecosystems, evaluating the effectiveness of removal programs, or
+estimating biomass available for harvest.
 \end{abstract}
 
 \begin{document}
@@ -81,7 +80,7 @@ be minimized if their local biomass is controlled by culling
 \citep{ariasgonzalez_2011}.
 
 Governments and non-profit organizations have sought to reduce lionfish
-densities through removal programs and incentivizing its consumption
+densities through removal programs and by incentivizing its consumption
 \citep{chin_2016}. In some cases, these have shown to significantly
 reduce -- but not quite eliminate -- lionfish abundances at local scales
 \citep{deleon_2013,sandel_2015}. Complete eradication of lionfish
@@ -99,7 +98,7 @@ empirical modeling
 \citep{barbour_2011,morris_2011,deleon_2013,johnston_2015,sandel_2015,usseglio_2017}.
 Determining the feasibility of such initiatives requires modeling the
 change in biomass in response to changes in fishing mortality
-(\emph{i.e.} culling). A common way to model this is via
+(\emph{i.e.,} culling). A common way to model this is via
 length-structured population models, where fish lengths are converted to
 weight to calculate total biomass
 \citep{barbour_2011,cote_2014,andradibrown_2017}. The allometric
@@ -133,13 +132,14 @@ Our objective was to quantify the magnitude of error caused by using
 length observations. In this study, we calculated and reported the first
 length-weight relationship for lionfish in the central Mexican Caribbean
 using previously collected \emph{in situ} observations (n = 109;
-\citep{villaseorderbez_2014}). We then estimated lionfish weight in this
+\citet{villaseorderbez_2014}). We then estimated lionfish weight in this
 area using previously published length-weight relationships for lionfish
 populations from ten locations across the Western Atlantic, Gulf of
 Mexico, and Caribbean. By comparing these weight estimates to our
 \emph{in situ} length-weight observations, we showed that using \emph{ex
 situ} parameter values resulted in up to a threefold under- or
-overestimation of lionfish weight.
+overestimation of lionfish weight and estimated of total biomass ranged
+between 76\% and 140\% of observed total biomass.
 
 \section*{Methods}
 
@@ -188,14 +188,14 @@ Eq. \ref{eq:allometric}.}
 \end{figure}
 
 The weight-at-length relationship for lionfish in the central Mexican
-Caribbean was calculated with the allometric growth function
+Caribbean was calculated with the allometric growth function:
 
 \begin{equation}
 \label{eq:allometric}
 TW = aTL^b
 \end{equation}
 
-where \(a\) is the ponderal index and \(b\) is the scaling exponent or
+Where \(a\) is the ponderal index and \(b\) is the scaling exponent or
 allometric parameter. We linearized the equation using
 \(log_{10}\)-transformation and estimated the coefficients using an
 Ordinary Least Squares Regression with a heteroskedastic-robust standard
@@ -212,16 +212,17 @@ coefficients and report all parameters as TL (mm) to TW (g) conversions.
 We obtained a total of 18 parameter pairs by combining length-weight
 parameters extracted from the literature and the additional pair
 calculated here (Fig \ref{fig:all_allo}). Recall that the objective of
-this study is not to describe variations between populations (which
-would require access to raw data), but rather to assess how \emph{ex
-situ} parameter values influence the accuracy of weight estimates for
-lionfish, using the central Mexican Caribbean as a case study. Using
-each of the 18 parameter pairs, we estimated \(TW\) from the \(TL\)
-observations collected in the central Mexican Caribbean (n = 109, with
-\(TL\) ranging from 34 mm to 310 mm) and divided predicted weights by
-known observed weights to obtain a simple measure of over- or
-underestimation. Difference in mean weight ratios were tested with an
-analysis of covariance (ANCOVA):
+this study is not to describe differences in the length-weight
+relationship between populations (which would require access to raw
+data), but rather to assess how \emph{ex situ} parameter values
+influence the accuracy of weight estimates for lionfish, using the
+central Mexican Caribbean as a case study. Using each of the 18
+parameter pairs, we estimated \(TW\) from the \(TL\) observations
+collected in the central Mexican Caribbean (n = 109, with \(TL\) ranging
+from 34 mm to 310 mm) and divided predicted weights by known observed
+weights to obtain a simple measure of over- or underestimation.
+Difference in mean weight ratios were tested with an analysis of
+covariance (ANCOVA):
 
 \begin{equation}
 R_{i,j} = \tilde{\mu} + \alpha_j + \beta TL_{ij} + e_{ij}
@@ -231,9 +232,9 @@ R_{i,j} = \tilde{\mu} + \alpha_j + \beta TL_{ij} + e_{ij}
 
 Where \(R_{ij}\) is the weight ratio for the \(i\)-th organism obtained
 with parameters from the \(j\)-th study, \(\tilde{\mu}\) is a constant
-for all individuals, \(a_j\) is the treatment effect (\emph{i.e.} the
+for all individuals, \(a_j\) is the treatment effect (\emph{i.e.,} the
 difference induced by each study), \(TL_{ij}\) is the covariate
-(\emph{i.e.} Total Length) for the \(i\)-th subject in the \(j\)-th
+(\emph{i.e.,} Total Length) for the \(i\)-th subject in the \(j\)-th
 group with slope \(\beta\), and \(e_{ij}\) is the error term of the
 regression. Ratios were logit-transformed prior to analysis, and a
 \emph{post-hoc} Tukey's test was used to identify groups where mean
@@ -276,7 +277,7 @@ Caribbean & B & 109 & 0.32 & 3.23 & 0.98 & This study\\
 \section*{Results}
 
 The length-weight relationship for organisms from the central Mexican
-Caribbean (\ref{fig:l-w-carib}) resulted in coefficient values of
+Caribbean (Fig \ref{fig:l-w-carib}) resulted in coefficient values of
 \(a = 3.205 \times 10^{-6}\) and \(b = 3.235\) (\(R^2 = 0.977\),
 \(F_{1, 107} = 6928.67; p < 0.001\)). The allometric factor (\(b\)) was
 significantly different from \(b = 3\) (\(t_{107} = 6.04; p<0.001\)),
@@ -293,44 +294,49 @@ samples, dashed black line indicates curve of best fit, marginal plots
 represent the density distribution of each variable.}
 \end{figure}
 
-ANCOVA results show that there were significant differences in our
-predicted weight ratios for the central Mexican Caribbean when using
-each of the different pairs of parameters
-(\(F_{17, 1943} = 24.96; p < 0.001\); Fig \ref{fig:bio_ratio}). For
-example, the actual observed weights of the 109 lionfish from the
-Central Mexican Caribbean had a mean \(\pm\) SD of 52.56 \(\pm\) 76.58
-g. However, if we used allometric parameter values from Banco Chinchorro
-in the Caribbean to predict weights from our observed length
-observations, we estimated a mean \(\pm\) SD of 40.37 \(\pm\) 58.74 g
-\citep{sabidoitz_2016}. If we similarly used parameter values from North
-Carolina in the Western Atlantic to estimate lionfish weights in the
-Central Mexican Caribbean, we found a mean \(\pm\) SD 73.76 \(\pm\)
-96.11 g \citep{barbour_2011}. Weights predicted from these extreme
-parameters correspond to mean predicted-to-observed weight ratios of
-0.80 \(\pm\) 0.19 and 1.76 \(\pm\) 0.50 (mean \(\pm\) SD), respectively.
-Furthermore, for individual organisms, the largest differences between
-predicted and observed values resulted in ratios of 0.36 and 3.51
-(\emph{i.e.} the tails of each violin in Fig \ref{fig:bio_ratio}). If
-instead of looking at the mean ratios we looked at the total biomass
-(\emph{i.e.} summing across organisms), these cases would lead to
-estimated total biomasses of 76.2\% (4,363.53 g) and 140\% (8,039.96 g)
-of true observed biomass (5,729.34 g). These were the two most extreme
-sets of parameters, but results consistently varie Use of \emph{ex situ}
-parameters can result in erroneous weight and total biomass estimates
-for lionfish.
+ANCOVA results revealed significant differences in our predicted weight
+ratios for the central Mexican Caribbean when using each of the
+different pairs of parameters (\(F_{17, 1943} = 24.96; p < 0.001\); Fig
+\ref{fig:bio_ratio}). For example, the actual observed weights of the
+109 lionfish from the Central Mexican Caribbean had a mean \(\pm\) SD of
+52.56 \(\pm\) 76.58 g. However, if we used allometric parameter values
+from Banco Chinchorro in the Caribbean to predict weights from our
+observed length observations, we estimated a mean \(\pm\) SD of 40.37
+\(\pm\) 58.74 g \citep{sabidoitz_2016}. If we similarly used parameter
+values from North Carolina in the Western Atlantic to estimate lionfish
+weights in the Central Mexican Caribbean, we found a mean \(\pm\) SD of
+73.76 \(\pm\) 96.11 g \citep{barbour_2011}. Weights predicted from these
+extreme parameters correspond to mean predicted-to-observed weight
+ratios of 0.80 \(\pm\) 0.19 and 1.76 \(\pm\) 0.50 (mean \(\pm\) SD),
+respectively. Furthermore, largest errors for individual organisms
+collected in the central Mexican Caribbean resulted in ratios of 0.36
+and 3.51 (\emph{i.e.,} the tails of each violin in Fig
+\ref{fig:bio_ratio}). If we examined biomass (\emph{i.e.,} summing
+across all 109 organisms) instead of mean ratios, total biomass
+estimates were 76.2\% (4,363.53 g) and 140\% (8,039.96 g) of true
+observed biomass (5,729.34 g). Parameters for this study estimate total
+biomass at 98\% of observed biomass. These misestimates come from the
+two most extreme sets of parameters, but results varied consistently
+across locations (Figs \ref{fig:bio_ratio} and \ref{fig:errors}).
+Overall, the use of \emph{ex situ} parameters led to significantly
+erroneous estimates of individual weight and total biomass for lionfish.
 
-Tukey's \emph{post-hoc} test suggested that weight ratios for the
-central Mexican Caribbean were not different from those obtained with
-parameters from Little Cayman, the Bahamas, and some sites in the Gulf
-of Mexico (Tukey's HSD \(p > 0.05\)). All weight estimates using
-parameters from the Gulf of Mexico and Western Atlantic were higher than
-observed values, and only parameters from the Caribbean produced weights
-smaller than observed (Fig \ref{fig:bio_ratio}). The regional average
-(\(\pm\) SD) of predicted-to-observed weight ratios from these three
-regions were 1.24 \(\pm\) 0.309, 1.41 \(\pm\) 0.523, and 1.20 \(\pm\)
-0.423 for the Gulf of Mexico, Western Atlantic, and Caribbean,
-respectively. This suggests that the smallest errors are observed when
-using parameters from other locations in the Caribbean.
+Tukey's \emph{post-hoc} test showed that weight ratios for the central
+Mexican Caribbean differeed from those obtained with parameters from the
+Western Atlantic, and most sites in the Caribbean and the Gulf of Mexico
+(Tukey's HSD \(p > 0.05\)). The only sites where weight ratios did not
+differ from the central Mexican Caribbean were Little Cayman
+\citep{edwards_2014}, Bahamas \citep{darling_2011},
+and the Northern Gulf of Mexico (\citet{dahl_2014}; Tukey's HSD
+\(p > 0.05\)). All weight estimates using parameters from the Gulf of
+Mexico and Western Atlantic were higher than observed values, and only
+parameters from the Caribbean produced weights smaller than observed
+(Fig \ref{fig:bio_ratio}). The regional average (\(\pm\) SD) of
+predicted-to-observed weight ratios from these three regions were 1.24
+\(\pm\) 0.309, 1.41 \(\pm\) 0.523, and 1.20 \(\pm\) 0.423 for the Gulf
+of Mexico, Western Atlantic, and Caribbean, respectively. This suggests
+that the smallest errors are observed when using parameters from other
+locations in the Caribbean.
 
 \begin{figure}
 \centering
@@ -353,12 +359,13 @@ version of this figure is presented in Figure S4.}
 \centering
 \includegraphics{Manuscript_files/figure-latex/pred_obs-1.pdf}
 \caption{\label{fig:bio_ratio}Violin plot of predicted-to-observed
-weight ratios for 18 pairs of allometric parameters. Sex is indicated in
-parentheses. Blue circles indicate median values and like letters
-indicate values that do not differ significantly. For Sabido-Itza et al,
-2016b, BC and PNAX make reference to Banco Chinchorro and Parque
-Nacional Arrecifes de Xcalak, two sites for which they report
-parameters.}
+weight ratios when applying each of 18 different pairs of allometric
+parameters to the 109 lionfish collected in the central Mexican
+Caribbean. Sex is indicated in parentheses. Blue circles indicate median
+values and like letters indicate values that do not differ
+significantly. For Sabido-Itza et al, 2016b, BC and PNAX make reference
+to Banco Chinchorro and Parque Nacional Arrecifes de Xcalak, two sites
+for which they report parameters.}
 \end{figure}
 
 \begin{figure}
@@ -379,16 +386,17 @@ Our results suggest that lionfish exhibit highly variable, spatially
 heterogeneous allometric relationships across their invaded range, and
 that this variation is relevant for managing invasions. Moreover, we
 show that the use of \emph{ex situ} parameter values may lead to highly
-biased weight estimates. Our comparison of observed weights to those
-predicted with locally-informed parameters and \emph{ex situ} parameters
-showed that weight can be overestimated by more than threefold,
-highlighting the need to use local information. Here we discuss the
-implications of our findings, possible shortcommings in our analyses,
-and highlight potential future research directions.
+biased weight and total biomass estimates. Our comparison of observed
+weights to those predicted with locally-informed parameters and \emph{ex
+situ} parameters showed that weight of an individual lionfish can be
+overestimated by more than threefold, highlighting the need to use local
+information. Here we discuss the implications of our findings, possible
+shortcommings in our analyses, and highlight potential future research
+directions.
 
 Differences in length-weight relationships have traditionally been
 highlighted as potential pitfalls to fishery management. For example,
-\citet{wilson_2012} show that small-scale variations in length-at-age
+\citet{wilson_2012} showed that small-scale variations in length-at-age
 and fishing mortality in other Scorpaeniformes translate to differential
 landings, effort, and catch per unit effort in the live fish fishery of
 California, and that these differences must be taken into account in
@@ -414,22 +422,25 @@ existence of two distinct population groups, identified as the
 alternatively suggested that length-at-age differences may be driven by
 the environment.
 
-We might be inclined to attribute all variation in the lionfish
+One might be inclined to attribute all variation in the lionfish
 length-weight relationship to the spatial origin of these parameters.
 However, samples from the 12 studies included here were not only
 collected in different locations, but also at different points in time
 and across different depth and size ranges (See Supplementary Table 2
-for an extended version of Table 1). While we could not evaluate how
-these factors influenced length-weight estimates from previous studies
-without raw data, we still show that a lack of locally-calculated
-parameters can induce significant bias when calculating weight from
-length observations. The magnitude of the bias discovered in this study
-and our lack of understanding the sources driving spatial variation for
-lionfish highlights the need to simultaneously collect length-weight
-information across the invaded range to test for spatially-induced
-patterns and to link these findings to previously suggested
-environmental and genetic structures. Such an endeavor would provide
-insight into lionfish biology and better inform management.
+for an extended version of Table 1). The magnitude of the bias
+discovered in this study and our lack of understanding the sources
+driving spatial variation for lionfish highlights the need to
+simultaneously collect length-weight information across the invaded
+range to test for spatially-induced patterns and to link these findings
+to previously suggested environmental and genetic structures. Such an
+endeavor would provide insight into lionfish biology and better inform
+management. However, while we could not evaluate how these factors
+influenced length-weight estimates from previous studies without raw
+data, we still show that a lack of locally-calculated parameters can
+induce significant bias when calculating weight from length
+observations. We demonstrate the importance of using \emph{in situ}
+parameters to obtain accurate weight estimates regardless of the
+underlying mechanisms driving variation between populations.
 
 Applying parameter estimates to lengths outside the range of lengths
 originally used to estimate the parameters may also induce error. Our
@@ -439,7 +450,7 @@ estimated parametrs with smaller organisms
 had a \(TL\) of 310 mm, which is well within the range of all other
 studies (the next smallest maximum length was 325 mm; See Supplementary
 Table 2). Due to the power function describing the allometric
-relationship (\emph{i.e.} Eq. 1), the error in weight estimates is
+relationship (\emph{i.e.,} Eq. 1), the error in weight estimates is
 larger when extrapolation is done for lengths that are larger than the
 maximum length used to estimate the parameters. Our estimates are
 therefore conservative because we only used parameter pairs from other
