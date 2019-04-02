@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  11 FEB 2019 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.17)  13 FEB 2019 23:21
 entering extended mode
 **./Manuscript_diff.tex
 (Manuscript_diff.tex
@@ -728,19 +728,19 @@ Package: ulem 2012/05/18
 ) (Manuscript_diff.aux)
 \openout1 = `Manuscript_diff.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 96.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -839,8 +839,8 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 95.
-LaTeX Info: Redefining \microtypecontext on input line 95.
+(lastpage)             ! on input line 96.
+LaTeX Info: Redefining \microtypecontext on input line 96.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -853,7 +853,7 @@ Package microtype Info: No adjustment of character kerning.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-ptm.cfg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 98.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 99.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -863,10 +863,10 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 98
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 99
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
@@ -876,30 +876,30 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 99
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 99
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 98
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 99
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -908,27 +908,27 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 99.
 
-Overfull \hbox (376.69739pt too wide) in paragraph at lines 103--128
+Overfull \hbox (376.69739pt too wide) in paragraph at lines 104--129
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (93.62013pt too wide) in paragraph at lines 103--128
+Overfull \hbox (93.62013pt too wide) in paragraph at lines 104--129
 |   []
  []
 
 
-Overfull \hbox (6.42906pt too wide) in paragraph at lines 129--158
+Overfull \hbox (6.42906pt too wide) in paragraph at lines 130--159
 \OT1/ptm/m/n/10 (-20) to re-duced re-cruit-ment of na-tive fishes by nearly 80%
  over a five-week pe-riod []|   []   |   []   |   []
  []
@@ -936,57 +936,57 @@ Overfull \hbox (6.42906pt too wide) in paragraph at lines 129--158
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (99.7701pt too wide) in paragraph at lines 186--227
+Overfull \hbox (99.7701pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (175.28702pt too wide) in paragraph at lines 186--227
+Overfull \hbox (175.28702pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []   |   []   []\OT1/ptm/m/n/10 (-20) high lev-els of sit
 e fi-delity and small home ranges []|   []
  []
 
 
-Overfull \hbox (214.36795pt too wide) in paragraph at lines 186--227
+Overfull \hbox (214.36795pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (16.5408pt too wide) in paragraph at lines 186--227
+Overfull \hbox (16.5408pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []
  []
 
 
-Overfull \hbox (1.55421pt too wide) in paragraph at lines 186--227
+Overfull \hbox (1.55421pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   |   []   |   []   |   []   []\OT1/ptm/m/n/10 (-20) (Betancur-
  []
 
 
-Overfull \hbox (12.98839pt too wide) in paragraph at lines 186--227
+Overfull \hbox (12.98839pt too wide) in paragraph at lines 187--228
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   [][]|   []   |   []   |   []   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (912.39302pt too wide) in paragraph at lines 228--255
+Overfull \hbox (912.39302pt too wide) in paragraph at lines 229--256
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (1014.9918pt too wide) in paragraph at lines 262--304
+Overfull \hbox (1014.9918pt too wide) in paragraph at lines 263--305
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   |   []   |   []
  []
 
 
-Overfull \hbox (210.83926pt too wide) in paragraph at lines 262--304
+Overfull \hbox (210.83926pt too wide) in paragraph at lines 263--305
 []|   []
  []
 
 
-Overfull \hbox (150.18013pt too wide) in paragraph at lines 262--304
+Overfull \hbox (150.18013pt too wide) in paragraph at lines 263--305
 |   []   |   []   |   []   [][]|   []
  []
 
@@ -994,9 +994,9 @@ Overfull \hbox (150.18013pt too wide) in paragraph at lines 262--304
 Underfull \vbox (badness 1173) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 304.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 305.
  [2]
-Overfull \hbox (76.8799pt too wide) in paragraph at lines 322--336
+Overfull \hbox (76.8799pt too wide) in paragraph at lines 323--337
 []|   []   |   []   |   []   |   []   |   []   [][]|   []   |   []   |   []   |
    []   |   []   |   []   |   []   |   []   |   []   |   []
  []
@@ -1006,7 +1006,7 @@ File: Manuscript_files/figure-latex/map-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/map-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/map-1.pdf used on input 
-line 339.
+line 340.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1014,23 +1014,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [3]
 
 LaTeX Warning: Reference `eq:log-alo-trans' on page 4 undefined on input line 4
-00.
+01.
 
 [4 <./Manuscript_files/figure-latex/map-1.pdf>] [5] [6
 
 ]
 
-LaTeX Warning: Reference `tab:reg_table' on page 7 undefined on input line 498.
+LaTeX Warning: Reference `tab:reg_table' on page 7 undefined on input line 499.
 
 
 
-Overfull \hbox (12.25171pt too wide) in paragraph at lines 485--499
+Overfull \hbox (12.25171pt too wide) in paragraph at lines 486--500
 |   []   |   []   |   []   |   []   |   []   |   []   [][]|   []   |   []   |  
  []   |   []   |   []
  []
 
 
-Overfull \hbox (64.41847pt too wide) in paragraph at lines 485--499
+Overfull \hbox (64.41847pt too wide) in paragraph at lines 486--500
 |   []   |   []   |   []   |   []   |   []   []\OT1/ptm/m/n/10 (-20) ($\OML/ztm
 cm/m/it/10 R[] \OT1/ztmcm/m/n/10 = 0\OML/ztmcm/m/it/10 :\OT1/ztmcm/m/n/10 977$\
 OT1/ptm/m/n/10 (-20) , []|   []   |   []   |   []   |   []   |   []   |   [][][
@@ -1042,21 +1042,21 @@ File: Manuscript_files/figure-latex/fit1-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/fit1-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/fit1-1.pdf used on input
- line 504.
+ line 505.
 (pdftex.def)             Requested size: 397.48402pt x 230.86192pt.
 
 
 LaTeX Warning: Reference `eq:log-alo-trans' on page 7 undefined on input line 5
-16.
+17.
 
 
-Overfull \hbox (3.56001pt too wide) in paragraph at lines 516--552
+Overfull \hbox (3.56001pt too wide) in paragraph at lines 517--553
 []|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [
 ]   |   []   |   []   |   []   |   []   |   []
  []
 
 
-Overfull \hbox (79.77695pt too wide) in paragraph at lines 554--582
+Overfull \hbox (79.77695pt too wide) in paragraph at lines 555--583
 []\OT1/ptm/m/n/10 (-20) for the cen-tral Mex-i-can Caribbean when us-ing []|   
 []   |   []   []the dif-fer-ent pairs of pa-ram-e-ters ([]|   []
  []
@@ -1064,16 +1064,16 @@ Overfull \hbox (79.77695pt too wide) in paragraph at lines 554--582
 [7
 
  <./Manuscript_files/figure-latex/fit1-1.pdf>]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 631.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 632.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 631.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 632.
 
-Overfull \hbox (22.66034pt too wide) in paragraph at lines 640--825
+Overfull \hbox (22.66034pt too wide) in paragraph at lines 641--826
 []|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [
 ]   |   []   |   []   |   []   |   []   |   []   |   []
  []
@@ -1083,7 +1083,7 @@ File: Manuscript_files/figure-latex/fit2-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/fit2-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/fit2-1.pdf used on input
- line 831.
+ line 832.
 (pdftex.def)             Requested size: 397.48402pt x 274.02307pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1094,7 +1094,7 @@ File: Manuscript_files/figure-latex/pred_obs-1.pdf Graphic file (type pdf)
 
 <use Manuscript_files/figure-latex/pred_obs-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/pred_obs-1.pdf used on i
-nput line 850.
+nput line 851.
 (pdftex.def)             Requested size: 397.48402pt x 375.40158pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1106,27 +1106,27 @@ File: Manuscript_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pd
 f)
  <use Manuscript_files/figure-latex/unnamed-chunk-9-1.pdf>
 Package pdftex.def Info: Manuscript_files/figure-latex/unnamed-chunk-9-1.pdf us
-ed on input line 863.
+ed on input line 864.
 (pdftex.def)             Requested size: 397.48402pt x 375.40158pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./Manuscript_files/figure-latex/pred_obs-1.pdf>] [11 <./Manuscript_files/
 figure-latex/unnamed-chunk-9-1.pdf>]
-Overfull \hbox (5.98987pt too wide) in paragraph at lines 901--902
+Overfull \hbox (5.98987pt too wide) in paragraph at lines 902--903
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   |   []   |   []
  []
 
 
-Overfull \hbox (4.06844pt too wide) in paragraph at lines 924--958
+Overfull \hbox (4.06844pt too wide) in paragraph at lines 925--959
 []|   []   |   []   [][]|   []   |   []   |   []   |   []   |   []   |   []   |
    []   |   []   |   []   |   []   |   []   []\OT1/ptm/m/n/10 (-20) length-weig
 ht []|   []
  []
 
 
-Overfull \hbox (32.31984pt too wide) in paragraph at lines 924--958
+Overfull \hbox (32.31984pt too wide) in paragraph at lines 925--959
 |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   [] 
   |   []   |   []   |   []   |   []
  []
@@ -1145,11 +1145,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9216 strings out of 493329
- 133208 string characters out of 3139072
- 423304 words of memory out of 3000000
+ 9219 strings out of 493329
+ 133235 string characters out of 3139072
+ 423310 words of memory out of 3000000
  12338 multiletter control sequences out of 15000+200000
- 58199 words of font info for 225 fonts, out of 3000000 for 9000
+ 58318 words of font info for 227 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,11n,45p,1027b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
@@ -1163,7 +1163,7 @@ m Files/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Manuscript_diff.pdf (15 pages, 414584 bytes).
+Output written on Manuscript_diff.pdf (15 pages, 414866 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

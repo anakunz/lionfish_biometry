@@ -53,7 +53,7 @@ L 19: Using the word “major” is a subjective word and elicits an emotional r
 
 - *In L142 (Now L151) We now say that "the use of ex situ parameters led to significantly erroneous estimates of individual weight and total biomass for lionfish"*
 
-- *Ass suggested, we have changed "major" from L175 to "key" (now L211).*
+- *Ass suggested, we have changed "major" from L175 to "key" (now L212).*
 
 
 ### Introduction:
@@ -154,7 +154,7 @@ L 107-108: There appear to be quite a few differences in the sampling and proces
 
 L175: Remove the word major from the main conclusion. Use either key, central, or fundamental. Major seems to be too strong and subjective of a word.
 
-*We now use the word "key" (L211).*
+*We now use the word "key" (L212).*
 
 \clearpage
 
