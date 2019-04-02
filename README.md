@@ -1,7 +1,8 @@
 # Spatial variation in allometric growth of invasive lionfish has management implications
 
+Repository with data and code for: Villaseñor-Derbez, J. C., & Fitzgerald, S. (2019). Spatial variation in allometric growth of invasive lionfish has management implications. PeerJ, 7, e6667. [doi:10.7717/peerj.6667](https://peerj.com/articles/6667/)
 
-## Repository structure 
+## Relevant repository structure 
 
 ```
 -- data
@@ -9,21 +10,29 @@
    |__lionfish_data.csv
    |__spatial
 -- docs
-   |__bibliography.bib
-   |__CoverLetter.pdf
-   |__CoverLetter.pdf.docx
    |__elsevier-harvard.csl
    |__huct.csl
    |__main.tex
    |__Manuscript.bbl
+   |__Manuscript.log
+   |__Manuscript.md
    |__Manuscript.pdf
    |__Manuscript.Rmd
    |__Manuscript.tex
-   |__Manuscript_files
    |__peerj.csl
    |__peerj_template.tex
    |__references.bib
+   |__reviews.pdf
+   |__reviews.Rmd
+   |__reviews_original.pdf
+   |__spbasic.bst
+   |__spmpsci.bst
+   |__spphys.bst
    |__supplementary
+   |__svglov3.clo
+   |__svjour3.cls
+   |__template.pdf
+   |__template.tex
    |__wlpeerj.cls
 -- lionfish_biometry.Rproj
 -- README.md
