@@ -10,31 +10,9 @@ Repository with data and code for: Villaseñor-Derbez, J. C., & Fitzgerald, S. (
    |__lionfish_data.csv
    |__spatial
 -- docs
-   |__elsevier-harvard.csl
-   |__huct.csl
-   |__main.tex
-   |__Manuscript.bbl
-   |__Manuscript.log
-   |__Manuscript.md
    |__Manuscript.pdf
    |__Manuscript.Rmd
    |__Manuscript.tex
-   |__peerj.csl
-   |__peerj_template.tex
-   |__references.bib
-   |__reviews.pdf
-   |__reviews.Rmd
-   |__reviews_original.pdf
-   |__spbasic.bst
-   |__spmpsci.bst
-   |__spphys.bst
-   |__supplementary
-   |__svglov3.clo
-   |__svjour3.cls
-   |__template.pdf
-   |__template.tex
-   |__wlpeerj.cls
--- lionfish_biometry.Rproj
 -- README.md
 ```
 
